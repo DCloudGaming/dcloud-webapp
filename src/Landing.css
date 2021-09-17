@@ -97,3 +97,12 @@ positions.png section {
   background-color: #171738;
   color: white;
 }
+
+.button-highlight {
+  background: #ff6633 !important;
+  color: white;
+  border-radius: 10px;
+  font-weight: 700;
+  border-width: 0;
+  padding: 15px;
+}

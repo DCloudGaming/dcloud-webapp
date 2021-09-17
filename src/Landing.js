@@ -10,7 +10,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { Button, Card, Elevation, Icon, IconSize } from "@blueprintjs/core";
+import { Card, Elevation, Icon, IconSize } from "@blueprintjs/core";
 import "./Landing.css";
 
 export default function LandingPage() {
@@ -30,14 +30,14 @@ export default function LandingPage() {
               </Row>
               <Row className="justify-content-md-center">
                 <Col md="2">
-                  <Button large intent="primary">
+                  <button large className="button-highlight">
                     Sign up to play
-                  </Button>
+                  </button>
                 </Col>
                 <Col md="2">
-                  <Button large intent="secondary">
+                  <button large intent="secondary">
                     Apply to stream
-                  </Button>
+                  </button>
                 </Col>
               </Row>
               <Row>
@@ -151,9 +151,9 @@ export default function LandingPage() {
                     </Row>
                     <Row>
                       <Col md="5">
-                        <Button large intent="primary">
+                        <button large className="button-highlight">
                           Apply to stream
-                        </Button>
+                        </button>
                       </Col>
                       <Col md="5">
                         <b>How stream pay works →</b>
@@ -221,9 +221,9 @@ export default function LandingPage() {
                     </Row>
                     <Row>
                       <Col md="5">
-                        <Button large intent="primary">
+                        <button large className="button-highlight">
                           Play now
-                        </Button>
+                        </button>
                       </Col>
                     </Row>
                     <Row>
@@ -265,9 +265,9 @@ export default function LandingPage() {
               </Row>
               <Row>
                 <Col md="5">
-                  <Button large intent="primary">
+                  <button large className="button-highlight">
                     Learn about DCLO Token
-                  </Button>
+                  </button>
                 </Col>
                 <Col md="5">
                   <b>Exchange & Wallets →</b>
@@ -293,9 +293,9 @@ export default function LandingPage() {
                       torrent software will be enabled with a wallet and BTT
                       token balance.
                     </p>
-                    <Button large intent="secondary">
+                    <button large intent="secondary">
                       Connect wallet
-                    </Button>
+                    </button>
                   </Card>
                 </Col>
                 <Col>
@@ -315,9 +315,9 @@ export default function LandingPage() {
                       Just use the torrent program like normal, there is nothing
                       else you need to learn or do.
                     </p>
-                    <Button large intent="secondary">
+                    <button large intent="secondary">
                       Learn more
-                    </Button>
+                    </button>
                   </Card>
                 </Col>
                 <Col>
@@ -337,9 +337,9 @@ export default function LandingPage() {
                       integrated wallet allows for secure storage of your BTT,
                       which you can send to other wallets.
                     </p>
-                    <Button large intent="secondary">
+                    <button large intent="secondary">
                       Learn more
-                    </Button>
+                    </button>
                   </Card>
                 </Col>
               </Row>
@@ -367,9 +367,9 @@ export default function LandingPage() {
                 />
               </Col>
               <Col md="2">
-                <Button large intent="secondary">
+                <button large intent="secondary">
                   Get estimate
-                </Button>
+                </button>
               </Col>
             </Row>
           </Container>
@@ -394,9 +394,9 @@ export default function LandingPage() {
                     <br />
                     <Row>
                       <Col md="5">
-                        <Button large intent="primary">
+                        <button large className="button-highlight">
                           Learn about safety
-                        </Button>
+                        </button>
                       </Col>
                       <Col md="5">
                         <b>Community guidelines →</b>
@@ -451,7 +451,7 @@ export default function LandingPage() {
                       placeholder="Email"
                       dir="auto"
                     />
-                    <Button>Submit</Button>
+                    <button>Submit</button>
                     <p>
                       Discord / Telegram / Twitter / Youtube / Documentation
                     </p>
