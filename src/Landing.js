@@ -35,7 +35,7 @@ export default function LandingPage() {
                   </button>
                 </Col>
                 <Col md="2">
-                  <button large intent="secondary">
+                  <button large className="button-secondary">
                     Apply to stream
                   </button>
                 </Col>
@@ -293,7 +293,7 @@ export default function LandingPage() {
                       torrent software will be enabled with a wallet and BTT
                       token balance.
                     </p>
-                    <button large intent="secondary">
+                    <button large className="button-secondary">
                       Connect wallet
                     </button>
                   </Card>
@@ -315,7 +315,7 @@ export default function LandingPage() {
                       Just use the torrent program like normal, there is nothing
                       else you need to learn or do.
                     </p>
-                    <button large intent="secondary">
+                    <button large className="button-secondary">
                       Learn more
                     </button>
                   </Card>
@@ -337,7 +337,7 @@ export default function LandingPage() {
                       integrated wallet allows for secure storage of your BTT,
                       which you can send to other wallets.
                     </p>
-                    <button large intent="secondary">
+                    <button large className="button-secondary">
                       Learn more
                     </button>
                   </Card>
@@ -367,7 +367,7 @@ export default function LandingPage() {
                 />
               </Col>
               <Col md="2">
-                <button large intent="secondary">
+                <button large className="button-secondary">
                   Get estimate
                 </button>
               </Col>
