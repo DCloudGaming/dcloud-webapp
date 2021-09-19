@@ -10,68 +10,77 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { Card, Elevation, Icon, IconSize } from "@blueprintjs/core";
+import { Card, Elevation, Icon, IconSize, H1, Text } from "@blueprintjs/core";
 import "./Landing.css";
 
 export default function LandingPage() {
   return (
     <>
       <div>
-        <section className="section section-lg top-section">
-          <section className="section">
-            <Container>
-              <Row className="justify-content-md-center">
+        <section className="section section-lg">
+          <section className="top-section">
+            <nav class="bp3-navbar .modifier">
+              <Container>
+                <div class="bp3-navbar-group bp3-align-left">
+                  <img
+                    id="logo"
+                    src={require("./assets/img/logo.png")}
+                    className="mr-3"
+                  />
+                  <H1 id="logo-text">DCLO.</H1>
+                </div>
+                <div class="bp3-navbar-group bp3-align-right">
+                  <button class="bp3-button bp3-minimal">STREAMER</button>
+                  <button class="bp3-button bp3-minimal">PLAYER</button>
+                  <button class="bp3-button bp3-minimal">GAME PRODUCER</button>
+                  <button class="bp3-button bp3-minimal">LOGIN</button>
+                  <button class="bp3-button bp3-minimal">SIGN UP</button>
+                </div>
+              </Container>
+            </nav>
+            <img
+              className="img-landing-top"
+              src={require("./assets/img/positions.png")}
+            />
+            <Container className="top-section">
+              <Row className="mb-4">
                 <Col md="6">
-                  <h1>
-                    Hop in. Pick a game. Play instantly. No fancy hardware
-                    needed.
-                  </h1>
+                  <H1>
+                    Pick a game. Play instantly.
+                    <br />
+                    No fancy hardware needed.
+                  </H1>
                 </Col>
               </Row>
-              <Row className="justify-content-md-center">
-                <Col md="2">
-                  <button large className="button-highlight">
-                    Sign up to play
-                  </button>
-                </Col>
-                <Col md="2">
-                  <button large className="button-secondary">
-                    Apply to stream
-                  </button>
-                </Col>
-              </Row>
-              <Row>
-                <img
-                  className="img-center img-fluid"
-                  src={require("./assets/img/positions.png")}
-                />
-              </Row>
-            </Container>
-            <Row>
-              <img
-                className="img-center img-fluid"
-                src={require("./assets/img/demo.png")}
-              />
-            </Row>
-            <Container>
-              <Row className="justify-content-md-center">
-                <Col md="10">
-                  <h1>Revolutionary platform to run and publish application</h1>
-                </Col>
-              </Row>
-              <Row className="justify-content-md-center">
-                <Col md="12">
-                  <h4>
+              <Row className="mb-5">
+                <Col md="6">
+                  <Text className="bp3-running-text">
                     CloudMorph is a decentralized, self-hosted cloud
                     gaming/cloud application platform. App deployment for
                     publisher and App access for user are made simple. Users can
                     easily discover and run any application/games directly from
                     their browser. The app content are built up by community in
                     decentralized manner.
-                  </h4>
+                  </Text>
                 </Col>
               </Row>
+              <Row>
+                <button large className="button-highlight">
+                  Sign up to play
+                </button>
+                <button large className="button-secondary">
+                  Apply to stream
+                </button>
+              </Row>
             </Container>
+          </section>
+          <section className="section mb-5">
+            <Row>
+              <img
+                className="img-center img-fluid"
+                src={require("./assets/img/demo.png")}
+              />
+            </Row>
           </section>
         </section>
 

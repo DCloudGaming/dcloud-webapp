@@ -64,16 +64,9 @@
   margin-top: 10px;
   border-color: darkgray;
 }
-positions.png section {
-  margin-bottom: 5em !important;
-}
-
-.row {
-  /* margin-bottom: 5em !important; */
-}
 
 .top-section {
-  margin-top: 5em;
+  height: 90vh;
 }
 
 .play-section {
@@ -114,4 +107,50 @@ positions.png section {
   border-radius: 10px;
   border-width: 0px;
   padding: 8px 18px;
+}
+
+img.img-landing-top {
+  width: 60%;
+  position: absolute;
+  left: 70%;
+  bottom: 10vh;
+  z-index: -1;
+  margin: 0 auto;
+  transform: translate(-60%, 0);
+}
+
+.bp3-heading {
+  color: #161637;
+}
+
+.container.top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 70vh;
+}
+
+.row > button {
+  width: auto;
+  margin-right: 1rem;
+}
+
+.bp3-navbar-group > button {
+  padding: 3rem;
+}
+
+.bp3-navbar {
+  box-shadow: none;
+  margin-top: 1rem;
+}
+
+img#logo {
+  max-width: 3rem;
+}
+
+h1#logo-text {
+  font-weight: 900;
+  font-size: large;
+  color: #2b2c95;
+  margin-left: 1rem;
 }
