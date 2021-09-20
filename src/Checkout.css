@@ -6,8 +6,12 @@
 }
 
 .checkout__ad {
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
+}
+
+.checkout__left {
+  width: 90vw;
 }
 
 .checkout__title {

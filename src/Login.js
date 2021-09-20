@@ -1,69 +1,109 @@
-import React, { useState } from 'react';
-import './Login.css'
+import React, { useState } from "react";
+import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
+import {
+  CardHeader,
+  CardBody,
+  CardFooter,
+  CardTitle,
+  ListGroupItem,
+  ListGroup,
+  Container,
+  Row,
+  Col,
+} from "reactstrap";
+import {
+  Card,
+  Elevation,
+  Icon,
+  IconSize,
+  H1,
+  H5,
+  Text,
+  Menu,
+  MenuItem,
+} from "@blueprintjs/core";
 
 function Login() {
-    const history = useHistory();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const history = useHistory();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const signIn = e => {
-        e.preventDefault();
+  const signIn = (e) => {
+    e.preventDefault();
 
-        auth
-            .signInWithEmailAndPassword(email, password)
-            .then(auth => {
-                history.push('/')
-            })
-            .catch(error => alert(error.message))
-    }
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        history.push("/");
+      })
+      .catch((error) => alert(error.message));
+  };
 
-    const register = e => {
-        e.preventDefault();
+  const register = (e) => {
+    e.preventDefault();
 
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((auth) => {
-                // it successfully created a new user with email and password
-                if (auth) {
-                    history.push('/')
-                }
-            })
-            .catch(error => alert(error.message))
-    }
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        // it successfully created a new user with email and password
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
+  };
 
-    return (
-        <div className='login'>
-            <Link to='/'>
-                <img
-                    className="login__logo"
-                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png' 
-                />
-            </Link>
-
-            <div className='login__container'>
-                <h1>Sign-in</h1>
-
-                <form>
-                    <h5>E-mail</h5>
-                    <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
-
-                    <h5>Password</h5>
-                    <input type='password' value={password} onChange={e => setPassword(e.target.value)} />
-
-                    <button type='submit' onClick={signIn} className='login__signInButton'>Sign In</button>
-                </form>
-
-                <p>
-                    By signing-in you agree to the AMAZON FAKE CLONE Conditions of Use & Sale. Please
-                    see our Privacy Notice, our Cookies Notice and our Interest-Based Ads Notice.
-                </p>
-
-                <button onClick={register} className='login__registerButton'>Create your Amazon Account</button>
-            </div>
-        </div>
-    )
+  return (
+    <Container>
+      <Row className="mt-10">
+        <Col md="3"></Col>
+        <Col md="6">
+          <Card
+            interactive={true}
+            elevation={Elevation.ZERO}
+            style={{
+              background: "#a5e4ff",
+            }}
+          >
+            <Row className="mb-5">
+              <img
+                className="login__logo"
+                src={require("./assets/img/logo.png")}
+              />
+            </Row>
+            <input
+              className="bp3-input .modifier bp3-fill bp3-large mb-3"
+              type="text"
+              placeholder="Email"
+              dir="auto"
+            />
+            <input
+              className="bp3-input .modifier bp3-fill bp3-large mb-4"
+              type="text"
+              placeholder="Password"
+              dir="auto"
+            />
+            <Row className="mt-4 mb-5">
+              <Col md="5">
+                <button large className="button-highlight full-width">
+                  Login
+                </button>
+              </Col>
+              <Col md="2" />
+              <Col md="5">
+                <button large className="button-minimal">
+                  Create an account →
+                </button>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+        <Col md="3"></Col>
+      </Row>
+    </Container>
+  );
 }
 
-export default Login
+export default Login;

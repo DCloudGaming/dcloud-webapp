@@ -35,10 +35,14 @@ function Product({ id, title, image, price, rating }) {
             ))}
         </div>
       </div>
+      <img
+        src="https://hoangmarketing.com/wp-content/uploads/2021/08/Thetan-Arena-la-gi.jpg"
+        alt=""
+      />
 
-      <img src={image} alt="" />
-
-      <button onClick={addToBasket}>Add to Basket</button>
+      <button large className="button-highlight" onClick={addToBasket}>
+        Vote
+      </button>
     </div>
   );
 }
