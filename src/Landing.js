@@ -251,7 +251,8 @@ export default function LandingPage() {
                   <Row className="mb-5">
                     <Text>
                       Whether you’re following your fantasy or your competitive
-                      tournament, we’ll get you where you need to play.
+                      tournament, we’ll get you the right hardware for your best
+                      gaming experience.
                     </Text>
                   </Row>
                   <Row className="mb-4">
@@ -291,19 +292,16 @@ export default function LandingPage() {
                     </Col>
                   </Row>
                   <Row className="mb-5">
-                    <Col md="5">
+                    <Col md="3">
                       <button large className="button-highlight">
                         Play now
                       </button>
                     </Col>
-                  </Row>
-                  <Row>
-                    <b>PAY WITH DCLO TOKEN</b>
-                    <Text>
-                      Pay by <b>DCLO Token</b> to unlock perks like 15% off rent
-                      fee, free cross-border transaction fee, exclusive offers,
-                      and more.
-                    </Text>
+                    <Col md="8">
+                      <button large className="button-minimal">
+                        See frequently asked question →
+                      </button>
+                    </Col>
                   </Row>
                 </Col>
                 <Col md="1"></Col>
@@ -312,8 +310,8 @@ export default function LandingPage() {
                     <img
                       className="img-center"
                       style={{
-                        height: "600px",
-                        width: "400px",
+                        height: "500px",
+                        width: "300px",
                       }}
                       src={require("./assets/img/landing-player-first.png")}
                     />
@@ -321,10 +319,9 @@ export default function LandingPage() {
                 </Col>
               </Row>
               <Row className="mt-10 mb-5">
+                <b>PAY WITH DCLO TOKEN</b>
                 <Row className="mb-2">
-                  <H1>
-                    <b>Pay. Earn. Stake. Go bananas.</b>
-                  </H1>
+                  <H1>Pay Earn Stake. Go bananas.</H1>
                 </Row>
                 <Row>
                   <Text className="bp3-running-text">
@@ -335,18 +332,6 @@ export default function LandingPage() {
                     BitTorrent File System, DLive, and others in the pipeline.
                   </Text>
                 </Row>
-              </Row>
-              <Row className="mb-5">
-                <Col md="2">
-                  <button large className="button-highlight">
-                    Learn more
-                  </button>
-                </Col>
-                <Col md="5">
-                  <button large className="button-minimal">
-                    Exchange & Wallets →
-                  </button>
-                </Col>
               </Row>
               <Row>
                 <Col>
@@ -393,7 +378,7 @@ export default function LandingPage() {
                       else you need to learn or do.
                     </Text>
                     <button large className="button-secondary">
-                      Reviews
+                      See reviews
                     </button>
                   </Card>
                 </Col>
@@ -420,6 +405,18 @@ export default function LandingPage() {
                       Airdrop programs
                     </button>
                   </Card>
+                </Col>
+              </Row>
+              <Row className="mt-5 mb-5">
+                <Col md="2">
+                  <button large className="button-highlight">
+                    Learn more
+                  </button>
+                </Col>
+                <Col md="5">
+                  <button large className="button-minimal">
+                    Exchange & Wallets →
+                  </button>
                 </Col>
               </Row>
             </Container>
@@ -459,12 +456,12 @@ export default function LandingPage() {
               <Row className="row-grid justify-content-between">
                 <Col md="6">
                   <div className="pl-md-5">
-                    <b>SAFETY FIRST</b>
+                    <b>PRIVACY FIRST</b>
                     <Row className="mb-2">
                       <H1>
-                        How to work together for a
+                        How to collaborate for a
                         <br />
-                        best gaming experience
+                        fuss-free gaming experience
                       </H1>
                     </Row>
                     <Text className="bp3-running-text mb-5">
@@ -476,7 +473,7 @@ export default function LandingPage() {
                     <Row className="mb-5">
                       <Col md="5">
                         <button large className="button-highlight">
-                          Learn about safety
+                          Learn about privacy
                         </button>
                       </Col>
                       <Col md="6">
