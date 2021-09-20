@@ -109,6 +109,14 @@
   padding: 8px 18px;
 }
 
+.button-minimal {
+  color: #000033 !important;
+  background: transparent;
+  font-weight: 600;
+  border-width: 0px;
+  padding: 8px 18px;
+}
+
 img.img-landing-top {
   width: 60%;
   position: absolute;
@@ -153,4 +161,24 @@ h1#logo-text {
   font-size: large;
   color: #2b2c95;
   margin-left: 1rem;
+}
+
+.footer {
+  background-color: #d2effc;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.brand-color {
+  color: #2b2d95;
+}
+
+.mt-10 {
+  margin-top: 5rem !important;
+}
+
+.full-width {
+  width: 100%;
 }

@@ -10,10 +10,54 @@ import {
   Row,
   Col,
 } from "reactstrap";
-import { Card, Elevation, Icon, IconSize, H1, Text } from "@blueprintjs/core";
+import {
+  Card,
+  Elevation,
+  Icon,
+  IconSize,
+  H1,
+  H5,
+  Text,
+  Menu,
+  MenuItem,
+} from "@blueprintjs/core";
 import "./Landing.css";
 
 export default function LandingPage() {
+  const streamerFooter = [
+    "Become a Streamer",
+    "Earnings",
+    "Cities",
+    "Help",
+    "Safety",
+    "Application Requirements",
+    "Bonus",
+    "DCLO Rewards",
+    "Hub",
+  ];
+  const playerFooter = [
+    "Become a Player",
+    "Earnings",
+    "Cities",
+    "Help",
+    "Safety",
+    "Application Requirements",
+    "Bonus",
+    "DCLO Rewards",
+    "Hub",
+    "Gift Cards",
+    "Something",
+    "Donate",
+  ];
+  const dcloFooter = [
+    "Careers",
+    "Developers",
+    "Press",
+    "Investor Relations",
+    "Media",
+    "Business",
+  ];
+
   return (
     <>
       <div>
@@ -30,11 +74,21 @@ export default function LandingPage() {
                   <H1 id="logo-text">DCLO.</H1>
                 </div>
                 <div class="bp3-navbar-group bp3-align-right">
-                  <button class="bp3-button bp3-minimal">STREAMER</button>
-                  <button class="bp3-button bp3-minimal">PLAYER</button>
-                  <button class="bp3-button bp3-minimal">GAME PRODUCER</button>
-                  <button class="bp3-button bp3-minimal">LOGIN</button>
-                  <button class="bp3-button bp3-minimal">SIGN UP</button>
+                  <button class="bp3-button bp3-minimal">
+                    <b>STREAMER</b>
+                  </button>
+                  <button class="bp3-button bp3-minimal">
+                    <b>PLAYER</b>
+                  </button>
+                  <button class="bp3-button bp3-minimal">
+                    <b>GAME PRODUCER</b>
+                  </button>
+                  <button class="bp3-button bp3-minimal">
+                    <b>LOGIN</b>
+                  </button>
+                  <button class="bp3-button bp3-minimal">
+                    <b>SIGN UP</b>
+                  </button>
                 </div>
               </Container>
             </nav>
@@ -87,7 +141,7 @@ export default function LandingPage() {
         <section className="section section-lg">
           <section className="section">
             <Container>
-              <Row className="row-grid justify-content-between">
+              <Row className="row-grid justify-content-between mb-5">
                 <Col className="mt-lg-5" md="4">
                   <Row>
                     <img
@@ -98,74 +152,80 @@ export default function LandingPage() {
                 </Col>
                 <Col md="7">
                   <div className="pl-md-5">
-                    <b>STREAM WITH DCLO</b>
-                    <h1>
-                      Set your own hours.
+                    <Row className="mb-2">
+                      <b>STREAM WITH DCLO</b>
                       <br />
-                      Earn on your own terms.
-                    </h1>
-                    <p>
-                      Maybe you’re preparing for work. Or keeping your computer
-                      idle to spend more time with your family. It’s a great
-                      time to rent the machine, connect with your community, and
-                      earn a little extra cash.
-                    </p>
-                    <br />
-                    <Row>
+                      <H1>
+                        Set your own hours.
+                        <br />
+                        Earn on your own terms.
+                      </H1>
+                    </Row>
+                    <Row className="mb-5">
+                      <Text>
+                        Maybe you’re preparing for work. Or keeping your
+                        computer idle to spend more time with your family. It’s
+                        a great time to rent the machine, connect with your
+                        community, and earn a little extra cash.
+                      </Text>
+                    </Row>
+                    <Row className="mb-3">
                       <Col md="1">
                         <Icon
                           icon="bank-account"
                           size={IconSize.LARGE}
-                          intent="success"
+                          className="brand-color"
                         />
                       </Col>
                       <Col md="11">
                         <h5>Reliable earnings</h5>
-                        <p>
+                        <Text>
                           Make money, keep your tips, and use in-app tools to
                           help maximize your earnings.
-                        </p>
+                        </Text>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="mb-3">
                       <Col md="1">
                         <Icon
                           icon="time"
                           size={IconSize.LARGE}
-                          intent="success"
+                          className="brand-color"
                         />
                       </Col>
                       <Col md="11">
                         <h5>A flexible schedule</h5>
-                        <p>
+                        <Text>
                           Be your own boss and drive whenever it works for you.
-                        </p>
+                        </Text>
                       </Col>
                     </Row>
-                    <Row>
+                    <Row className="mb-5">
                       <Col md="1">
                         <Icon
                           icon="heart"
                           size={IconSize.LARGE}
-                          intent="success"
+                          className="brand-color"
                         />
                       </Col>
                       <Col md="11">
                         <h5>Get paid promptly</h5>
-                        <p>
+                        <Text>
                           Cash out your earnings whenever you want with Dcloud
                           token.
-                        </p>
+                        </Text>
                       </Col>
                     </Row>
                     <Row>
-                      <Col md="5">
+                      <Col md="4">
                         <button large className="button-highlight">
                           Apply to stream
                         </button>
                       </Col>
                       <Col md="5">
-                        <b>How stream pay works →</b>
+                        <button large className="button-minimal">
+                          How stream pay works →
+                        </button>
                       </Col>
                     </Row>
                   </div>
@@ -177,109 +237,115 @@ export default function LandingPage() {
         <section className="section section-lg play-section">
           <section className="section">
             <Container>
-              <Row className="row-grid justify-content-between">
-                <Col md="5">
+              <Row className="row-grid justify-content-between mb-5">
+                <Col md="7">
                   {/* TODO: switch different here */}
-                  <div className="pl-md-5">
+                  <Row className="mb-2">
                     <b>PLAY WITH DCLO</b>
-                    <h1>
-                      Ready, set, play
+                    <H1>
+                      Ready set play
                       <br />
-                      in just a few quick clicks.
-                    </h1>
-                    <p>
+                      in a few clicks
+                    </H1>
+                  </Row>
+                  <Row className="mb-5">
+                    <Text>
                       Whether you’re following your fantasy or your competitive
                       tournament, we’ll get you where you need to play.
-                    </p>
-                    <br />
-                    <Row>
-                      <Col md="1">
-                        <Icon
-                          icon="applications"
-                          size={IconSize.LARGE}
-                          intent="success"
-                        />
-                      </Col>
-                      <Col md="11">
-                        <h5>Get a reliable match in minutes</h5>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="1">
-                        <Icon
-                          icon="desktop"
-                          size={IconSize.LARGE}
-                          intent="success"
-                        />
-                      </Col>
-                      <Col md="11">
-                        <h5>Know that your machine can handle any game</h5>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="1">
-                        <Icon
-                          icon="timeline-events"
-                          size={IconSize.LARGE}
-                          intent="success"
-                        />
-                      </Col>
-                      <Col md="11">
-                        <h5>Schedule your playtime in advance</h5>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col md="5">
-                        <button large className="button-highlight">
-                          Play now
-                        </button>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <h3 style={{ color: "#171637", fontWeigh: 1000 }}>
-                        <b>dclotoken</b>
-                      </h3>
-                      <p>
-                        Pay by DClo Token to unlock perks like 15% off rent fee,
-                        free cross-border transaction fee, exclusive offers, and
-                        more.
-                      </p>
-                    </Row>
-                  </div>
+                    </Text>
+                  </Row>
+                  <Row className="mb-4">
+                    <Col md="1">
+                      <Icon
+                        icon="applications"
+                        size={IconSize.LARGE}
+                        className="brand-color"
+                      />
+                    </Col>
+                    <Col md="11">
+                      <h5>Get a reliable match in minutes</h5>
+                    </Col>
+                  </Row>
+                  <Row className="mb-4">
+                    <Col md="1">
+                      <Icon
+                        icon="desktop"
+                        size={IconSize.LARGE}
+                        className="brand-color"
+                      />
+                    </Col>
+                    <Col md="11">
+                      <h5>Know that your machine can handle any game</h5>
+                    </Col>
+                  </Row>
+                  <Row className="mb-5">
+                    <Col md="1">
+                      <Icon
+                        icon="timeline-events"
+                        size={IconSize.LARGE}
+                        className="brand-color"
+                      />
+                    </Col>
+                    <Col md="11">
+                      <h5>Schedule your playtime in advance</h5>
+                    </Col>
+                  </Row>
+                  <Row className="mb-5">
+                    <Col md="5">
+                      <button large className="button-highlight">
+                        Play now
+                      </button>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <b>PAY WITH DCLO TOKEN</b>
+                    <Text>
+                      Pay by <b>DCLO Token</b> to unlock perks like 15% off rent
+                      fee, free cross-border transaction fee, exclusive offers,
+                      and more.
+                    </Text>
+                  </Row>
                 </Col>
-                <Col className="mt-lg-5" md="6">
+                <Col md="1"></Col>
+                <Col md="4">
                   <Row>
                     <img
                       className="img-center"
                       style={{
                         height: "600px",
-                        width: "350px",
+                        width: "400px",
                       }}
                       src={require("./assets/img/landing-player-first.png")}
                     />
                   </Row>
                 </Col>
               </Row>
-              <Row>
-                <h1>
-                  <b>Pay. Earn. Stake. Go bananas.</b>
-                </h1>
-                <p>
-                  We’ve got options to get you pay smoothly. BTT is a TRC-10
-                  utility token based on the blockchain that powers features of
-                  the most popular decentralized protocols and applications in
-                  the world. DApps powered by BTT include BitTorrent Speed,
-                  BitTorrent File System, DLive, and others in the pipeline.
-                </p>
+              <Row className="mt-10 mb-5">
+                <Row className="mb-2">
+                  <H1>
+                    <b>Pay. Earn. Stake. Go bananas.</b>
+                  </H1>
+                </Row>
+                <Row>
+                  <Text className="bp3-running-text">
+                    We’ve got options to get you pay smoothly. BTT is a TRC-10
+                    utility token based on the blockchain that powers features
+                    of the most popular decentralized protocols and applications
+                    in the world. DApps powered by BTT include BitTorrent Speed,
+                    BitTorrent File System, DLive, and others in the pipeline.
+                  </Text>
+                </Row>
               </Row>
-              <Row>
-                <Col md="5">
+              <Row className="mb-5">
+                <Col md="2">
                   <button large className="button-highlight">
-                    Learn about DCLO Token
+                    Learn more
                   </button>
                 </Col>
                 <Col md="5">
-                  <b>Exchange & Wallets →</b>
+                  <button large className="button-minimal">
+                    Exchange & Wallets →
+                  </button>
                 </Col>
               </Row>
               <Row>
@@ -296,12 +362,12 @@ export default function LandingPage() {
                         margin: "50px 50px",
                       }}
                     />
-                    <p>
+                    <Text className="bp3-running-text mb-5">
                       When downloading or upgrading to a new version of
                       BitTorrent or µTorrent Web, or µTorrent Classic, the
                       torrent software will be enabled with a wallet and BTT
                       token balance.
-                    </p>
+                    </Text>
                     <button large className="button-secondary">
                       Connect wallet
                     </button>
@@ -309,7 +375,9 @@ export default function LandingPage() {
                 </Col>
                 <Col>
                   <Card interactive={true} elevation={Elevation.ZERO}>
-                    <h5>Enjoy faster download speeds</h5>
+                    <h5>
+                      <b>Then, enjoy faster stream speed</b>
+                    </h5>
                     <img
                       className="img-center img-fluid"
                       src={require("./assets/img/fly.png")}
@@ -318,20 +386,22 @@ export default function LandingPage() {
                         margin: "50px 55px",
                       }}
                     />
-                    <p>
+                    <Text className="bp3-running-text mb-5">
                       When downloading torrents, BitTorrent Speed automatically
                       bids BitTorrent (BTT) to other users for faster speeds.
                       Just use the torrent program like normal, there is nothing
                       else you need to learn or do.
-                    </p>
+                    </Text>
                     <button large className="button-secondary">
-                      Learn more
+                      Reviews
                     </button>
                   </Card>
                 </Col>
                 <Col>
                   <Card interactive={true} elevation={Elevation.ZERO}>
-                    <h5>Best part, earn DCLO</h5>
+                    <h5>
+                      <b>Best part, earn DCLO.</b>
+                    </h5>
                     <img
                       className="img-center img-fluid"
                       src={require("./assets/img/coin.png")}
@@ -340,14 +410,14 @@ export default function LandingPage() {
                         margin: "50px 100px",
                       }}
                     />
-                    <p>
+                    <Text className="bp3-running-text mb-5">
                       When a torrent file finishes downloading, you can
                       automatically earn BitTorrent (BTT) by seeding. The
                       integrated wallet allows for secure storage of your BTT,
                       which you can send to other wallets.
-                    </p>
+                    </Text>
                     <button large className="button-secondary">
-                      Learn more
+                      Airdrop programs
                     </button>
                   </Card>
                 </Col>
@@ -357,13 +427,13 @@ export default function LandingPage() {
         </section>
         <section className="section section-lg estimate-section">
           <Container>
-            <Row>
+            <Row className="mb-5">
               <Col md="3">
                 <h5>
                   <b>
                     Ready to roll?
                     <br />
-                    Get a DCLO estimate.
+                    Get an estimate.
                   </b>
                 </h5>
               </Col>
@@ -376,7 +446,7 @@ export default function LandingPage() {
                 />
               </Col>
               <Col md="2">
-                <button large className="button-secondary">
+                <button large className="button-highlight">
                   Get estimate
                 </button>
               </Col>
@@ -387,33 +457,37 @@ export default function LandingPage() {
           <section className="section">
             <Container>
               <Row className="row-grid justify-content-between">
-                <Col md="7">
+                <Col md="6">
                   <div className="pl-md-5">
                     <b>SAFETY FIRST</b>
-                    <h1>
-                      How to work together for a
-                      <br />
-                      best gaming experience
-                    </h1>
-                    <p>
+                    <Row className="mb-2">
+                      <H1>
+                        How to work together for a
+                        <br />
+                        best gaming experience
+                      </H1>
+                    </Row>
+                    <Text className="bp3-running-text mb-5">
                       Every gaming session should feel safe and comfy to
                       everyone. A few simple ground rules can help make that
                       happen for all players and streamers.
-                    </p>
+                    </Text>
                     <br />
-                    <Row>
+                    <Row className="mb-5">
                       <Col md="5">
                         <button large className="button-highlight">
                           Learn about safety
                         </button>
                       </Col>
-                      <Col md="5">
-                        <b>Community guidelines →</b>
+                      <Col md="6">
+                        <button large className="button-minimal">
+                          Community guidelines →
+                        </button>
                       </Col>
                     </Row>
                   </div>
                 </Col>
-                <Col className="mt-lg-5" md="4">
+                <Col md="5">
                   <Row>
                     <img
                       className="img-center img-fluid"
@@ -425,27 +499,34 @@ export default function LandingPage() {
             </Container>
           </section>
         </section>
-        <section className="section section-lg">
+        <section className="section section-lg mt-10">
           <section className="section">
             <Container>
               <Row className="justify-content-md-center">
-                <Col md="6">
+                <Col md="12">
                   <b>JOIN OUR COMMUNITY</b>
-                  <h1>
-                    We help you play your
-                    <br />
-                    favourite game
-                  </h1>
-                  <br />
-                  <p>
-                    Affordable gaming solutions, effortless payments, and
-                    getting all the right people to all the right places. So you
-                    can have the best time.
-                  </p>
+                  <Row className="mb-2">
+                    <H1>A place to enjoy your favourite games</H1>
+                  </Row>
+                  <Text className="bp3-running-text mb-5">
+                    Affordable gaming solution, effortless payment, and getting
+                    all the right people to all the right places. So you can
+                    have the best time.
+                  </Text>
                 </Col>
               </Row>
               <Row className="justify-content-md-center">
-                <Col md="7">
+                <Col md="6">
+                  <img
+                    className="img-center"
+                    style={{
+                      height: "350px",
+                      width: "500px",
+                    }}
+                    src={require("./assets/img/landing-community.png")}
+                  />
+                </Col>
+                <Col md="6">
                   <Card
                     interactive={true}
                     elevation={Elevation.ZERO}
@@ -453,27 +534,89 @@ export default function LandingPage() {
                       background: "#a5e4ff",
                     }}
                   >
-                    <h5>Join our mailing list</h5>
+                    <Row className="mb-4">
+                      <h5>Join our mailing list</h5>
+                    </Row>
                     <input
-                      className="bp3-input .modifier bp3-fill bp3-large"
+                      className="bp3-input .modifier bp3-fill bp3-large mb-3"
                       type="text"
                       placeholder="Email"
                       dir="auto"
                     />
-                    <button>Submit</button>
-                    <p>
-                      Discord / Telegram / Twitter / Youtube / Documentation
-                    </p>
+                    <input
+                      className="bp3-input .modifier bp3-fill bp3-large mb-4"
+                      type="text"
+                      placeholder="Another field to fill up space"
+                      dir="auto"
+                    />
+                    <Row className="mt-4">
+                      <Col md="4">
+                        <button large className="button-highlight">
+                          Submit
+                        </button>
+                      </Col>
+                      <Col md="6">
+                        <button large className="button-minimal">
+                          Do something else →
+                        </button>
+                      </Col>
+                    </Row>
                   </Card>
                 </Col>
               </Row>
             </Container>
           </section>
         </section>
-        <img
-          className="img-center img-fluid"
-          src={require("./assets/img/footer.png")}
-        />
+        <section className="section section-lg mt-10">
+          <section className="section footer">
+            <Row className="justify-content-md-center">
+              <img
+                className="img-center img-fluid"
+                src={require("./assets/img/landing-footer.png")}
+              />
+            </Row>
+
+            <Container>
+              <Row className="pb-5">
+                <Col md={3}>
+                  <Menu className="transparent">
+                    <br />
+                    <H5>STREAMER</H5>
+                    {streamerFooter.map((link) => (
+                      <MenuItem text={link} />
+                    ))}
+                  </Menu>
+                </Col>
+                <Col md={3}>
+                  <Menu className="transparent">
+                    <br />
+                    <H5>PLAYER</H5>
+                    {playerFooter.map((link) => (
+                      <MenuItem text={link} />
+                    ))}
+                  </Menu>
+                </Col>
+                <Col md={3}>
+                  <Menu className="transparent">
+                    <br />
+                    <H5>DCLO.</H5>
+                    {dcloFooter.map((link) => (
+                      <MenuItem text={link} />
+                    ))}
+                  </Menu>
+                </Col>
+                <Col md={3}>
+                  <button class="button-highlight mt-5 mb-4 full-width">
+                    DCLO streamer app
+                  </button>
+                  <button class="button-highlight mb-5 full-width">
+                    DCLO player app
+                  </button>
+                </Col>
+              </Row>
+            </Container>
+          </section>
+        </section>
       </div>
     </>
   );
