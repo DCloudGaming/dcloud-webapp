@@ -1,6 +1,52 @@
 # Welcome to DClo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- All-in-one platform for players
+- Interface for streamers to do everything else except streaming
+- Dashboard, wallet, CMS for token holder
+- Landing page for visitors
+
+> :warning: Many front-end bugs are minor and hard to catch, feel free to try out and submit issues when you encounter bugs. I have never tested every flow thoroughly.
+
+# Progress
+
+> :zap: Pseudo Kanban for progress tracking and transparency
+
+## Pending
+
+C
+Create a listing
+Sign up with Metamask
+
+R
+Listing detail - Timing & game
+Listing detail - Past sessions & rating
+User dashboard - Basic infos
+User dashboard - Wallet address & balance & transactions
+User dashboard - Streamer profile
+User dashboard - Player profile
+
+U
+Listing detail - Timing & game
+User dashboard - Basic infos
+User dashboard - Wallet address
+User dashboard - Streamer profile
+User dashboard - Player profile
+
+D
+Listing
+Unlink wallet address
+
+## Building presentational components using mock data
+
+List all listings - without filters
+
+## Buidling functional components using API data
+
+## Testing; completing user goals
+
+## Final polish
+
+## Ready for launch i.e. done
 
 ## Available Scripts
 
@@ -39,20 +85,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
 ### Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
@@ -64,7 +96,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 ### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
