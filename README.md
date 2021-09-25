@@ -18,8 +18,6 @@ Create a listing
 Sign up with Metamask
 
 R
-Listing detail - Timing & game
-Listing detail - Past sessions & rating
 User dashboard - Basic infos
 User dashboard - Wallet address & balance & transactions
 User dashboard - Streamer profile
@@ -38,9 +36,12 @@ Unlink wallet address
 
 ## Building presentational components using mock data
 
-List all listings - without filters
+Listing detail - Timing & game
+Listing detail - Past sessions & rating
 
 ## Buidling functional components using API data
+
+List all listings - without filters
 
 ## Testing; completing user goals
 

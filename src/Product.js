@@ -1,9 +1,29 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+} from "reactstrap";
+import { Row, Col } from "reactstrap";
 
-function Product({ id, title, image, price, rating }) {
+function Product({
+  id,
+  streamerId,
+  title,
+  hardware,
+  hourlyRate,
+  duration,
+  startTime,
+  image,
+  rating,
+}) {
   const [{ basket }, dispatch] = useStateValue();
+  const startTimeObj = new Date(startTime);
 
   const addToBasket = () => {
     // dispatch the item into the data layer
@@ -13,37 +33,56 @@ function Product({ id, title, image, price, rating }) {
         id: id,
         title: title,
         image: image,
-        price: price,
+        price: hourlyRate,
         rating: rating,
       },
     });
   };
 
   return (
-    <div className="product">
-      <div className="product__info">
-        <p>{title}</p>
-        <p className="product__price">
-          <small>$</small>
-          <strong>{price}</strong>
-        </p>
-        <div className="product__rating">
-          {Array(rating)
-            .fill()
-            .map((_, i) => (
-              <p>🌟</p>
-            ))}
-        </div>
-      </div>
-      <img
-        src="https://hoangmarketing.com/wp-content/uploads/2021/08/Thetan-Arena-la-gi.jpg"
-        alt=""
+    <Card className="product">
+      <CardImg
+        top
+        width="100%"
+        src={
+          "https://hoangmarketing.com/wp-content/uploads/2021/08/Thetan-Arena-la-gi.jpg"
+        }
       />
-
-      <button large className="button-highlight" onClick={addToBasket}>
-        Vote
-      </button>
-    </div>
+      <CardBody>
+        <div className="bubble">RPH ${hourlyRate}</div>
+        <CardTitle tag="h5">{title}</CardTitle>
+        <CardSubtitle tag="h6" className="mb-3 mt-2 text-muted">
+          {hardware}
+        </CardSubtitle>
+        <CardText>
+          {startTimeObj.toLocaleString("en-US", {
+            month: "short",
+            day: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+          })}
+          <span aria-hidden="true"> · </span>
+          {duration} hours
+        </CardText>
+        <br />
+        <Row>
+          <Col md={8}>
+            <div className="product__rating">
+              {Array(rating)
+                .fill()
+                .map((_, i) => (
+                  <p>🌟</p>
+                ))}
+            </div>
+          </Col>
+          <Col md={3}>
+            <button large className="button-highlight" onClick={addToBasket}>
+              Vote
+            </button>
+          </Col>
+        </Row>
+      </CardBody>
+    </Card>
   );
 }
 

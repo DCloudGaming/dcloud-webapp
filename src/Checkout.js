@@ -41,7 +41,7 @@ function Checkout() {
                 image={
                   "https://hoangmarketing.com/wp-content/uploads/2021/08/Thetan-Arena-la-gi.jpg"
                 }
-                price={item.price}
+                price={item.hourlyRate}
                 rating={item.rating}
               />
             ))}

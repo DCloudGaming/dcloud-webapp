@@ -19,7 +19,7 @@ function Order({ order }) {
             id={item.id}
             title={item.title}
             image={item.image}
-            price={item.price}
+            price={item.hourlyRate}
             rating={item.rating}
             hideButton
           />
