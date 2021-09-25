@@ -1,4 +1,4 @@
-# Welcome to DClo
+# DCLO. webapp
 
 - All-in-one platform for players
 - Interface for streamers to do everything else except streaming
@@ -11,43 +11,44 @@
 
 > :zap: Pseudo Kanban for progress tracking and transparency
 
-## Pending
+### Pending
 
 C
-Create a listing
-Sign up with Metamask
+
+- Create a listing
+- Sign up with Metamask
 
 R
-User dashboard - Basic infos
-User dashboard - Wallet address & balance & transactions
-User dashboard - Streamer profile
-User dashboard - Player profile
 
 U
-Listing detail - Timing & game
-User dashboard - Basic infos
-User dashboard - Wallet address
-User dashboard - Streamer profile
-User dashboard - Player profile
+
+- Listing detail - Timing & games
+- User dashboard - Basic infos
+- User dashboard - Wallet address
+- User dashboard - Streamer profile
+- User dashboard - Player profile
 
 D
-Listing
-Unlink wallet address
 
-## Building presentational components using mock data
+- Listing
+- Unlink wallet address
 
-Listing detail - Timing & game
-Listing detail - Past sessions & rating
+### Building presentational components using mock data
 
-## Buidling functional components using API data
+- User dashboard - Basic infos
+- User dashboard - Wallet address & balance & transactions
+- User dashboard - Streamer profile
 
-List all listings - without filters
+### Buidling functional components using API data
 
-## Testing; completing user goals
+- List all listings - without filters
+- Listing detail - Timing & games
 
-## Final polish
+### Testing; completing user goals
 
-## Ready for launch i.e. done
+### Final polish
+
+### Ready for launch i.e. done
 
 ## Available Scripts
 

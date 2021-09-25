@@ -9,11 +9,18 @@ export const getListings = async () => {
 };
 
 export const getListing = async (id) => {
+  var listing = sampleListings.find((listing) => listing.id == id);
+  listing = {
+    ...listing,
+    streamer: sampleStreamer,
+    games: sampleGames,
+  };
+
   return {
     code: 200,
     message: "",
     error: null,
-    data: sampleListings.find((listing) => listing.id == id),
+    data: listing,
   };
 };
 
@@ -100,10 +107,31 @@ const sampleListings = [
     streamerId: "1",
     title: "Thetan Arena",
     hardware: "MSI Aegis RS 11th Gen",
+    rating: Math.round(Math.random() * 5),
     hourlyRate: Math.round(Math.random() * 20),
     duration: Math.round(Math.random() * 24),
     startTime: 1632536814826 + Math.round(Math.random() * 100),
-    rating: Math.round(Math.random() * 5),
     image: "./assets/img/demo.png",
   },
 ];
+
+const sampleGames = [
+  {
+    title: "Thetan Arena",
+    image: "img",
+  },
+  {
+    title: "Free Fire",
+    image: "img",
+  },
+  {
+    title: "Squid Game",
+    image: "img",
+  },
+];
+
+const sampleStreamer = {
+  name: "Anh Huynh",
+  location: "Singapore",
+  sessions: 134,
+};

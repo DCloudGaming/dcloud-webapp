@@ -1,0 +1,11 @@
+.row > .bp3-heading {
+  width: auto !important;
+}
+
+.row > p {
+  width: auto !important;
+}
+
+.pricing {
+  padding-right: 3rem !important;
+}
