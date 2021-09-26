@@ -10,6 +10,7 @@ import Orders from "./Orders";
 import Play from "./Play";
 import LandingPage from "./Landing";
 import Listing from "./Listing";
+import UserDashboard from "./UserDashboard";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
@@ -77,6 +78,10 @@ function App() {
           <Route path="/listing">
             <Header />
             <Listing />
+          </Route>
+          <Route path="/dashboard">
+            <Header />
+            <UserDashboard />
           </Route>
           <Route path="/">
             <Header />

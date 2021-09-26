@@ -18,16 +18,6 @@ C
 - Create a listing
 - Sign up with Metamask
 
-R
-
-U
-
-- Listing detail - Timing & games
-- User dashboard - Basic infos
-- User dashboard - Wallet address
-- User dashboard - Streamer profile
-- User dashboard - Player profile
-
 D
 
 - Listing
@@ -35,14 +25,18 @@ D
 
 ### Building presentational components using mock data
 
-- User dashboard - Basic infos
-- User dashboard - Wallet address & balance & transactions
-- User dashboard - Streamer profile
+U
+
+- Listing detail - Timing & games `/listing`
+- User dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
 
 ### Buidling functional components using API data
 
-- List all listings - without filters
-- Listing detail - Timing & games
+R
+
+- List all listings - without filters `/`
+- Listing detail - Timing & games `/listing`
+- User dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
 
 ### Testing; completing user goals
 

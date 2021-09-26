@@ -1,0 +1,32 @@
+.row > .bp3-heading {
+  width: auto !important;
+}
+
+.row > p {
+  width: auto !important;
+}
+
+.pricing {
+  padding-right: 3rem !important;
+}
+
+.dashboard__balance-amount {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.dashboard__balance-amount > h1 {
+  color: white;
+  font-weight: 700;
+  font-size: 4rem;
+  margin-top: 1.5rem;
+}
+
+.dashboard__balance-amount > h5 {
+  color: white;
+}
+
+.dashboard__balance-section {
+  position: relative;
+}
