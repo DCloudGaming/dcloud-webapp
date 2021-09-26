@@ -98,6 +98,8 @@
   font-weight: 700;
   border-width: 0;
   padding: 8px 18px;
+  padding-right: 20px !important;
+  padding-left: 20px !important;
 }
 
 .button-secondary {

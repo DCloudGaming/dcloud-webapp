@@ -15,18 +15,19 @@
 
 - Sign up with Metamask
 - Unlink wallet address
-- Instant play page (duplicate Listing page) - Filter form: game, start time, duration -> click on a listing -> open the video player
 
 ### Building presentational components using mock data
 
-- Create/Update/Delete listing detail - Timing & games `/listing`
-- Create/Update user dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
+- Instant play page (duplicate Listing page) - Filter form: game, start time, duration -> click on a listing -> open the video player
+- Play by link
 
-### Buidling functional components using API data
+### Building functional components using API data
 
 - List all listings - without filters `/`
 - Listing detail - Timing & games `/listing`
 - User dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
+- Create/Update/Delete listing detail - Timing & games -> It will be updated dynamically when streamer app is online
+- Create/Update user dashboard - form: name, location, hardware, connection & actions: save, connect wallet, log out `/user/update`
 
 ### Testing; completing user goals
 

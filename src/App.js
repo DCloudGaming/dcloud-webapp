@@ -11,6 +11,7 @@ import Play from "./Play";
 import LandingPage from "./Landing";
 import Listing from "./Listing";
 import UserDashboard from "./UserDashboard";
+import UserUpdate from "./UserUpdate";
 import { auth } from "./firebase";
 import { useStateValue } from "./StateProvider";
 import { loadStripe } from "@stripe/stripe-js";
@@ -82,6 +83,10 @@ function App() {
           <Route path="/dashboard">
             <Header />
             <UserDashboard />
+          </Route>
+          <Route path="/user/update">
+            <Header />
+            <UserUpdate />
           </Route>
           <Route path="/">
             <Header />
