@@ -13,26 +13,16 @@
 
 ### Pending
 
-C
-
-- Create a listing
 - Sign up with Metamask
-
-D
-
-- Listing
 - Unlink wallet address
+- Instant play page (duplicate Listing page) - Filter form: game, start time, duration -> click on a listing -> open the video player
 
 ### Building presentational components using mock data
 
-U
-
-- Listing detail - Timing & games `/listing`
-- User dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
+- Create/Update/Delete listing detail - Timing & games `/listing`
+- Create/Update user dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
 
 ### Buidling functional components using API data
-
-R
 
 - List all listings - without filters `/`
 - Listing detail - Timing & games `/listing`

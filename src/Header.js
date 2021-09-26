@@ -52,10 +52,12 @@ function Header() {
               </div>
             </Link>
 
-            <div className="header__option">
-              <span className="header__optionLineOne">Your</span>
-              <span className="header__optionLineTwo">Token</span>
-            </div>
+            <a href="https://dclosingapore.gitbook.io/dclo/">
+              <div className="header__option">
+                <span className="header__optionLineOne">Friendly</span>
+                <span className="header__optionLineTwo">Introduction</span>
+              </div>
+            </a>
 
             <Link to="/checkout">
               <div className="header__optionBasket">
