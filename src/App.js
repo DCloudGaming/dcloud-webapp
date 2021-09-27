@@ -10,6 +10,7 @@ import Orders from "./Orders";
 import Play from "./Play";
 import LandingPage from "./Landing";
 import Listing from "./Listing";
+import Streams from "./Streams";
 import UserDashboard from "./UserDashboard";
 import UserUpdate from "./UserUpdate";
 import { auth } from "./firebase";
@@ -79,6 +80,10 @@ function App() {
           <Route path="/listing">
             <Header />
             <Listing />
+          </Route>
+          <Route path="/streams">
+            <Header />
+            <Streams />
           </Route>
           <Route path="/dashboard">
             <Header />

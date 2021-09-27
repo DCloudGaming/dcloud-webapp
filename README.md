@@ -18,9 +18,6 @@
 
 ### Building presentational components using mock data
 
-- Instant play page (duplicate Listing page) - Filter form: game, start time, duration -> click on a listing -> open the video player
-- Play by link
-
 ### Building functional components using API data
 
 - List all listings - without filters `/`
@@ -28,6 +25,8 @@
 - User dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
 - Create/Update/Delete listing detail - Timing & games -> It will be updated dynamically when streamer app is online
 - Create/Update user dashboard - form: name, location, hardware, connection & actions: save, connect wallet, log out `/user/update`
+- Instant play page (duplicate Listing page) - Filter form: game, start time, duration -> click on a listing -> open the video player `/stream`
+- Play by link `/play`
 
 ### Testing; completing user goals
 
