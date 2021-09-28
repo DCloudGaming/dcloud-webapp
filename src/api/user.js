@@ -1,3 +1,8 @@
+
+export const authMetamask = async (wallet_address) => {
+
+}
+
 export const getUser = async (id) => {
   return {
     code: 200,

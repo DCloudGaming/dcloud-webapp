@@ -51,55 +51,55 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="app">
-        <Switch>
-          <Route path="/landing">
-            <LandingPage />
-          </Route>
-          <Route path="/orders">
-            <Header />
-            <Orders />
-          </Route>
-          <Route path="/play">
-            <Play />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/checkout">
-            <Header />
-            <Checkout />
-          </Route>
-          <Route path="/payment">
-            <Header />
-            <Elements stripe={promise}>
-              <Payment />
-            </Elements>
-          </Route>
-          <Route path="/listing">
-            <Header />
-            <Listing />
-          </Route>
-          <Route path="/streams">
-            <Header />
-            <Streams />
-          </Route>
-          <Route path="/dashboard">
-            <Header />
-            <UserDashboard />
-          </Route>
-          <Route path="/user/update">
-            <Header />
-            <UserUpdate />
-          </Route>
-          <Route path="/">
-            <Header />
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+      <Router>
+        <div className="app">
+          <Switch>
+            <Route path="/landing">
+              <LandingPage />
+            </Route>
+            <Route path="/orders">
+              <Header />
+              <Orders />
+            </Route>
+            <Route path="/play">
+              <Play />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/checkout">
+              <Header />
+              <Checkout />
+            </Route>
+            <Route path="/payment">
+              <Header />
+              <Elements stripe={promise}>
+                <Payment />
+              </Elements>
+            </Route>
+            <Route path="/listing">
+              <Header />
+              <Listing />
+            </Route>
+            <Route path="/streams">
+              <Header />
+              <Streams />
+            </Route>
+            <Route path="/dashboard">
+              <Header />
+              <UserDashboard />
+            </Route>
+            <Route path="/user/update">
+              <Header />
+              <UserUpdate />
+            </Route>
+            <Route path="/">
+              <Header />
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
   );
 }
 
