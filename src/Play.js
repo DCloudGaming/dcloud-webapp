@@ -2,8 +2,17 @@ import React from "react";
 import "./Order.css";
 import ReactNetflixPlayer from "react-netflix-player";
 import { Container } from "reactstrap";
+import importScript from "common/importScript";
 
 function Play({ order }) {
+  importScript("/static/js/log.js");
+  importScript("/static/js/env.js");
+  importScript("/static/js/event/event.js");
+  importScript("/static/js/network/socket.js");
+  importScript("/static/js/network/rtcp.js");
+  importScript("/static/js/appcontroller.js");
+  importScript("/static/js/init.js");
+
   return (
     <Container>
       <div>
