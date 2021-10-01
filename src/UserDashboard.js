@@ -15,7 +15,8 @@ import {
   MenuItem,
 } from "@blueprintjs/core";
 import "./UserDashboard.css";
-import { getUser } from "./api/user";
+import { getUser, getUserProfile, retrieveAccount } from "./api/user";
+import { getWalletAddress } from './reducer';
 
 function UserDashboard() {
   const [user, setUser] = useState();
@@ -23,8 +24,12 @@ function UserDashboard() {
 
   useEffect(() => {
     const getUserWrapper = async () => {
-      const resp = await getUser(userId);
+      const account = retrieveAccount();
+      const resp = await getUserProfile(account);
+      console.log("Dashboard");
+      console.log(resp);
       if (!resp.error) setUser(resp.data);
+
     };
 
     getUserWrapper();
@@ -39,7 +44,7 @@ function UserDashboard() {
       <Row>
         <Col md={7}>
           <H1>{user.name}</H1>
-          <H6>Wallet {user.wallet.address}</H6>
+          <H6>Wallet {user.wallet_address}</H6>
           <Row className="mt-5 mb-5 dashboard__balance-section">
             <img
               style={{
@@ -50,31 +55,38 @@ function UserDashboard() {
               src={require("./assets/img/piggybank.png")}
             />
             <div className="dashboard__balance-amount">
-              <H5>Balance</H5>
-              <H1>δ {user.wallet.balance}</H1>
+              <H5>Current Unreleased Balance</H5>
+              <H1>δ {user.cur_unreleased_balance}</H1>
             </div>
           </Row>
           <Table borderless>
             <thead>
               <tr>
-                <th>Type</th>
-                <th>Amount</th>
-                <th>Created</th>
+                <th>ID</th>
+                <th>Reward ($)</th>
+                <th>App Name</th>
+                <th>Max Duration (s)</th>
+                <th>Total Duration (s)</th>
+                <th>Stream Status (s)</th>
               </tr>
             </thead>
             <tbody>
-              {user.wallet.transactions.map((trx) => (
+              {user.host_sessions.map((trx) => (
                 <tr>
                   {" "}
-                  <td>{trx.type}</td>
-                  <td>δ {trx.amount}</td>
-                  {new Date(trx.createTime).toLocaleString("en-US", {
+                  <td>{trx.ID}</td>
+                  <td>{trx.accum_charge}</td>
+                  <td>{trx.app_name}</td>
+                  <td>{trx.max_duration}</td>
+                  <td>{trx.total_duration}</td>
+                  <td>{trx.stream_status}</td>
+                  {/* {new Date(trx.createTime).toLocaleString("en-US", {
                     month: "short",
                     day: "numeric",
                     year: "numeric",
                     hour: "numeric",
                     minute: "numeric",
-                  })}
+                  })} */}
                 </tr>
               ))}
             </tbody>
@@ -106,11 +118,11 @@ function UserDashboard() {
               <Text>
                 <Text>
                   Joined in{" "}
-                  {new Date(user.createTime).toLocaleString("en-US", {
+                  {/* {new Date(user.createTime).toLocaleString("en-US", {
                     month: "short",
                     day: "numeric",
                     year: "numeric",
-                  })}
+                  })} */}
                 </Text>
               </Text>
             </Col>
@@ -121,11 +133,11 @@ function UserDashboard() {
             </Col>
             <Col md="11">
               <Text>
-                <Text>Streamed {user.streamer.sessions} sessions</Text>
+                <Text>Streamed {user.host_sessions.length} sessions</Text>
               </Text>
             </Col>
           </Row>
-          <H5 className="mt-5">Hardware</H5>
+          <H5 className="mt-5">Machine</H5>
           <Row className="mb-3 mt-4">
             <Col md="1">
               <Icon
@@ -135,7 +147,7 @@ function UserDashboard() {
               />
             </Col>
             <Col md="11">
-              <Text>{user.streamer.hardware.hardware}</Text>
+              <Text>{user.machine}</Text>
             </Col>
           </Row>
           <Row className="mb-3">
@@ -146,11 +158,11 @@ function UserDashboard() {
                 className="brand-color"
               />
             </Col>
-            <Col md="11">
+            {/* <Col md="11">
               <Text>
                 <Text>{user.streamer.hardware.avgConnection}</Text>
               </Text>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
       </Row>

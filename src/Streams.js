@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Streams.css";
 import StreamCard from "./StreamCard";
-import MetamaskBox from "./MetamaskBox";
 import { getStreams } from "./api/stream";
 
 function Streams() {
@@ -26,7 +25,6 @@ function Streams() {
 
 
       <div className="home">
-        <MetamaskBox />
         {streams
           .reduce((all, one, i) => {
             const chunk = Math.floor(i / 4);

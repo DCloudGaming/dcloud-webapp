@@ -1,29 +1,55 @@
 import React, { useEffect, useState } from "react";
 import "./Streams.css";
 import { useMetaMask } from "metamask-react";
-import { authMetamask, getOrCreateUser, getUser2 } from "./api/user";
+import { authMetamask, getOrCreateUser } from "./api/user";
 import { ethers } from 'ethers'
+// import { getWalletAddress } from "./reducer";
+import { useStateValue } from "./StateProvider";
 
 function MetamaskBox() {
     const { status, connect, account } = useMetaMask();
+    const [{}, dispatch] = useStateValue();
 
+    // const current_wallet = getWalletAddress();
     // useEffect(() => {
-    if (status === "connected") {
+    
+    if (status === "connected") { // && current_wallet != null) {
         const authMetamaskWrapper = async () => {
             const web3 = new ethers.providers.Web3Provider(window.ethereum);
-        //    const address = await web3.getSigner().getAddress();
+            // TODO: Validate jwt token in another flow instead
             const dbUser = await getOrCreateUser(account);
             console.log(dbUser);
-            const signature = await web3.getSigner().signMessage(`I am signing my one-time nonce: ${dbUser.nonce}`);
-            console.log("signature");
-            console.log(signature);
-            const dbUserVerify = await authMetamask(account, signature);
-            console.log(dbUserVerify);
-            const dbUserProfile = await getUser2(account);
-            
+            if (dbUser.nonce) {
+                const signature = await web3.getSigner().signMessage(`I am signing my one-time nonce: ${dbUser.nonce}`);
+                console.log("signature");
+                console.log(signature);
+                const dbUserVerify = await authMetamask(account, signature);
+                console.log(dbUserVerify);
+
+                // TODO: retrieve from store instead.
+                window.account = account;
+                // dispatch({
+                //     type: "SET_METAMASK_WALLET",
+                //     user: account,
+                // });
+                localStorage.setItem("wallet_address", account);
+            } 
+            // else {
+            //     dispatch({
+            //         type: "SET_METAMASK_WALLET",
+            //         user: null,
+            //     });
+            // }
+
         }
         authMetamaskWrapper();
-    }
+    } 
+    // else {
+    //     dispatch({
+    //         type: "SET_METAMASK_WALLET",
+    //         user: null,
+    //     });
+    // }
     
 
     if (status === "initializing") return <div>Synchronisation with MetaMask ongoing...</div>

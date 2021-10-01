@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 import { Row, Col, Container } from "reactstrap";
+import MetamaskBox from "./MetamaskBox";
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
@@ -34,6 +35,8 @@ function Header() {
         </Col>
         <Col md={5}>
           <div className="header__nav">
+            <MetamaskBox />
+
             <Link to={!user && "/login"}>
               <div onClick={handleAuthenticaton} className="header__option">
                 <span className="header__optionLineOne">
