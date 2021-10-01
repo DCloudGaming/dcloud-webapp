@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Streams.css";
 import { useMetaMask } from "metamask-react";
-import { authMetamask } from "./api/user";
+import { authMetamask, getOrCreateUser, getUser2 } from "./api/user";
 import { ethers } from 'ethers'
 
 function MetamaskBox() {
@@ -12,10 +12,15 @@ function MetamaskBox() {
         const authMetamaskWrapper = async () => {
             const web3 = new ethers.providers.Web3Provider(window.ethereum);
         //    const address = await web3.getSigner().getAddress();
-
-            const signature = await web3.getSigner().signMessage("Sigh Hieu mess");
+            const dbUser = await getOrCreateUser(account);
+            console.log(dbUser);
+            const signature = await web3.getSigner().signMessage(`I am signing my one-time nonce: ${dbUser.nonce}`);
             console.log("signature");
             console.log(signature);
+            const dbUserVerify = await authMetamask(account, signature);
+            console.log(dbUserVerify);
+            const dbUserProfile = await getUser2(account);
+            
         }
         authMetamaskWrapper();
     }
