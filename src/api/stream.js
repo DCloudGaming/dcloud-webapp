@@ -1,12 +1,21 @@
 import { NavLink } from "react-router-dom";
+import axios from "../axios";
+
+// export const getStreams = async () => {
+//   return {
+//     code: 200,
+//     message: "",
+//     data: sampleStreams,
+//   };
+// };
 
 export const getStreams = async () => {
-  return {
-    code: 200,
-    message: "",
-    data: sampleStreams,
-  };
-};
+  const response = await axios({
+    method: "get",
+    url: "/apps/discover"
+  })
+  return response;
+}
 
 export const getStream = async (id) => {
   var stream = sampleStreams.find((stream) => stream.id == id);
