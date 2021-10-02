@@ -16,7 +16,7 @@ import {
   MenuItem,
 } from "@blueprintjs/core";
 import "./UserUpdate.css";
-import { getUser } from "./api/user";
+import { getUser, updateUser } from "./api/user";
 
 function UserUpdate() {
   const [user, setUser] = useState();
@@ -48,6 +48,7 @@ function UserUpdate() {
               avgConnection: user.streamer.hardware.avgConnection,
             }}
             onSubmit={(values, { setSubmitting }) => {
+              updateUser(userId, values);
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);

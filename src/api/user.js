@@ -13,6 +13,16 @@ export const getUser = async (id) => {
   };
 };
 
+export const updateUser = async (id, values) => {
+  const resp = {
+    code: 200,
+    message: "Successfully update user.",
+    error: null,
+  };
+
+  return resp;
+};
+
 export const transactionType = Object.freeze({
   TOP_UP: "Top up",
 });
