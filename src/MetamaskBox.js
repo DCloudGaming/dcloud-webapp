@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./Streams.css";
 import { useMetaMask } from "metamask-react";
-import { authMetamask, getOrCreateUser } from "./api/user";
+import { authMetamask, getOrCreateUser, genOTP } from "./api/user";
 import { ethers } from 'ethers'
 // import { getWalletAddress } from "./reducer";
 import { useStateValue } from "./StateProvider";
+
+const handleGenOTP = async () => {
+    const response = await genOTP();
+    alert(JSON.stringify(`The OTP is ${response.data.otp}`, null, 2));
+}
 
 function MetamaskBox() {
     const { status, connect, account } = useMetaMask();
@@ -26,8 +31,6 @@ function MetamaskBox() {
                 const dbUserVerify = await authMetamask(account, signature);
                 console.log(dbUserVerify);
 
-                // TODO: retrieve from store instead.
-                window.account = account;
                 // dispatch({
                 //     type: "SET_METAMASK_WALLET",
                 //     user: account,
@@ -43,6 +46,12 @@ function MetamaskBox() {
 
         }
         authMetamaskWrapper();
+        return (
+            <div>
+                <div>Connected account: {account}</div>
+                <div><button onClick={handleGenOTP}>Get OTP</button></div>
+            </div>
+        );
     } 
     // else {
     //     dispatch({
@@ -60,10 +69,6 @@ function MetamaskBox() {
 
     if (status === "connecting") return <div>Connecting...</div>
     
-    if (status === "connected") {
-        return <div>Connected account: {account}</div>
-    }
-
 }
 
 export default MetamaskBox;

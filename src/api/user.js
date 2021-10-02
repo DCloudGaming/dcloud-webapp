@@ -64,6 +64,15 @@ export const updateUser = async (values) => {
   return response.data;
 }
 
+export const genOTP = async () => {
+  const response = await axios({
+    method: "get",
+    url: "/users/genOTP",
+    withCredentials: true
+  })
+  return response.data
+}
+
 export const getUser = async (id) => {
   return {
     code: 200,
@@ -78,7 +87,6 @@ export const getUser = async (id) => {
     },
   };
 };
-
 
 export const transactionType = Object.freeze({
   TOP_UP: "Top up",
