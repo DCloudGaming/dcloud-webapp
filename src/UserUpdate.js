@@ -41,7 +41,12 @@ function UserUpdate() {
         <Col md={4} />
         <Col md={4}>
           <Formik
-            initialValues={{ email: "", password: "" }}
+            initialValues={{
+              name: user.name,
+              location: user.location,
+              hardware: user.streamer.hardware.hardware,
+              avgConnection: user.streamer.hardware.avgConnection,
+            }}
             onSubmit={(values, { setSubmitting }) => {
               setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
@@ -87,9 +92,9 @@ function UserUpdate() {
                 </Row>
                 <Row className="mb-4">
                   <input
-                    name="connection"
+                    name="avgConnection"
                     onChange={handleChange}
-                    value={values.connection}
+                    value={values.avgConnection}
                   />
                 </Row>
                 <Row className="mb-4">
