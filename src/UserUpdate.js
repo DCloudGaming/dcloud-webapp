@@ -49,6 +49,7 @@ function UserUpdate() {
             // initialValues={{ email: "", password: "" }}
             initialValues={ user }
             onSubmit={(values, { setSubmitting }) => {
+              // updateUser(userId, values);
               setTimeout(() => {
                 // alert(JSON.stringify(values, null, 2));
                 updateUser(values)
@@ -94,9 +95,9 @@ function UserUpdate() {
                 </Row>
                 <Row className="mb-4">
                   <input
-                    name="connection"
+                    name="avgConnection"
                     onChange={handleChange}
-                    value={values.connection}
+                    value={values.avgConnection}
                   />
                 </Row>
                 {/* <Row className="mb-4">

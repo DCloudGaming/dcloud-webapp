@@ -70,7 +70,7 @@ export const genOTP = async () => {
     url: "/users/genOTP",
     withCredentials: true
   })
-  return response.data
+  return response
 }
 
 export const getUser = async (id) => {
@@ -87,6 +87,7 @@ export const getUser = async (id) => {
     },
   };
 };
+
 
 export const transactionType = Object.freeze({
   TOP_UP: "Top up",

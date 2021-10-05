@@ -24,6 +24,8 @@ function MetamaskBox() {
             // TODO: Validate jwt token in another flow instead
             const dbUser = await getOrCreateUser(account);
             console.log(dbUser);
+            console.log(dbUser.nonce);
+            console.log("HIEU");
             if (dbUser.nonce) {
                 const signature = await web3.getSigner().signMessage(`I am signing my one-time nonce: ${dbUser.nonce}`);
                 console.log("signature");
