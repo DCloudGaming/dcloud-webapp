@@ -37,39 +37,55 @@ function Header() {
           <div className="header__nav">
             <MetamaskBox />
 
-            <Link to={!user && "/login"}>
-              <div onClick={handleAuthenticaton} className="header__option">
-                <span className="header__optionLineOne">
-                  Hello {!user ? "Guest" : user.email}
-                </span>
-                <span className="header__optionLineTwo">
-                  {user ? "Sign Out" : "Sign In"}
-                </span>
+            <Link to="/dashboard">
+              <div className="header__option">
+              <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">My Profile</span>
               </div>
             </Link>
 
-            <Link to="/orders">
+            <Link to="/vote">
               <div className="header__option">
-                <span className="header__optionLineOne">Returns</span>
-                <span className="header__optionLineTwo">& Orders</span>
+              <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">Vote</span>
               </div>
             </Link>
 
-            <a href="https://dclosingapore.gitbook.io/dclo/">
+            <Link to="/streams">
               <div className="header__option">
-                <span className="header__optionLineOne">Friendly</span>
-                <span className="header__optionLineTwo">Introduction</span>
+              <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">Discover</span>
+              </div>
+            </Link>
+
+            <Link to="/user/update">
+              <div className="header__option">
+              <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">Host Update</span>
+              </div>
+            </Link>
+
+            <Link to="/admin/update">
+              <div className="header__option">
+              <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">Admin Update</span>
+              </div>
+            </Link>
+
+            <Link to="/landing">
+              <div className="header__option">
+              <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">Landing</span>
+              </div>
+            </Link>
+            
+            <a href="https://dclosingapore.gitbook.io/dclo/" target="_blank">
+              <div className="header__option">
+                <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineTwo">Docs</span>
               </div>
             </a>
 
-            <Link to="/checkout">
-              <div className="header__optionBasket">
-                <ShoppingBasketIcon />
-                <span className="header__optionLineTwo header__basketCount">
-                  {basket?.length}
-                </span>
-              </div>
-            </Link>
           </div>
         </Col>
       </Container>

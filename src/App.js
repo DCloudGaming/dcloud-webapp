@@ -49,6 +49,7 @@ function App() {
       <div className="app">
         <Switch>
           <Route path="/landing">
+            <Header />
             <LandingPage />
           </Route>
           <Route path="/orders">
@@ -85,9 +86,12 @@ function App() {
             <Header />
             <AdminUpdate />
           </Route>
-          <Route path="/">
+          <Route path="/vote">
             <Header />
             <Home />
+          </Route>
+          <Route path="/">
+            <Header />
           </Route>
         </Switch>
       </div>

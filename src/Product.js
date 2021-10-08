@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from 'react';
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
 import {
@@ -10,33 +10,32 @@ import {
   CardSubtitle,
 } from "reactstrap";
 import { Row, Col } from "reactstrap";
+import { voteApp } from "./api/listing";
 
 function Product({
   id,
-  streamerId,
-  title,
-  hardware,
-  hourlyRate,
-  duration,
-  startTime,
-  image,
-  rating,
+  app_name,
+  vote_count,
+  // hardware,
+  // hourlyRate,
+  // duration,
+  // startTime,
+  // image,
 }) {
   const [{ basket }, dispatch] = useStateValue();
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+  let startTime = 1632536814826 + Math.round(Math.random() * 100);
   const startTimeObj = new Date(startTime);
+  let hourlyRate = 1;
+  let duration = Math.round(Math.random() * 24)
+  let rating = Math.round(Math.random() * 5);
+  let hardware = "MSI Aegis RS 11th Gen";
 
-  const addToBasket = () => {
-    // dispatch the item into the data layer
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id: id,
-        title: title,
-        image: image,
-        price: hourlyRate,
-        rating: rating,
-      },
-    });
+  const vote = async () => {
+    await voteApp(app_name);
+    // TODO: Fix this 
+    window.location.reload();
+    // forceUpdate();
   };
 
   return (
@@ -50,7 +49,7 @@ function Product({
       />
       <CardBody>
         <div className="bubble">RPH ${hourlyRate}</div>
-        <CardTitle tag="h5">{title}</CardTitle>
+        <CardTitle tag="h5">{app_name}</CardTitle>
         <CardSubtitle tag="h6" className="mb-3 mt-2 text-muted">
           {hardware}
         </CardSubtitle>
@@ -62,7 +61,7 @@ function Product({
             minute: "numeric",
           })}
           <span aria-hidden="true"> · </span>
-          {duration} hours
+          Count Vote: {vote_count}
         </CardText>
         <br />
         <Row>
@@ -76,7 +75,7 @@ function Product({
             </div>
           </Col>
           <Col md={3}>
-            <button large className="button-highlight" onClick={addToBasket}>
+            <button large className="button-highlight" onClick={vote}>
               Vote
             </button>
           </Col>
