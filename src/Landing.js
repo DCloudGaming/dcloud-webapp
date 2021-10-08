@@ -21,6 +21,8 @@ import {
   Menu,
   MenuItem,
 } from "@blueprintjs/core";
+// import { ethers } from 'ethers'
+
 import "./Landing.css";
 
 export default function LandingPage() {

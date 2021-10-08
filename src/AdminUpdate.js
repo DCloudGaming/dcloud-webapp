@@ -30,13 +30,13 @@ function AdminUpdate() {
         <Col md={4}>
           <Formik
             initialValues={{
-              hourlyRate: admin.hourlyRate,
-              allowedApps: admin.allowedApps,
+              hourly_rate: admin.hourly_rate,
+              allowed_apps: admin.allowed_apps,
             }}
             onSubmit={(values, { setSubmitting }) => {
+              values.hourly_rate = parseInt(values.hourly_rate);
               updateAdmin(values);
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);
               }, 400);
             }}
@@ -55,9 +55,9 @@ function AdminUpdate() {
                 </Row>
                 <Row className="mb-4">
                   <input
-                    name="hourlyRate"
+                    name="hourly_rate"
                     onChange={handleChange}
-                    value={values.hourlyRate}
+                    value={values.hourly_rate}
                   />
                 </Row>
                 <Row className="mb-1">
@@ -65,18 +65,18 @@ function AdminUpdate() {
                 </Row>
                 <Row className="mb-4">
                   <MultiSelect
-                    items={admin.allowedApps}
-                    selectedItems={values.allowedApps}
+                    items={admin.allowed_apps}
+                    selectedItems={values.allowed_apps}
                     onItemSelect={(item) =>
-                      setFieldValue("allowedApps", [
-                        ...values.allowedApps,
+                      setFieldValue("allowed_apps", [
+                        ...values.allowed_apps,
                         item,
                       ])
                     }
                     onRemove={(item) =>
                       setFieldValue(
-                        "allowedApps",
-                        values.allowedApps.filter((i) => i != item)
+                        "allowed_apps",
+                        values.allowed_apps.filter((i) => i != item)
                       )
                     }
                   />

@@ -16,7 +16,7 @@ import {
   MenuItem,
 } from "@blueprintjs/core";
 import "./UserUpdate.css";
-import { getUser, updateUser } from "./api/user";
+import { getOrCreateUser, getUser, updateUser, getUserFromToken } from "./api/user";
 
 function UserUpdate() {
   const [user, setUser] = useState();
@@ -24,8 +24,13 @@ function UserUpdate() {
 
   useEffect(() => {
     const getUserWrapper = async () => {
-      const resp = await getUser(userId);
-      if (!resp.error) setUser(resp.data);
+      const resp = await getUserFromToken();
+      console.log("get user from token");
+      console.log(resp);
+      // const resp = await getUser(userId);
+      // const resp = await getUser
+      // if (!resp.error) setUser(resp.data);
+      setUser(resp);
     };
 
     getUserWrapper();
@@ -41,16 +46,13 @@ function UserUpdate() {
         <Col md={4} />
         <Col md={4}>
           <Formik
-            initialValues={{
-              name: user.name,
-              location: user.location,
-              hardware: user.streamer.hardware.hardware,
-              avgConnection: user.streamer.hardware.avgConnection,
-            }}
+            // initialValues={{ email: "", password: "" }}
+            initialValues={ user }
             onSubmit={(values, { setSubmitting }) => {
-              updateUser(userId, values);
+              // updateUser(userId, values);
               setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
+                // alert(JSON.stringify(values, null, 2));
+                updateUser(values)
                 setSubmitting(false);
               }, 400);
             }}
@@ -79,13 +81,13 @@ function UserUpdate() {
                   />
                 </Row>
                 <Row className="mb-1">
-                  <H6>Hardware</H6>
+                  <H6>Machine</H6>
                 </Row>
                 <Row className="mb-4">
                   <input
-                    name="hardware"
+                    name="machine"
                     onChange={handleChange}
-                    value={values.hardware}
+                    value={values.machine}
                   />
                 </Row>
                 <Row className="mb-1">
@@ -98,11 +100,11 @@ function UserUpdate() {
                     value={values.avgConnection}
                   />
                 </Row>
-                <Row className="mb-4">
+                {/* <Row className="mb-4">
                   <button className="full-width button-secondary">
                     Connect with wallet
                   </button>
-                </Row>
+                </Row> */}
                 <Row>
                   <button
                     className="button-highlight mt-4"

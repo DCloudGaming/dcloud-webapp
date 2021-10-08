@@ -1,3 +1,78 @@
+import axios from "../axios";
+
+// TODO: Store in redux
+export const retrieveAccount = () => {
+  return localStorage.getItem("wallet_address");
+}
+
+export const getOrCreateUser = async (wallet_address) => {
+  const response = await axios({
+    method: "post",
+    url: `/users/getOrCreate`,
+    data: {
+      wallet_address: wallet_address, 
+    },
+    withCredentials: true
+  });
+  return response.data;
+}
+
+export const authMetamask = async (wallet_address, signature) => {
+  const response = await axios({
+    method: "post",
+    url: `/users/auth`,
+    data: {
+      wallet_address: wallet_address,
+      signature: signature,
+    },
+    withCredentials: true
+  });  
+  return response.data;
+}
+
+
+export const getUserProfile = async (wallet_address) => {
+  const response = await axios({
+    method: "get",
+    url: `/users/profile?wallet_address=${wallet_address}`,
+    withCredentials: true
+  });  
+  return response;
+}
+
+export const getUserFromToken = async () => {
+  const response = await axios({
+    method: "get",
+    url: `/users/getFromToken`,
+    withCredentials: true
+  });
+  return response.data;
+}
+
+export const updateUser = async (values) => {
+  const response = await axios({
+    method: "post",
+    url: "/users/update",
+    data: {
+      wallet_address: values.WalletAddress,
+      machine: values.machine,
+      location: values.location,
+      name: values.name
+    },
+    withCredentials: true
+  })
+  return response.data;
+}
+
+export const genOTP = async () => {
+  const response = await axios({
+    method: "get",
+    url: "/users/genOTP",
+    withCredentials: true
+  })
+  return response
+}
+
 export const getUser = async (id) => {
   return {
     code: 200,
@@ -13,15 +88,6 @@ export const getUser = async (id) => {
   };
 };
 
-export const updateUser = async (id, values) => {
-  const resp = {
-    code: 200,
-    message: "Successfully update user.",
-    error: null,
-  };
-
-  return resp;
-};
 
 export const transactionType = Object.freeze({
   TOP_UP: "Top up",

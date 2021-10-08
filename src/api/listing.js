@@ -1,4 +1,26 @@
+import axios from "../axios";
 import { NavLink } from "react-router-dom";
+
+export const getAllowApps = async () => {
+  const response = await axios({
+    method: "get",
+    url: "/apps/getAllowApps",
+    withCredentials: true
+  });
+  return response;
+};
+
+export const voteApp = async (app_name) => {
+  const response = await axios({
+    method: "post",
+    url: "/apps/voteApp",
+    data: {
+      app_name: app_name
+    },
+    withCredentials: true
+  });
+  return response;
+}
 
 export const getListings = async () => {
   return {

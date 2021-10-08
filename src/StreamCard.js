@@ -14,10 +14,10 @@ import { Link } from "react-router-dom";
 
 function StreamCard({
   id,
-  streamerId,
-  title,
-  hardware,
-  hourlyRate,
+  host_wallet_address,
+  app_name,
+  machine,
+  hourly_rate,
   duration,
   startTime,
   image,
@@ -36,10 +36,10 @@ function StreamCard({
         }
       />
       <CardBody>
-        <div className="bubble">RPH ${hourlyRate}</div>
-        <CardTitle tag="h5">{title}</CardTitle>
+        <div className="bubble">RPH ${hourly_rate}</div>
+        <CardTitle tag="h5">{app_name}</CardTitle>
         <CardSubtitle tag="h6" className="mb-3 mt-2 text-muted">
-          {hardware}
+          {machine}
         </CardSubtitle>
         <CardText>
           {/* {startTimeObj.toLocaleString("en-US", {
@@ -64,7 +64,7 @@ function StreamCard({
           <Col md={6}>
             <Link to={"/play"}>
               <button large className="button-highlight">
-                Join now
+                Start playing
               </button>
             </Link>
           </Col>

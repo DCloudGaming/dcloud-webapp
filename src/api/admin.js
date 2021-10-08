@@ -1,26 +1,25 @@
 import userEvent from "@testing-library/user-event";
 import { Dropdown } from "reactstrap";
+import axios from "../axios";
 
-export const getAdmin = async (id) => {
-  return {
-    code: 200,
-    message: "",
-    error: null,
-    data: {
-      hourlyRate: "12",
-      allowedApps: sampleAllowedApps,
-    },
-  };
-};
+export const getAdmin = async () => {
+  const response = await axios({
+    method: "get",
+    url: `/users/getAdminSettings`,
+    withCredentials: true
+  });
+  return response;
+}
 
 export const updateAdmin = async (values) => {
-  const resp = {
-    code: 200,
-    message: "Successfully update admin config.",
-    error: null,
-  };
-
-  return resp;
+  console.log(values);
+  const response = await axios({
+    method: "post",
+    url: `/users/updateAdminSettings`,
+    data: values,
+    withCredentials: true
+  });
+  return response;
 };
 
 const generateSampleApp = () => {

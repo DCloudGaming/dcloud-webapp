@@ -1,11 +1,17 @@
 export const initialState = {
   basket: [],
   user: null,
+  wallet_address: null
 };
 
 // Selector
 export const getBasketTotal = (basket) =>
   basket?.reduce((amount, item) => item.hourlyRate + amount, 0);
+
+export const getWalletAddress = () => {
+  return initialState.wallet_address
+}
+
 
 const reducer = (state, action) => {
   console.log(action);
@@ -45,6 +51,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         user: action.user,
+      };
+    
+    case "SET_METAMASK_WALLET":
+      return {
+        ...state,
+        wallet_address: action.wallet_address
       };
 
     default:
