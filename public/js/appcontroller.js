@@ -10,9 +10,11 @@
   const appBody = document.getElementById("app-body");
   const appd = document.getElementById("app");
   const appTitle = document.getElementById("app-title");
-  const appScreen = document.getElementById("app-screen");
-
-  var offerst;
+  // const appScreen = document.getElementById("app-screen");
+  // TODO: find a non-hacky way to grab video element
+  const appScreen = document.getElementsByTagName("video")[0];
+  appScreen.id = "app-screen";
+  console.log("Initial: ", appScreen);
 
   const onConnectionReady = () => {
     start();
@@ -161,4 +163,4 @@
 
   // Add fake data for displaying
   rtcp.updateHosts([]);
-})($, document, event, env)
+})($, document, event, env);

@@ -1,56 +1,80 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useHistory } from "react-router-dom";
 import "./Order.css";
 import ReactNetflixPlayer from "react-netflix-player";
 import { Container } from "reactstrap";
 import ImportScript from "./common/importScript";
 
 function Play({ order }) {
-  ImportScript("/static/js/log.js");
-  ImportScript("/static/js/env.js");
-  ImportScript("/static/js/event/event.js");
-  ImportScript("/static/js/network/socket.js");
-  ImportScript("/static/js/network/rtcp.js");
-  ImportScript("/static/js/appcontroller.js");
-  ImportScript("/static/js/init.js");
+  const history = useHistory();
+  const [title, setTitle] = useState("Free Fire");
+  const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
+  const [videoList, setVideoList] = useState([
+    {
+      nome: "Free Fire from Hieu",
+      id: 1,
+      playing: true,
+    },
+    {
+      nome: "Free Fire from Thanh",
+      id: 2,
+      playing: false,
+    },
+    {
+      nome: "Free Fire from Ngoc",
+      id: 3,
+      playing: false,
+    },
+  ]);
+  ImportScript(
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  );
+  ImportScript("js/log.js");
+  ImportScript("js/env.js");
+  ImportScript("js/event/event.js");
+  ImportScript("js/network/socket.js");
+  ImportScript("js/network/rtcp.js");
+  ImportScript("js/appcontroller.js");
+  ImportScript("js/init.js");
 
   return (
     <Container>
-      <div>
+      <table id="hostAppsTable" className="table table-borderless">
+        <thead>
+          <tr>
+            <th className="text-center">#</th>
+            <th>Name</th>
+            <th>GPU</th>
+            <th>Review</th>
+          </tr>
+        </thead>
+        <tbody id="hostAppsTableBody"></tbody>
+      </table>
+      <div id="videoPlayer">
         <ReactNetflixPlayer
           // Vídeo Link - Just data is required
           src="http://lucasjunior.com.br/teste.mp4"
           // src={"http://videoinvalid"}
-          title="Dragon Ball Z"
-          subTitle="Opening"
-          titleMedia="Dragon Ball Z"
-          extraInfoMedia="Opening"
+          title={title}
+          subTitle={subtitle}
+          titleMedia={title}
+          extraInfoMedia={subtitle}
           // Text language of player
-          playerLanguage="pt"
+          playerLanguage="en"
           // Action when the button X (close) is clicked
-          backButton={() => {}}
+          backButton={() => {
+            history.push("/streams");
+          }}
           // The player use the all viewport
           fullPlayer
           autoPlay
           startPosition={0}
-          // The info of the next video action
-          dataNext={{ title: "Não existe um próximo vídeo." }}
           // The action call when the next video is clicked
-          onNextClick={() => {}}
           // The list reproduction data, will be render in this order
-          reprodutionList={[
-            {
-              nome: "Opening",
-              id: 1,
-              playing: true,
-            },
-            {
-              nome: "Teste",
-              id: 2,
-              playing: false,
-            },
-          ]}
+          reprodutionList={videoList}
           // The function call when a item in reproductionList is clicked
           onClickItemListReproduction={(id, playing) => {
+            alert("Pick " + id);
             return {
               id,
               playing,
