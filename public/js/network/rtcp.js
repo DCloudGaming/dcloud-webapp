@@ -14,7 +14,7 @@ const rtcp = (() => {
   let inputReady = false;
 
   const start = (iceservers) => {
-    log.info(`[rtcp] <- received stunturn from worker ${iceservers}`);
+    log.info(`[rtcp] <- received stunturn2 from worker ${iceservers}`);
 
     connection = new RTCPeerConnection({
       iceServers: JSON.parse(iceservers),
@@ -25,16 +25,17 @@ const rtcp = (() => {
     // input channel, ordered + reliable, id 0
     // inputChannel = connection.createDataChannel('a', { ordered: true, negotiated: true, id: 0, });
     // recv dataChannel from worker
+    console.log(`Hieu iceServers : ${JSON.parse(iceservers)}`);
     connection.ondatachannel = (e) => {
-      log.debug(`[rtcp] ondatachannel: ${e.channel.label}`);
+      log.info(`[rtcp] ondatachannel: ${e.channel.label}`);
       inputChannel = e.channel;
       inputChannel.onopen = () => {
-        log.debug("[rtcp] the input channel has opened");
+        log.info("[rtcp] the input channel has opened");
         inputReady = true;
         event.pub(CONNECTION_READY);
       };
       inputChannel.onclose = () =>
-        log.debug("[rtcp] the input channel has closed");
+        log.info("[rtcp] the input channel has closed");
     };
 
     connection.oniceconnectionstatechange = ice.onIceConnectionStateChange;
@@ -46,7 +47,8 @@ const rtcp = (() => {
 
     socket.send({
       type: "initwebrtc",
-      data: JSON.stringify({ is_mobile: env.isMobileDevice() }),
+      // data: JSON.stringify({ is_mobile: env.isMobileDevice() }),
+      data: JSON.stringify({ is_mobile: false }),
     });
   };
 
@@ -159,7 +161,12 @@ const rtcp = (() => {
       });
       isFlushing = false;
     },
-    input: (data) => inputChannel.send(data),
+    input: (data) => {
+      console.log("InputChannel send");
+      console.log(data);
+      console.log(inputChannel);
+      inputChannel.send(data)
+    },
     isConnected: () => connected,
     isInputReady: () => inputReady,
     getConnection: () => connection,

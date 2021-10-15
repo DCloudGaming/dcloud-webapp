@@ -160,4 +160,4 @@
   event.sub(KEY_STATE_UPDATED, (data) => rtcp.input(data));
 
   // Add fake data for displaying
-})($, document, event, env);
+})(1, document, event, env);

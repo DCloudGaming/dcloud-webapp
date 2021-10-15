@@ -12,12 +12,12 @@ function Play({ order }) {
   // TODO: Fix this hack
   localStorage.setItem("host_wallet_address", data.state.host_wallet_address);
   localStorage.setItem("app_name", data.state.app_name);
-  useEffect(() => {
-    const handlePlayStartSessionWrapper = async () => {
-      await startSession(data.state.app_name, data.state.host_wallet_address);
-    }
-    handlePlayStartSessionWrapper();
-  }, []);
+  // useEffect(() => {
+  //   const handlePlayStartSessionWrapper = async () => {
+      // await startSession(data.state.app_name, data.state.host_wallet_address);
+  //   }
+  //   handlePlayStartSessionWrapper();
+  // }, []);
 
   ImportScript(
     "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -114,7 +114,8 @@ function Play({ order }) {
         />
       </div> */}
       <div>
-        <video id="app-screen" width="100%" height="100%"></video>
+        <video id="app-screen" onContextMenu={() => false} muted playinfullscreen="false" poster="/static/assets/img/waiting.svg" playsInline
+             autoPlay width="100%" height="100%"></video>
       </div>
     </Container>
   );
