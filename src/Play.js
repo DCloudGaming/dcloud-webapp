@@ -4,8 +4,32 @@ import "./Order.css";
 import ReactNetflixPlayer from "react-netflix-player";
 import { Container } from "reactstrap";
 import ImportScript from "./common/importScript";
+import { startSession } from "./api/stream";
+import {useLocation} from "react-router-dom";
 
 function Play({ order }) {
+  let data = useLocation();
+  // TODO: Fix this hack
+  localStorage.setItem("host_wallet_address", data.state.host_wallet_address);
+  localStorage.setItem("app_name", data.state.app_name);
+  useEffect(() => {
+    const handlePlayStartSessionWrapper = async () => {
+      await startSession(data.state.app_name, data.state.host_wallet_address);
+    }
+    handlePlayStartSessionWrapper();
+  }, []);
+
+  ImportScript(
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+  );
+  ImportScript("js/log.js");
+  ImportScript("js/env.js");
+  ImportScript("js/event/event.js");
+  ImportScript("js/network/socket.js");
+  ImportScript("js/network/rtcp.js");
+  ImportScript("js/appcontroller.js");
+  ImportScript("js/init.js");
+
   const history = useHistory();
   const [title, setTitle] = useState("Free Fire");
   const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
@@ -26,16 +50,7 @@ function Play({ order }) {
       playing: false,
     },
   ]);
-  ImportScript(
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-  );
-  ImportScript("js/log.js");
-  ImportScript("js/env.js");
-  ImportScript("js/event/event.js");
-  ImportScript("js/network/socket.js");
-  ImportScript("js/network/rtcp.js");
-  ImportScript("js/appcontroller.js");
-  ImportScript("js/init.js");
+
 
   return (
     <Container>
@@ -96,6 +111,10 @@ function Play({ order }) {
           // subtitleMedia="/teste.vtt"
         />
       </div>
+      {/* <div>
+        <video id="app-screen" oncontextmenu="return false;" muted playinfullscreen="false" poster="/static/assets/img/waiting.svg" playsinline
+              onloadstart="this.volume=0.5" autoplay width="100%" height="100%"></video>
+      </div> */}
     </Container>
   );
 }

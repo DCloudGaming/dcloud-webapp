@@ -42,6 +42,14 @@ const socket = (() => {
       log.info(`[ws] -> setting ping interval to ${pingIntervalMs}ms`);
       // !to add destructor if SPA
       setInterval(ping, pingIntervalMs);
+      // TODO: Fix
+      conn.send(
+        JSON.stringify({
+            type: "startSession",
+            data: JSON.stringify({ app_name: localStorage.getItem("app_name"), host_wallet_address: localStorage.getItem("host_wallet_address") })
+          }
+        )
+      );
     };
     conn.onerror = (error) => log.error(`[ws] ${error}`);
     conn.onclose = () => log.info("[ws] closed");

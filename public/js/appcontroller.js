@@ -14,6 +14,7 @@
   // TODO: find a non-hacky way to grab video element
   const appScreen = document.getElementsByTagName("video")[0];
   appScreen.id = "app-screen";
+  // const appScreen = document.getElementById("app-screen");
   console.log("Initial: ", appScreen);
 
   const onConnectionReady = () => {

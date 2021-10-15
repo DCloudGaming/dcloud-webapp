@@ -62,7 +62,10 @@ function StreamCard({
             </div>
           </Col>
           <Col md={6}>
-            <Link to={"/play"}>
+            <Link to={{
+              pathname: "/play",
+              state: { app_name: app_name, host_wallet_address: host_wallet_address}
+            }}>
               <button large className="button-highlight">
                 Start playing
               </button>
