@@ -1,59 +1,37 @@
-import React, { useState } from "react";
+import { Card, Elevation } from "@blueprintjs/core";
+import React from "react";
+// import { useHistory } from "react-router-dom";
+import { Col, Container, Row } from "reactstrap";
 import "./Login.css";
-import { Link, useHistory } from "react-router-dom";
-import { auth } from "./firebase";
-import {
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  ListGroupItem,
-  ListGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
-import {
-  Card,
-  Elevation,
-  Icon,
-  IconSize,
-  H1,
-  H5,
-  Text,
-  Menu,
-  MenuItem,
-} from "@blueprintjs/core";
 
 function Login() {
-  const history = useHistory();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
 
-  const signIn = (e) => {
-    e.preventDefault();
+  // const signIn = (e) => {
+  //   e.preventDefault();
 
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((auth) => {
-        history.push("/");
-      })
-      .catch((error) => alert(error.message));
-  };
+  //   auth
+  //     .signInWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       history.push("/");
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
-  const register = (e) => {
-    e.preventDefault();
+  // const register = (e) => {
+  //   e.preventDefault();
 
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        // it successfully created a new user with email and password
-        if (auth) {
-          history.push("/");
-        }
-      })
-      .catch((error) => alert(error.message));
-  };
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       // it successfully created a new user with email and password
+  //       if (auth) {
+  //         history.push("/");
+  //       }
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
   return (
     <Container>
@@ -69,6 +47,7 @@ function Login() {
           >
             <Row className="mb-5">
               <img
+                alt="img"
                 className="login__logo"
                 src={require("./assets/img/logo.png")}
               />

@@ -1,30 +1,30 @@
 import React from "react";
-import "./StreamCard.css";
-import { useStateValue } from "./StateProvider";
+import { Link } from "react-router-dom";
 import {
   Card,
-  CardImg,
-  CardText,
   CardBody,
-  CardTitle,
+  CardImg,
   CardSubtitle,
+  CardText,
+  CardTitle,
+  Col,
+  Row,
 } from "reactstrap";
-import { Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import "./StreamCard.css";
 
 function StreamCard({
-  id,
+  // id,
   host_wallet_address,
   app_name,
   machine,
   hourly_rate,
   duration,
-  startTime,
-  image,
+  // startTime,
+  // image,
   rating,
 }) {
-  const [{ basket }, dispatch] = useStateValue();
-  const startTimeObj = new Date(startTime);
+  // const [{ basket }, dispatch] = useStateValue();
+  // const startTimeObj = new Date(startTime);
 
   return (
     <Card className="product">
@@ -53,19 +53,24 @@ function StreamCard({
         <br />
         <Row>
           <Col md={6}>
-            <div className="product__rating">
+            {/* <div className="product__rating">
               {Array(rating)
                 .fill()
                 .map((_, i) => (
-                  <p>🌟</p>
+                  <sp>🌟</p>
                 ))}
-            </div>
+            </div> */}
           </Col>
           <Col md={6}>
-            <Link to={{
-              pathname: "/play",
-              state: { app_name: app_name, host_wallet_address: host_wallet_address}
-            }}>
+            <Link
+              to={{
+                pathname: "/play",
+                state: {
+                  app_name: app_name,
+                  host_wallet_address: host_wallet_address,
+                },
+              }}
+            >
               <button large className="button-highlight">
                 Start playing
               </button>

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Table, Container, Row, Col } from "reactstrap";
-import { Formik } from "formik";
 import { H6 } from "@blueprintjs/core";
+import { Formik } from "formik";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "reactstrap";
 import "./AdminUpdate.css";
 import { getAdmin, updateAdmin } from "./api/admin";
 import MultiSelect from "./components/MultiSelect";

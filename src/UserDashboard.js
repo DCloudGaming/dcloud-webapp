@@ -1,22 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Table, Container, Row, Col } from "reactstrap";
-import {
-  Card,
-  Elevation,
-  Icon,
-  IconSize,
-  H1,
-  H2,
-  H4,
-  H5,
-  H6,
-  Text,
-  Menu,
-  MenuItem,
-} from "@blueprintjs/core";
+import { H1, H5, H6, Icon, IconSize, Text } from "@blueprintjs/core";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row, Table } from "reactstrap";
+import { getUserProfile, retrieveAccount } from "./api/user";
 import "./UserDashboard.css";
-import { getUser, getUserProfile, retrieveAccount } from "./api/user";
-import { getWalletAddress } from './reducer';
 
 function UserDashboard() {
   const [user, setUser] = useState();
@@ -29,7 +15,6 @@ function UserDashboard() {
       console.log("Dashboard");
       console.log(resp);
       if (!resp.error) setUser(resp.data);
-
     };
 
     getUserWrapper();
