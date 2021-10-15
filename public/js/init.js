@@ -1,3 +1,4 @@
 log.setLevel("log.level", "debug");
 
-socket.connect(location.protocol, `${location.host}/client`);
+let serverHost = "localhost:8080";
+socket.connect(location.protocol, `${serverHost}/client`);

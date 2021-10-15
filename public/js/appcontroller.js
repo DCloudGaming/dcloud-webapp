@@ -135,9 +135,6 @@
     false
   );
 
-  event.sub(HOSTS_UPDATED, (data) => {
-    rtcp.updateHosts(data.hosts);
-  });
   event.sub(MEDIA_STREAM_INITIALIZED, (data) => {
     rtcp.start(data.stunturn);
   });
@@ -162,5 +159,4 @@
   event.sub(KEY_STATE_UPDATED, (data) => rtcp.input(data));
 
   // Add fake data for displaying
-  rtcp.updateHosts([]);
 })($, document, event, env);

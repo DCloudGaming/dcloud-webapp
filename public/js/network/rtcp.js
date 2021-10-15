@@ -163,48 +163,6 @@ const rtcp = (() => {
     isConnected: () => connected,
     isInputReady: () => inputReady,
     getConnection: () => connection,
-    updateHosts: (hosts) => {
-      const tab = document.getElementById("hostAppsTable");
-      // const tabBody = document.getElementById("hostAppsTableBody");
-      // tabBody.remove();
-      var rowCount = tab.rows.length;
-      for (var i = 1; i < rowCount; i++) {
-        tab.deleteRow(1);
-      }
-      var parse_hosts = JSON.parse(hosts);
-
-      // Fake data for displaying
-      for (let i = 0; i < 14; i++) {
-        parse_hosts.push({
-          host_id: 1,
-          app_paths: ["Garena"]
-        })
-      }
-      console.log(parse_hosts)
-
-      for (let i = 0; i < parse_hosts.length; i++) {
-        var chosen_host = parse_hosts[i];
-        var host_id = chosen_host["host_id"];
-        if (!chosen_host["app_paths"]) {
-          chosen_host["app_paths"] = []
-        }
-        for (let j = 0; j < chosen_host["app_paths"].length; j++) {
-          var app = chosen_host["app_paths"][j];
-          var tr = document.createElement('tr');
-          tr.innerHTML = '<td class="text-center">' + (i + 1) + '</td>' + '<td>' + app + '</td>' + '<td>' + 'GeForce RTX 2080 SUPER' + '</td>' + '<td>' + '4.8/5.0' + '</td>'
-          tr.onclick = createClickHandler(host_id, app);
-          tab.appendChild(tr);
-        }
-      }
-      // var chosen_host = parse_hosts[0];
-      // log.info(`UpdateHosts signal ${hosts}`);
-      // if (chosen_host) {
-      //   socket.send({
-      //     type: "registerBrowserHost",
-      //     data: JSON.stringify({host_id: chosen_host["host_id"], app: chosen_host["app_paths"][0]})
-      //   });
-      // }
-    },
   };
 })(event, socket, env, log);
 
