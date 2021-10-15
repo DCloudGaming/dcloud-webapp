@@ -26,10 +26,12 @@ function Play({ order }) {
   ImportScript("js/env.js");
   ImportScript("js/event/event.js");
   ImportScript("js/network/socket.js");
+  // setTimeout(()=>{
+  // }, 5000);
   ImportScript("js/network/rtcp.js");
   ImportScript("js/appcontroller.js");
   ImportScript("js/init.js");
-
+  
   const history = useHistory();
   const [title, setTitle] = useState("Free Fire");
   const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
@@ -65,7 +67,7 @@ function Play({ order }) {
         </thead>
         <tbody id="hostAppsTableBody"></tbody>
       </table>
-      <div id="videoPlayer">
+      {/* <div id="videoPlayer">
         <ReactNetflixPlayer
           // Vídeo Link - Just data is required
           src="http://lucasjunior.com.br/teste.mp4"
@@ -110,11 +112,10 @@ function Play({ order }) {
 
           // subtitleMedia="/teste.vtt"
         />
-      </div>
-      {/* <div>
-        <video id="app-screen" oncontextmenu="return false;" muted playinfullscreen="false" poster="/static/assets/img/waiting.svg" playsinline
-              onloadstart="this.volume=0.5" autoplay width="100%" height="100%"></video>
       </div> */}
+      <div>
+        <video id="app-screen" width="100%" height="100%"></video>
+      </div>
     </Container>
   );
 }
