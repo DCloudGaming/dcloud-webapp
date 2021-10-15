@@ -7,6 +7,7 @@ import "./Order.css";
 
 function Play() {
   let data = useLocation();
+
   // TODO: Fix this hack
   let hwa = data.state ? data.state.host_wallet_address : "";
   let an = data.state ? data.state.app_name : "";
@@ -20,15 +21,16 @@ function Play() {
   }, []);
 
   ImportScript(
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+    1
   );
-  ImportScript("js/log.js");
-  ImportScript("js/env.js");
-  ImportScript("js/event/event.js");
-  ImportScript("js/network/socket.js");
-  ImportScript("js/network/rtcp.js");
-  ImportScript("js/appcontroller.js");
-  ImportScript("js/init.js");
+  ImportScript("js/log.js", 2);
+  ImportScript("js/env.js", 3);
+  ImportScript("js/event/event.js", 4);
+  ImportScript("js/network/socket.js", 5);
+  ImportScript("js/network/rtcp.js", 6);
+  ImportScript("js/appcontroller.js", 7);
+  ImportScript("js/init.js", 8);
 
   // const history = useHistory();
   // const [title, setTitle] = useState("Free Fire");
