@@ -1,7 +1,7 @@
-// import { ethers } from "ethers";
+import { ethers } from "ethers";
 import { useMetaMask } from "metamask-react";
 import React from "react";
-import { genOTP, getOrCreateUser } from "./api/user";
+import { genOTP, getOrCreateUser, authMetamask } from "./api/user";
 import "./Streams.css";
 
 const handleGenOTP = async () => {
@@ -15,14 +15,14 @@ function MetamaskBox() {
   if (status === "connected") {
     // && current_wallet != null) {
     const authMetamaskWrapper = async () => {
-      //   const web3 = new ethers.providers.Web3Provider(window.ethereum);
+      const web3 = new ethers.providers.Web3Provider(window.ethereum);
       // TODO: Validate jwt token in another flow instead
       const dbUser = await getOrCreateUser(account);
       if (dbUser.nonce) {
-        // const signature = await web3
-        //   .getSigner()
-        //   .signMessage(`I am signing my one-time nonce: ${dbUser.nonce}`);
-        // const dbUserVerify = await authMetamask(account, signature);
+        const signature = await web3
+          .getSigner()
+          .signMessage(`I am signing my one-time nonce: ${dbUser.nonce}`);
+        await authMetamask(account, signature);
 
         localStorage.setItem("wallet_address", account);
       }
