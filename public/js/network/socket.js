@@ -5,6 +5,7 @@
  *
  * @version 1
  */
+let env = 1;
 const socket = (() => {
   // TODO: this ping is for maintain websocket state
   /*
@@ -107,4 +108,4 @@ const socket = (() => {
     latency: latency,
     connect: connect,
   };
-})($, event, log);
+})(1, event, log);

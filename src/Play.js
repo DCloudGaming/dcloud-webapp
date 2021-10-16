@@ -13,12 +13,12 @@ function Play() {
   let an = data.state ? data.state.app_name : "";
   localStorage.setItem("host_wallet_address", hwa);
   localStorage.setItem("app_name", an);
-  useEffect(() => {
-    const handlePlayStartSessionWrapper = async () => {
-      await startSession(an, hwa);
-    };
-    handlePlayStartSessionWrapper();
-  }, []);
+  // useEffect(() => {
+  //   const handlePlayStartSessionWrapper = async () => {
+  //     await startSession(an, hwa);
+  //   };
+  //   handlePlayStartSessionWrapper();
+  // }, []);
 
   ImportScript(
     "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
@@ -113,7 +113,8 @@ function Play() {
         />
       </div> */}
       <div>
-        <video id="app-screen" width="100%" height="100%"></video>
+        <video id="app-screen" onContextMenu={() => false} muted playinfullscreen="false" poster="/static/assets/img/waiting.svg" playsInline
+             autoPlay width="100%" height="100%"></video>
       </div>
     </Container>
   );
