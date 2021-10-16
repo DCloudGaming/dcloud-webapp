@@ -1,26 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Table, Container, Row, Col } from "reactstrap";
+import { H6 } from "@blueprintjs/core";
 import { Formik } from "formik";
-import {
-  Card,
-  Elevation,
-  Icon,
-  IconSize,
-  H1,
-  H2,
-  H4,
-  H5,
-  H6,
-  Text,
-  Menu,
-  MenuItem,
-} from "@blueprintjs/core";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "reactstrap";
+import { getUserFromToken, updateUser } from "./api/user";
 import "./UserUpdate.css";
-import { getOrCreateUser, getUser, updateUser, getUserFromToken } from "./api/user";
 
 function UserUpdate() {
   const [user, setUser] = useState();
-  const userId = 1;
 
   useEffect(() => {
     const getUserWrapper = async () => {
@@ -47,12 +33,12 @@ function UserUpdate() {
         <Col md={4}>
           <Formik
             // initialValues={{ email: "", password: "" }}
-            initialValues={ user }
+            initialValues={user}
             onSubmit={(values, { setSubmitting }) => {
               // updateUser(userId, values);
               setTimeout(() => {
                 // alert(JSON.stringify(values, null, 2));
-                updateUser(values)
+                updateUser(values);
                 setSubmitting(false);
               }, 400);
             }}

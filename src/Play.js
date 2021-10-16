@@ -1,58 +1,57 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import "./Order.css";
-import ReactNetflixPlayer from "react-netflix-player";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Container } from "reactstrap";
-import ImportScript from "./common/importScript";
 import { startSession } from "./api/stream";
-import {useLocation} from "react-router-dom";
+import ImportScript from "./common/importScript";
+import "./Order.css";
 
-function Play({ order }) {
+function Play() {
   let data = useLocation();
+
   // TODO: Fix this hack
-  localStorage.setItem("host_wallet_address", data.state.host_wallet_address);
-  localStorage.setItem("app_name", data.state.app_name);
+  let hwa = data.state ? data.state.host_wallet_address : "";
+  let an = data.state ? data.state.app_name : "";
+  localStorage.setItem("host_wallet_address", hwa);
+  localStorage.setItem("app_name", an);
   // useEffect(() => {
   //   const handlePlayStartSessionWrapper = async () => {
-      // await startSession(data.state.app_name, data.state.host_wallet_address);
-  //   }
+  //     await startSession(an, hwa);
+  //   };
   //   handlePlayStartSessionWrapper();
   // }, []);
 
   ImportScript(
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+    1
   );
-  ImportScript("js/log.js");
-  ImportScript("js/env.js");
-  ImportScript("js/event/event.js");
-  ImportScript("js/network/socket.js");
-  // setTimeout(()=>{
-  // }, 5000);
-  ImportScript("js/network/rtcp.js");
-  ImportScript("js/appcontroller.js");
-  ImportScript("js/init.js");
-  
-  const history = useHistory();
-  const [title, setTitle] = useState("Free Fire");
-  const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
-  const [videoList, setVideoList] = useState([
-    {
-      nome: "Free Fire from Hieu",
-      id: 1,
-      playing: true,
-    },
-    {
-      nome: "Free Fire from Thanh",
-      id: 2,
-      playing: false,
-    },
-    {
-      nome: "Free Fire from Ngoc",
-      id: 3,
-      playing: false,
-    },
-  ]);
+  ImportScript("js/log.js", 2);
+  ImportScript("js/env.js", 3);
+  ImportScript("js/event/event.js", 4);
+  ImportScript("js/network/socket.js", 5);
+  ImportScript("js/network/rtcp.js", 6);
+  ImportScript("js/appcontroller.js", 7);
+  ImportScript("js/init.js", 8);
 
+  // const history = useHistory();
+  // const [title, setTitle] = useState("Free Fire");
+  // const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
+  // const [videoList, setVideoList] = useState([
+  //   {
+  //     nome: "Free Fire from Hieu",
+  //     id: 1,
+  //     playing: true,
+  //   },
+  //   {
+  //     nome: "Free Fire from Thanh",
+  //     id: 2,
+  //     playing: false,
+  //   },
+  //   {
+  //     nome: "Free Fire from Ngoc",
+  //     id: 3,
+  //     playing: false,
+  //   },
+  // ]);
 
   return (
     <Container>

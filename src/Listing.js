@@ -1,30 +1,18 @@
-import React, { useState, useEffect } from "react";
-import {
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  ListGroupItem,
-  ListGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
 import {
   Card,
   Elevation,
-  Icon,
-  IconSize,
   H2,
   H4,
   H5,
+  Icon,
+  IconSize,
   Text,
-  Menu,
-  MenuItem,
 } from "@blueprintjs/core";
-import "./Listing.css";
-import GameCard from "./GameCard";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "reactstrap";
 import { getListing } from "./api/listing";
+import GameCard from "./GameCard";
+import "./Listing.css";
 
 function Listing() {
   const [listing, setListing] = useState();
@@ -69,7 +57,7 @@ function Listing() {
             <Row>
               {row.map((game) => (
                 <Col>
-                  <GameCard {...game} isChosen={listing.title == game.title} />
+                  <GameCard {...game} isChosen={listing.title === game.title} />
                 </Col>
               ))}
             </Row>

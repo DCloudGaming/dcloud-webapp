@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Product from "./Product";
-import { getListings, getAllowApps } from "./api/listing";
+import { getAllowApps } from "./api/listing";
 
 function Home() {
   const [listings, setListings] = useState([]);

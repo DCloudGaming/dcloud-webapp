@@ -1,16 +1,16 @@
-import React, { useReducer } from 'react';
-import "./Product.css";
-import { useStateValue } from "./StateProvider";
+import React from "react";
 import {
   Card,
-  CardImg,
-  CardText,
   CardBody,
-  CardTitle,
+  CardImg,
   CardSubtitle,
+  CardText,
+  CardTitle,
+  Col,
+  Row,
 } from "reactstrap";
-import { Row, Col } from "reactstrap";
 import { voteApp } from "./api/listing";
+import "./Product.css";
 
 function Product({
   id,
@@ -22,18 +22,18 @@ function Product({
   // startTime,
   // image,
 }) {
-  const [{ basket }, dispatch] = useStateValue();
-  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
+  // const [{ basket }, dispatch] = useStateValue();
+  // const [ignored, forceUpdate] = useReducer((x) => x + 1, 0);
   let startTime = 1632536814826 + Math.round(Math.random() * 100);
   const startTimeObj = new Date(startTime);
   let hourlyRate = 1;
-  let duration = Math.round(Math.random() * 24)
+  // let duration = Math.round(Math.random() * 24);
   let rating = Math.round(Math.random() * 5);
   let hardware = "MSI Aegis RS 11th Gen";
 
   const vote = async () => {
     await voteApp(app_name);
-    // TODO: Fix this 
+    // TODO: Fix this
     window.location.reload();
     // forceUpdate();
   };
