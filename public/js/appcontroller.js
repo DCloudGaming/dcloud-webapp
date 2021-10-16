@@ -12,8 +12,9 @@
   const appTitle = document.getElementById("app-title");
   // const appScreen = document.getElementById("app-screen");
   // TODO: find a non-hacky way to grab video element
-  const appScreen = document.getElementsByTagName("video")[0];
-  appScreen.id = "app-screen";
+  // const appScreen = document.getElementsByTagName("video")[0];
+  // appScreen.id = "app-screen";
+  const appScreen = document.getElementById("app-screen");
   console.log("Initial: ", appScreen);
 
   const onConnectionReady = () => {
@@ -135,9 +136,6 @@
     false
   );
 
-  event.sub(HOSTS_UPDATED, (data) => {
-    rtcp.updateHosts(data.hosts);
-  });
   event.sub(MEDIA_STREAM_INITIALIZED, (data) => {
     rtcp.start(data.stunturn);
   });
@@ -162,5 +160,4 @@
   event.sub(KEY_STATE_UPDATED, (data) => rtcp.input(data));
 
   // Add fake data for displaying
-  rtcp.updateHosts([]);
-})($, document, event, env);
+})(1, document, event, env);

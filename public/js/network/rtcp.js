@@ -14,7 +14,7 @@ const rtcp = (() => {
   let inputReady = false;
 
   const start = (iceservers) => {
-    log.info(`[rtcp] <- received stunturn from worker ${iceservers}`);
+    log.info(`[rtcp] <- received stunturn2 from worker ${iceservers}`);
 
     connection = new RTCPeerConnection({
       iceServers: JSON.parse(iceservers),
@@ -25,16 +25,17 @@ const rtcp = (() => {
     // input channel, ordered + reliable, id 0
     // inputChannel = connection.createDataChannel('a', { ordered: true, negotiated: true, id: 0, });
     // recv dataChannel from worker
+    console.log(`Hieu iceServers : ${JSON.parse(iceservers)}`);
     connection.ondatachannel = (e) => {
-      log.debug(`[rtcp] ondatachannel: ${e.channel.label}`);
+      log.info(`[rtcp] ondatachannel: ${e.channel.label}`);
       inputChannel = e.channel;
       inputChannel.onopen = () => {
-        log.debug("[rtcp] the input channel has opened");
+        log.info("[rtcp] the input channel has opened");
         inputReady = true;
         event.pub(CONNECTION_READY);
       };
       inputChannel.onclose = () =>
-        log.debug("[rtcp] the input channel has closed");
+        log.info("[rtcp] the input channel has closed");
     };
 
     connection.oniceconnectionstatechange = ice.onIceConnectionStateChange;
@@ -46,7 +47,8 @@ const rtcp = (() => {
 
     socket.send({
       type: "initwebrtc",
-      data: JSON.stringify({ is_mobile: env.isMobileDevice() }),
+      // data: JSON.stringify({ is_mobile: env.isMobileDevice() }),
+      data: JSON.stringify({ is_mobile: false }),
     });
   };
 
@@ -159,52 +161,15 @@ const rtcp = (() => {
       });
       isFlushing = false;
     },
-    input: (data) => inputChannel.send(data),
+    input: (data) => {
+      console.log("InputChannel send");
+      console.log(data);
+      console.log(inputChannel);
+      inputChannel.send(data)
+    },
     isConnected: () => connected,
     isInputReady: () => inputReady,
     getConnection: () => connection,
-    updateHosts: (hosts) => {
-      const tab = document.getElementById("hostAppsTable");
-      // const tabBody = document.getElementById("hostAppsTableBody");
-      // tabBody.remove();
-      var rowCount = tab.rows.length;
-      for (var i = 1; i < rowCount; i++) {
-        tab.deleteRow(1);
-      }
-      var parse_hosts = JSON.parse(hosts);
-
-      // Fake data for displaying
-      for (let i = 0; i < 14; i++) {
-        parse_hosts.push({
-          host_id: 1,
-          app_paths: ["Garena"]
-        })
-      }
-      console.log(parse_hosts)
-
-      for (let i = 0; i < parse_hosts.length; i++) {
-        var chosen_host = parse_hosts[i];
-        var host_id = chosen_host["host_id"];
-        if (!chosen_host["app_paths"]) {
-          chosen_host["app_paths"] = []
-        }
-        for (let j = 0; j < chosen_host["app_paths"].length; j++) {
-          var app = chosen_host["app_paths"][j];
-          var tr = document.createElement('tr');
-          tr.innerHTML = '<td class="text-center">' + (i + 1) + '</td>' + '<td>' + app + '</td>' + '<td>' + 'GeForce RTX 2080 SUPER' + '</td>' + '<td>' + '4.8/5.0' + '</td>'
-          tr.onclick = createClickHandler(host_id, app);
-          tab.appendChild(tr);
-        }
-      }
-      // var chosen_host = parse_hosts[0];
-      // log.info(`UpdateHosts signal ${hosts}`);
-      // if (chosen_host) {
-      //   socket.send({
-      //     type: "registerBrowserHost",
-      //     data: JSON.stringify({host_id: chosen_host["host_id"], app: chosen_host["app_paths"][0]})
-      //   });
-      // }
-    },
   };
 })(event, socket, env, log);
 

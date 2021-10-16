@@ -1,23 +1,13 @@
+import { Card, Elevation, H1 } from "@blueprintjs/core";
 import React from "react";
-import "./Checkout.css";
-import Subtotal from "./Subtotal";
-import { useStateValue } from "./StateProvider";
-import CheckoutProduct from "./CheckoutProduct";
 import { Container } from "reactstrap";
-import {
-  Card,
-  Elevation,
-  Icon,
-  IconSize,
-  H1,
-  H5,
-  Text,
-  Menu,
-  MenuItem,
-} from "@blueprintjs/core";
+import "./Checkout.css";
+import CheckoutProduct from "./CheckoutProduct";
+import { useStateValue } from "./StateProvider";
+import Subtotal from "./Subtotal";
 
 function Checkout() {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   return (
     <Container>

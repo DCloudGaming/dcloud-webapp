@@ -5,6 +5,7 @@
  *
  * @version 1
  */
+let env = 1;
 const socket = (() => {
   // TODO: this ping is for maintain websocket state
   /*
@@ -42,6 +43,14 @@ const socket = (() => {
       log.info(`[ws] -> setting ping interval to ${pingIntervalMs}ms`);
       // !to add destructor if SPA
       setInterval(ping, pingIntervalMs);
+      // TODO: Fix
+      conn.send(
+        JSON.stringify({
+            type: "startSession",
+            data: JSON.stringify({ app_name: localStorage.getItem("app_name"), host_wallet_address: localStorage.getItem("host_wallet_address") })
+          }
+        )
+      );
     };
     conn.onerror = (error) => log.error(`[ws] ${error}`);
     conn.onclose = () => log.info("[ws] closed");
@@ -55,9 +64,6 @@ const socket = (() => {
 
       switch (message) {
         // Update host list when new host added to network
-        case "hostsUpdated":
-          event.pub(HOSTS_UPDATED, { hosts: data.data });
-          break;
         case "init":
           event.pub(MEDIA_STREAM_INITIALIZED, { stunturn: data.data });
           break;
@@ -102,4 +108,4 @@ const socket = (() => {
     latency: latency,
     connect: connect,
   };
-})($, event, log);
+})(1, event, log);

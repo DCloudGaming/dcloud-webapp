@@ -1,18 +1,8 @@
 import React from "react";
+import { Card, CardBody, CardImg, CardSubtitle, CardTitle } from "reactstrap";
 import "./GameCard.css";
-import { useStateValue } from "./StateProvider";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-} from "reactstrap";
-import { Row, Col } from "reactstrap";
-import { green } from "@material-ui/core/colors";
 
-function GameCard({ title, image, isChosen }) {
+function GameCard({ title, isChosen }) {
   return (
     <Card>
       <CardImg

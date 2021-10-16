@@ -1,41 +1,57 @@
-import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import "./Order.css";
-import ReactNetflixPlayer from "react-netflix-player";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Container } from "reactstrap";
+import { startSession } from "./api/stream";
 import ImportScript from "./common/importScript";
+import "./Order.css";
 
-function Play({ order }) {
-  const history = useHistory();
-  const [title, setTitle] = useState("Free Fire");
-  const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
-  const [videoList, setVideoList] = useState([
-    {
-      nome: "Free Fire from Hieu",
-      id: 1,
-      playing: true,
-    },
-    {
-      nome: "Free Fire from Thanh",
-      id: 2,
-      playing: false,
-    },
-    {
-      nome: "Free Fire from Ngoc",
-      id: 3,
-      playing: false,
-    },
-  ]);
+function Play() {
+  let data = useLocation();
+
+  // TODO: Fix this hack
+  let hwa = data.state ? data.state.host_wallet_address : "";
+  let an = data.state ? data.state.app_name : "";
+  localStorage.setItem("host_wallet_address", hwa);
+  localStorage.setItem("app_name", an);
+  // useEffect(() => {
+  //   const handlePlayStartSessionWrapper = async () => {
+  //     await startSession(an, hwa);
+  //   };
+  //   handlePlayStartSessionWrapper();
+  // }, []);
+
   ImportScript(
-    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js",
+    1
   );
-  ImportScript("js/log.js");
-  ImportScript("js/env.js");
-  ImportScript("js/event/event.js");
-  ImportScript("js/network/socket.js");
-  ImportScript("js/network/rtcp.js");
-  ImportScript("js/appcontroller.js");
-  ImportScript("js/init.js");
+  ImportScript("js/log.js", 2);
+  ImportScript("js/env.js", 3);
+  ImportScript("js/event/event.js", 4);
+  ImportScript("js/network/socket.js", 5);
+  ImportScript("js/network/rtcp.js", 6);
+  ImportScript("js/appcontroller.js", 7);
+  ImportScript("js/init.js", 8);
+
+  // const history = useHistory();
+  // const [title, setTitle] = useState("Free Fire");
+  // const [subtitle, setSubTitle] = useState(" - Streaming from Anh");
+  // const [videoList, setVideoList] = useState([
+  //   {
+  //     nome: "Free Fire from Hieu",
+  //     id: 1,
+  //     playing: true,
+  //   },
+  //   {
+  //     nome: "Free Fire from Thanh",
+  //     id: 2,
+  //     playing: false,
+  //   },
+  //   {
+  //     nome: "Free Fire from Ngoc",
+  //     id: 3,
+  //     playing: false,
+  //   },
+  // ]);
 
   return (
     <Container>
@@ -50,7 +66,7 @@ function Play({ order }) {
         </thead>
         <tbody id="hostAppsTableBody"></tbody>
       </table>
-      <div id="videoPlayer">
+      {/* <div id="videoPlayer">
         <ReactNetflixPlayer
           // Vídeo Link - Just data is required
           src="http://lucasjunior.com.br/teste.mp4"
@@ -95,6 +111,10 @@ function Play({ order }) {
 
           // subtitleMedia="/teste.vtt"
         />
+      </div> */}
+      <div>
+        <video id="app-screen" onContextMenu={() => false} muted playinfullscreen="false" poster="/static/assets/img/waiting.svg" playsInline
+             autoPlay width="100%" height="100%"></video>
       </div>
     </Container>
   );

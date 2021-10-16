@@ -1,11 +1,10 @@
 import axios from "../axios";
-import { NavLink } from "react-router-dom";
 
 export const getAllowApps = async () => {
   const response = await axios({
     method: "get",
     url: "/apps/getAllowApps",
-    withCredentials: true
+    withCredentials: true,
   });
   return response;
 };
@@ -15,12 +14,12 @@ export const voteApp = async (app_name) => {
     method: "post",
     url: "/apps/voteApp",
     data: {
-      app_name: app_name
+      app_name: app_name,
     },
-    withCredentials: true
+    withCredentials: true,
   });
   return response;
-}
+};
 
 export const getListings = async () => {
   return {
@@ -31,7 +30,7 @@ export const getListings = async () => {
 };
 
 export const getListing = async (id) => {
-  var listing = sampleListings.find((listing) => listing.id == id);
+  var listing = sampleListings.find((listing) => listing.id === id);
   listing = {
     ...listing,
     streamer: sampleStreamer,

@@ -1,28 +1,17 @@
-import React from "react";
-import {
-  CardHeader,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  ListGroupItem,
-  ListGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
 import {
   Card,
   Elevation,
-  Icon,
-  IconSize,
   H1,
   H5,
-  Text,
+  Icon,
+  IconSize,
   Menu,
   MenuItem,
+  Text,
 } from "@blueprintjs/core";
+import React from "react";
+import { Col, Container, Row } from "reactstrap";
 // import { ethers } from 'ethers'
-
 import "./Landing.css";
 
 export default function LandingPage() {
@@ -69,6 +58,7 @@ export default function LandingPage() {
               <Container>
                 <div class="bp3-navbar-group bp3-align-left">
                   <img
+                    alt="img"
                     id="logo"
                     src={require("./assets/img/logo.png")}
                     className="mr-3"
@@ -95,6 +85,7 @@ export default function LandingPage() {
               </Container>
             </nav>
             <img
+              alt="img"
               className="img-landing-top"
               src={require("./assets/img/positions.png")}
             />
@@ -133,6 +124,7 @@ export default function LandingPage() {
           <section className="section mb-5">
             <Row>
               <img
+                alt="img"
                 className="img-center img-fluid"
                 src={require("./assets/img/demo.png")}
               />
@@ -147,6 +139,7 @@ export default function LandingPage() {
                 <Col className="mt-lg-5" md="4">
                   <Row>
                     <img
+                      alt="img"
                       className="img-center img-fluid"
                       src={require("./assets/img/landing-earn.png")}
                     />
@@ -310,6 +303,7 @@ export default function LandingPage() {
                 <Col md="4">
                   <Row>
                     <img
+                      alt="img"
                       className="img-center"
                       style={{
                         height: "500px",
@@ -342,6 +336,7 @@ export default function LandingPage() {
                       <b>First, enable your wallet</b>
                     </h5>
                     <img
+                      alt="img"
                       className="img-center img-fluid"
                       src={require("./assets/img/typing.png")}
                       style={{
@@ -366,6 +361,7 @@ export default function LandingPage() {
                       <b>Then, enjoy faster stream speed</b>
                     </h5>
                     <img
+                      alt="img"
                       className="img-center img-fluid"
                       src={require("./assets/img/fly.png")}
                       style={{
@@ -390,6 +386,7 @@ export default function LandingPage() {
                       <b>Best part, earn DCLO.</b>
                     </h5>
                     <img
+                      alt="img"
                       className="img-center img-fluid"
                       src={require("./assets/img/coin.png")}
                       style={{
@@ -489,6 +486,7 @@ export default function LandingPage() {
                 <Col md="5">
                   <Row>
                     <img
+                      alt="img"
                       className="img-center img-fluid"
                       src={require("./assets/img/landing-match.png")}
                     />
@@ -517,6 +515,7 @@ export default function LandingPage() {
               <Row className="justify-content-md-center">
                 <Col md="6">
                   <img
+                    alt="img"
                     className="img-center"
                     style={{
                       height: "350px",
@@ -570,6 +569,7 @@ export default function LandingPage() {
           <section className="section footer">
             <Row className="justify-content-md-center">
               <img
+                alt="img"
                 className="img-center img-fluid"
                 src={require("./assets/img/landing-footer.png")}
               />
