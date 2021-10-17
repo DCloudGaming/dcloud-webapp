@@ -9,10 +9,12 @@ function Play() {
   let data = useLocation();
 
   // TODO: Fix this hack
-  let hwa = data.state ? data.state.host_wallet_address : "";
-  let an = data.state ? data.state.app_name : "";
+  let hwa = data.state ? data.state.host_wallet_address : "0xe641a324ad3641658251b8d4a3c77b537134f6b0";
+  let an = data.state ? data.state.app_name : "Minesweeper";
   localStorage.setItem("host_wallet_address", hwa);
   localStorage.setItem("app_name", an);
+  console.log("wallet", hwa);
+  console.log("appname", an);
   // useEffect(() => {
   //   const handlePlayStartSessionWrapper = async () => {
   //     await startSession(an, hwa);
