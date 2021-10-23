@@ -1,11 +1,11 @@
 .header {
-  height: 80px;
+  height: 100px;
   display: flex;
-  background-color: white;
+  /* background-color: white; */
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: rgb(0 0 0 / 8%) 0px 1px 12px !important;
+  /* box-shadow: rgb(0 0 0 / 8%) 0px 1px 12px !important; */
   margin-bottom: 3rem;
   display: flex;
 }
@@ -46,6 +46,7 @@
 .header__nav {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .header__option {
@@ -58,4 +59,11 @@
 
 a {
   text-decoration: none !important;
+}
+
+.metamask_box {
+  background-color: #2b2c95;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
 }

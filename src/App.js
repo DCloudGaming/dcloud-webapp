@@ -10,6 +10,7 @@ import Play from "./Play";
 import LandingPage from "./Landing";
 import Listing from "./Listing";
 import Streams from "./Streams";
+import Glance from "./Glance";
 import UserDashboard from "./UserDashboard";
 import UserUpdate from "./UserUpdate";
 import AdminUpdate from "./AdminUpdate";
@@ -23,10 +24,6 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/landing">
-            <Header />
-            <LandingPage />
-          </Route>
           <Route path="/orders">
             <Header />
             <Orders />
@@ -65,8 +62,12 @@ function App() {
             <Header />
             <Home />
           </Route>
-          <Route path="/">
+          <Route path="/glance">
             <Header />
+            <Glance />
+          </Route>
+          <Route path="/">
+            <LandingPage />
           </Route>
         </Switch>
       </div>

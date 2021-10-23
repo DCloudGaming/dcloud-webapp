@@ -17,30 +17,35 @@ function Header() {
             />
           </Link>
         </Col>
-        <Col md={5}>
+        {/* <Col md={5}>
           <div className="header__search">
             <input className="header__searchInput" type="text" />
           </div>
-        </Col>
+        </Col> */}
         <Col md={5}>
           <div className="header__nav">
-            <MetamaskBox />
+            <Link to="/landing">
+              <div className="header__option">
+                <span className="header__optionLineOne">What is</span>
+                <span className="header__optionLineTwo">Declo</span>
+              </div>
+            </Link>
 
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard">
               <div className="header__option">
                 <span className="header__optionLineOne">.</span>
                 <span className="header__optionLineTwo">My Profile</span>
               </div>
-            </Link>
+            </Link> */}
 
             <Link to="/vote">
               <div className="header__option">
-                <span className="header__optionLineOne">.</span>
-                <span className="header__optionLineTwo">Vote</span>
+                <span className="header__optionLineOne">Vote</span>
+                <span className="header__optionLineTwo">Games</span>
               </div>
             </Link>
 
-            <Link to="/streams">
+            {/* <Link to="/streams">
               <div className="header__option">
                 <span className="header__optionLineOne">.</span>
                 <span className="header__optionLineTwo">Discover</span>
@@ -59,21 +64,14 @@ function Header() {
                 <span className="header__optionLineOne">.</span>
                 <span className="header__optionLineTwo">Admin Update</span>
               </div>
-            </Link>
-
-            <Link to="/landing">
-              <div className="header__option">
-                <span className="header__optionLineOne">.</span>
-                <span className="header__optionLineTwo">Landing</span>
-              </div>
-            </Link>
-
+            </Link> */}
             <a href="https://dclosingapore.gitbook.io/dclo/" target="_blank">
               <div className="header__option">
-                <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineOne">Read</span>
                 <span className="header__optionLineTwo">Docs</span>
               </div>
             </a>
+            <MetamaskBox />
           </div>
         </Col>
       </Container>
