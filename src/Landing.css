@@ -228,3 +228,7 @@ h1#logo-text {
   right: 13vw;
   text-align: center;
 }
+
+.section-lg {
+  margin-bottom: 5rem;
+}

@@ -15,6 +15,7 @@ import sample from "./assets/video/pov-playing-game.mp4";
 import topFirst from "./assets/video/landing-top-first.mp4";
 import topSecond from "./assets/video/landing-top-second.mp4";
 import topThird from "./assets/video/landing-top-third.mp4";
+import PayCard from "./components/Paycard";
 
 import "./Landing.css";
 
@@ -56,7 +57,7 @@ export default function LandingPage() {
   return (
     <>
       <div>
-        <section className="section section-lg">
+        <section>
           <section className="top-section">
             {/* TODO */}
             {/* <img
@@ -138,7 +139,6 @@ export default function LandingPage() {
             </Container>
           </section>
         </section>
-
         <section className="section section-lg">
           <section className="section">
             <Container>
@@ -157,35 +157,21 @@ export default function LandingPage() {
                     <Row className="mb-2">
                       <b>STREAM WITH DCLO</b>
                       <br />
+                      <br />
                       <H1>
-                        Set your own hours.
+                        Running GPUs at full capacity,
                         <br />
-                        Earn on your own terms.
+                        safely and profitably
                       </H1>
                     </Row>
                     <Row className="mb-5">
                       <Text>
-                        Maybe you’re preparing for work. Or keeping your
-                        computer idle to spend more time with your family. It’s
-                        a great time to rent the machine, connect with your
-                        community, and earn a little extra cash.
+                        Let's admit, GPU is not a small investment and leaving
+                        the hardware idly sitting day in and day out is not the
+                        best approach to utilizing that spending. How about
+                        renting out the GPUs to earn extra cash? Join the PGLO
+                        community.
                       </Text>
-                    </Row>
-                    <Row className="mb-3">
-                      <Col md="1">
-                        <Icon
-                          icon="bank-account"
-                          size={IconSize.LARGE}
-                          className="brand-color"
-                        />
-                      </Col>
-                      <Col md="11">
-                        <h5>Reliable earnings</h5>
-                        <Text>
-                          Make money, keep your tips, and use in-app tools to
-                          help maximize your earnings.
-                        </Text>
-                      </Col>
                     </Row>
                     <Row className="mb-3">
                       <Col md="1">
@@ -197,9 +183,20 @@ export default function LandingPage() {
                       </Col>
                       <Col md="11">
                         <h5>A flexible schedule</h5>
-                        <Text>
-                          Be your own boss and drive whenever it works for you.
-                        </Text>
+                      </Col>
+                    </Row>
+                    <Row className="mb-3">
+                      <Col md="1">
+                        <Icon
+                          icon="bank-account"
+                          size={IconSize.LARGE}
+                          className="brand-color"
+                        />
+                      </Col>
+                      <Col md="11">
+                        <h5>
+                          Use PGLO supporting tools to strategize earnings
+                        </h5>
                       </Col>
                     </Row>
                     <Row className="mb-5">
@@ -212,16 +209,12 @@ export default function LandingPage() {
                       </Col>
                       <Col md="11">
                         <h5>Get paid promptly</h5>
-                        <Text>
-                          Cash out your earnings whenever you want with Dcloud
-                          token.
-                        </Text>
                       </Col>
                     </Row>
                     <Row>
                       <Col md="4">
                         <button large className="button-highlight">
-                          Apply to stream
+                          Start playing
                         </button>
                       </Col>
                       <Col md="5">
@@ -236,104 +229,117 @@ export default function LandingPage() {
             </Container>
           </section>
         </section>
-        <section className="section section-lg play-section">
+        <section className="section play-section">
           <section className="section">
             <Container>
-              <Row className="row-grid justify-content-between mb-5">
+              <Row>
                 <Col md="7">
-                  {/* TODO: switch different here */}
-                  <Row className="mb-2">
-                    <b>PLAY WITH DCLO</b>
-                    <H1>
-                      Ready set play
+                  <Row className="row-grid justify-content-between">
+                    {/* TODO: switch different here */}
+                    <Row className="mb-2">
+                      <b>PLAY WITH DCLO</b>
                       <br />
-                      in a few clicks
-                    </H1>
-                  </Row>
-                  <Row className="mb-5">
-                    <Text>
-                      Whether you’re following your fantasy or your competitive
-                      tournament, we’ll get you the right hardware for your best
-                      gaming experience.
-                    </Text>
-                  </Row>
-                  <Row className="mb-4">
-                    <Col md="1">
-                      <Icon
-                        icon="applications"
-                        size={IconSize.LARGE}
-                        className="brand-color"
-                      />
-                    </Col>
-                    <Col md="11">
-                      <h5>Get a reliable match in minutes</h5>
-                    </Col>
-                  </Row>
-                  <Row className="mb-4">
-                    <Col md="1">
-                      <Icon
-                        icon="desktop"
-                        size={IconSize.LARGE}
-                        className="brand-color"
-                      />
-                    </Col>
-                    <Col md="11">
-                      <h5>Know that your machine can handle any game</h5>
-                    </Col>
-                  </Row>
-                  <Row className="mb-5">
-                    <Col md="1">
-                      <Icon
-                        icon="timeline-events"
-                        size={IconSize.LARGE}
-                        className="brand-color"
-                      />
-                    </Col>
-                    <Col md="11">
-                      <h5>Schedule your playtime in advance</h5>
-                    </Col>
-                  </Row>
-                  <Row className="mb-5">
-                    <Col md="3">
-                      <button large className="button-highlight">
-                        Play now
-                      </button>
-                    </Col>
-                    <Col md="8">
-                      <button large className="button-minimal">
-                        See frequently asked question →
-                      </button>
-                    </Col>
+                      <br />
+                      <H1>Winning knows no boundaries</H1>
+                    </Row>
+                    <Row className="mb-5">
+                      <Text>
+                        Whether it's League of Legends, Grand Theft Auto or
+                        Counter Strike, enjoy high quality access to the games
+                        you love with just your laptop and a working internet
+                        connection. Low latency. Sharp resolution. At your own
+                        convenience.
+                      </Text>
+                    </Row>
+                    <Row className="mb-4">
+                      <Col md="1">
+                        <Icon
+                          icon="applications"
+                          size={IconSize.LARGE}
+                          className="brand-color"
+                        />
+                      </Col>
+                      <Col md="11">
+                        <h5>Match instantly</h5>
+                      </Col>
+                    </Row>
+                    <Row className="mb-4">
+                      <Col md="1">
+                        <Icon
+                          icon="desktop"
+                          size={IconSize.LARGE}
+                          className="brand-color"
+                        />
+                      </Col>
+                      <Col md="11">
+                        <h5>Rich game library</h5>
+                      </Col>
+                    </Row>
+                    <Row className="mb-5">
+                      <Col md="1">
+                        <Icon
+                          icon="timeline-events"
+                          size={IconSize.LARGE}
+                          className="brand-color"
+                        />
+                      </Col>
+                      <Col md="11">
+                        <h5>Schedule ahead</h5>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col md="5">
+                        <button large className="button-highlight">
+                          Start streaming
+                        </button>
+                      </Col>
+                      <Col md="6">
+                        <button large className="button-minimal">
+                          See FAQs →
+                        </button>
+                      </Col>
+                    </Row>
                   </Row>
                 </Col>
-                <Col md="1"></Col>
-                <Col md="4">
-                  <Row>
+                <Col md="5">
+                  <Row
+                    style={{
+                      maxHeight: "500px",
+                    }}
+                  >
                     <img
                       alt="img"
                       className="img-center"
                       style={{
-                        height: "500px",
-                        width: "300px",
+                        maxWidth: "600px",
+                        position: "relative",
+                        bottom: "-8rem",
                       }}
                       src={require("./assets/img/landing-player-first.png")}
                     />
                   </Row>
                 </Col>
               </Row>
+            </Container>
+          </section>
+        </section>
+        <section className="section section-lg">
+          <section className="section">
+            <Container>
               <Row className="mt-10 mb-5">
-                <b>PAY WITH DCLO TOKEN</b>
-                <Row className="mb-2">
-                  <H1>Pay Earn Stake. Go bananas.</H1>
+                <b>INTRODUCING DCLO TOKEN</b>
+                <br />
+                <br />
+                <Row className="mb-5">
+                  <H1>Get started</H1>
                 </Row>
                 <Row>
-                  <Text className="bp3-running-text">
-                    We’ve got options to get you pay smoothly. BTT is a TRC-10
-                    utility token based on the blockchain that powers features
-                    of the most popular decentralized protocols and applications
-                    in the world. DApps powered by BTT include BitTorrent Speed,
-                    BitTorrent File System, DLive, and others in the pipeline.
-                  </Text>
+                  <Col md={6}>
+                    <PayCard role="Streamer"></PayCard>
+                  </Col>
+                  <Col md={6}>
+                    <PayCard role="Player" />
+                  </Col>
                 </Row>
               </Row>
               <Row>
@@ -413,22 +419,11 @@ export default function LandingPage() {
                   </Card>
                 </Col>
               </Row>
-              <Row className="mt-5 mb-5">
-                <Col md="2">
-                  <button large className="button-highlight">
-                    Learn more
-                  </button>
-                </Col>
-                <Col md="5">
-                  <button large className="button-minimal">
-                    Exchange & Wallets →
-                  </button>
-                </Col>
-              </Row>
             </Container>
           </section>
         </section>
-        <section className="section section-lg estimate-section">
+        {/* TODO */}
+        {/* <section className="section section-lg estimate-section">
           <Container>
             <Row className="mb-5">
               <Col md="3">
@@ -455,8 +450,8 @@ export default function LandingPage() {
               </Col>
             </Row>
           </Container>
-        </section>
-        <section className="section section-lg">
+        </section> */}
+        {/* <section className="section section-lg">
           <section className="section">
             <Container>
               <Row className="row-grid justify-content-between">
@@ -502,15 +497,16 @@ export default function LandingPage() {
               </Row>
             </Container>
           </section>
-        </section>
+        </section> */}
         <section className="section section-lg mt-10">
           <section className="section">
             <Container>
               <Row className="justify-content-md-center">
                 <Col md="12">
                   <b>JOIN OUR COMMUNITY</b>
+                  <br /> <br />
                   <Row className="mb-2">
-                    <H1>A place to enjoy your favourite games</H1>
+                    <H1>Good things are coming</H1>
                   </Row>
                   <Text className="bp3-running-text mb-5">
                     Affordable gaming solution, effortless payment, and getting
@@ -572,7 +568,8 @@ export default function LandingPage() {
             </Container>
           </section>
         </section>
-        <section className="section section-lg mt-10">
+        {/* TODO */}
+        {/* <section className="section section-lg mt-10">
           <section className="section footer">
             <Row className="justify-content-md-center">
               <img
@@ -622,7 +619,7 @@ export default function LandingPage() {
               </Row>
             </Container>
           </section>
-        </section>
+        </section> */}
       </div>
     </>
   );
