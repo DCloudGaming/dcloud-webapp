@@ -8,6 +8,7 @@ const monthsArr = Array.from({ length: 12 }, (x, i) => {
 const yearsArr = Array.from({ length: 9 }, (_x, i) => currentYear + i);
 
 export default function CForm({
+  contentChildren,
   role,
   cardMonth,
   cardYear,
@@ -44,31 +45,10 @@ export default function CForm({
     onUpdateState("isCardFlipped", false);
   };
 
-  // NOTE: Currently the cursor on the card number field gets reset if we remove a number, the code bellow was used
-  // in class components, need to transform this to work with functional components.
-  // getSnapshotBeforeUpdate() {
-  //     return this.props.cardNumberRef.current.selectionStart;
-  // }
-
-  // const componentDidUpdate = function (prevProps, prevState, cursorIdx) {
-  //     const node = cardNumberRef.current;
-  //     const { cardNumber: cardNum } = state;
-  //     const { cardNumber: prevCardNum } = prevState;
-  //     if (
-  //         cardNum.length > prevCardNum.length &&
-  //         cardNum[cursorIdx - 1] === ' '
-  //     ) {
-  //         cursorIdx += 1;
-  //     } else if (prevCardNum[cursorIdx - 1] === ' ') {
-  //         cursorIdx -= 1;
-  //     }
-  //     node.selectionStart = node.selectionEnd = cursorIdx;
-  // };
-
   return (
     <div className="card-form">
-      <div className="card-list">{children}</div>
       <div className="card-form__inner">
+        {contentChildren}
         <div className="card-input">
           <label htmlFor="cardNumber" className="card-input__label">
             Metamask Wallet Address
@@ -99,6 +79,7 @@ export default function CForm({
             ref={cardHolderRef}
             onFocus={(e) => onCardInputFocus(e, "cardHolder")}
             onBlur={onCardInputBlur}
+            placeholder="Try typing your name"
           />
         </div>
 
@@ -166,6 +147,7 @@ export default function CForm({
           </div>
         </div>
       </div>
+      <div className="card-list">{children}</div>
     </div>
   );
 }

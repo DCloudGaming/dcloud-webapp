@@ -7,15 +7,19 @@ import {
   IconSize,
   Menu,
   MenuItem,
+  Checkbox,
   Text,
+  Divider,
 } from "@blueprintjs/core";
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
+// TODO
 import sample from "./assets/video/pov-playing-game.mp4";
 import topFirst from "./assets/video/landing-top-first.mp4";
 import topSecond from "./assets/video/landing-top-second.mp4";
 import topThird from "./assets/video/landing-top-third.mp4";
 import PayCard from "./components/Paycard";
+import { SocialIcon } from "react-social-icons";
 
 import "./Landing.css";
 
@@ -335,14 +339,37 @@ export default function LandingPage() {
                 </Row>
                 <Row>
                   <Col md={6}>
-                    <PayCard role="Streamer"></PayCard>
+                    <PayCard role="Streamer">
+                      <H5 className="mt-3 mb-4">GAMER CHECKLIST</H5>
+                      <Checkbox>Connect your Metamask wallet</Checkbox>
+                      <Checkbox>High-speed internet connection </Checkbox>
+                      <Checkbox>
+                        Select the titles you want to play on Declo web app.
+                      </Checkbox>
+                      <H5 className="mt-3 mb-5">Enjoy the game!</H5>
+                      <Divider />
+                      <H5 className="mt-5 mb-3">
+                        <b>Bonus</b> Get a Declo Virtual Card
+                      </H5>
+                    </PayCard>
                   </Col>
                   <Col md={6}>
-                    <PayCard role="Player" />
+                    <PayCard role="Player">
+                      <H5 className="mt-3 mb-4">STREAMER CHECKLIST</H5>
+                      <Checkbox>Connect your Metamask wallet</Checkbox>
+                      <Checkbox>Install Declo desktop app</Checkbox>
+                      <Checkbox>List your games and schedule</Checkbox>
+                      <H5 className="mt-3 mb-5">Earn profit. Multiply joy.</H5>
+                      <Divider />
+                      <H5 className="mt-5 mb-3">
+                        <b>Bonus</b> Get a Declo Virtual Card
+                      </H5>
+                    </PayCard>
                   </Col>
                 </Row>
               </Row>
-              <Row>
+              {/* TODO */}
+              {/* <Row>
                 <Col>
                   <Card interactive={true} elevation={Elevation.ZERO}>
                     <h5>
@@ -418,9 +445,16 @@ export default function LandingPage() {
                     </button>
                   </Card>
                 </Col>
-              </Row>
+              </Row> */}
             </Container>
           </section>
+        </section>
+        <section className="section section-lg">
+          <Container>
+            <Row className="mb-5 mt-10">
+              <img alt="" src={`/img/landing/charts/howitworks.png`} />
+            </Row>
+          </Container>
         </section>
         {/* TODO */}
         {/* <section className="section section-lg estimate-section">
@@ -498,71 +532,100 @@ export default function LandingPage() {
             </Container>
           </section>
         </section> */}
-        <section className="section section-lg mt-10">
+        <section className="section mt-10">
           <section className="section">
             <Container>
-              <Row className="justify-content-md-center">
-                <Col md="12">
-                  <b>JOIN OUR COMMUNITY</b>
-                  <br /> <br />
-                  <Row className="mb-2">
-                    <H1>Good things are coming</H1>
-                  </Row>
-                  <Text className="bp3-running-text mb-5">
-                    Affordable gaming solution, effortless payment, and getting
-                    all the right people to all the right places. So you can
-                    have the best time.
-                  </Text>
-                </Col>
-              </Row>
-              <Row className="justify-content-md-center">
+              <Row style={{ maxHeight: "600px", overflow: "hidden" }}>
                 <Col md="6">
+                  <Row>
+                    <b>JOIN OUR COMMUNITY</b>
+                    <br /> <br />
+                    <Row className="mb-2">
+                      <H1>Good things are coming</H1>
+                    </Row>
+                    <Text className="bp3-running-text mb-5">
+                      Affordable gaming solution, effortless payment, and
+                      getting all the right people to all the right places. So
+                      you can have the best time.
+                    </Text>
+                  </Row>
+                  <Row>
+                    <Col md="2">
+                      <SocialIcon
+                        url="https://twitter.com/jaketrent"
+                        network="twitter"
+                      />
+                    </Col>
+                    <Col md="2">
+                      <SocialIcon
+                        url="https://twitter.com/jaketrent"
+                        network="discord"
+                      />
+                    </Col>
+                    <Col md="2">
+                      <SocialIcon
+                        url="https://twitter.com/jaketrent"
+                        network="telegram"
+                      />
+                    </Col>
+                    <Col md="2">
+                      <SocialIcon
+                        url="https://twitter.com/jaketrent"
+                        network="twitch"
+                      />
+                    </Col>
+                    <Col md="2">
+                      <SocialIcon
+                        url="https://twitter.com/jaketrent"
+                        network="facebook"
+                      />
+                    </Col>
+                    {/* <Col md="6">
+                      <Card
+                        interactive={true}
+                        elevation={Elevation.ZERO}
+                        style={{
+                          background: "#a5e4ff",
+                        }}
+                      >
+                        <Row className="mb-4">
+                          <h5>Join our mailing list</h5>
+                        </Row>
+                        <input
+                          className="bp3-input .modifier bp3-fill bp3-large mb-3"
+                          type="text"
+                          placeholder="Email"
+                          dir="auto"
+                        />
+                        <input
+                          className="bp3-input .modifier bp3-fill bp3-large mb-4"
+                          type="text"
+                          placeholder="Another field to fill up space"
+                          dir="auto"
+                        />
+                        <Row className="mt-4">
+                          <Col md="4">
+                            <button large className="button-highlight">
+                              Submit
+                            </button>
+                          </Col>
+                          <Col md="6">
+                            <button large className="button-minimal">
+                              Do something else →
+                            </button>
+                          </Col>
+                        </Row>
+                      </Card>
+                    </Col> */}
+                  </Row>
+                </Col>
+                <Col md="1" />
+                <Col md="5">
                   <img
                     alt="img"
-                    className="img-center"
-                    style={{
-                      height: "350px",
-                      width: "500px",
-                    }}
-                    src={require("./assets/img/landing-community.png")}
+                    className="img-landing-footer"
+                    src={require("./assets/img/cyborg-hatching.png")}
                   />
-                </Col>
-                <Col md="6">
-                  <Card
-                    interactive={true}
-                    elevation={Elevation.ZERO}
-                    style={{
-                      background: "#a5e4ff",
-                    }}
-                  >
-                    <Row className="mb-4">
-                      <h5>Join our mailing list</h5>
-                    </Row>
-                    <input
-                      className="bp3-input .modifier bp3-fill bp3-large mb-3"
-                      type="text"
-                      placeholder="Email"
-                      dir="auto"
-                    />
-                    <input
-                      className="bp3-input .modifier bp3-fill bp3-large mb-4"
-                      type="text"
-                      placeholder="Another field to fill up space"
-                      dir="auto"
-                    />
-                    <Row className="mt-4">
-                      <Col md="4">
-                        <button large className="button-highlight">
-                          Submit
-                        </button>
-                      </Col>
-                      <Col md="6">
-                        <button large className="button-minimal">
-                          Do something else →
-                        </button>
-                      </Col>
-                    </Row>
-                  </Card>
                 </Col>
               </Row>
             </Container>
@@ -620,6 +683,11 @@ export default function LandingPage() {
             </Container>
           </section>
         </section> */}
+        <div id="footer">
+          <Container>
+            <H5>© Copyright 2021, Declo. All Rights Reserved.</H5>
+          </Container>
+        </div>
       </div>
     </>
   );

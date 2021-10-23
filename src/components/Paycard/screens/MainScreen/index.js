@@ -11,7 +11,7 @@ const initialState = {
   isCardFlipped: false,
 };
 
-const MainScreen = ({ role }) => {
+const MainScreen = ({ children, role }) => {
   const [state, setState] = useState(initialState);
   const [currentFocusedElm, setCurrentFocusedElm] = useState(null);
 
@@ -56,6 +56,7 @@ const MainScreen = ({ role }) => {
   return (
     <div className="wrapper">
       <CForm
+        contentChildren={children}
         role={role}
         cardMonth={state.cardMonth}
         cardYear={state.cardYear}
@@ -79,7 +80,9 @@ const MainScreen = ({ role }) => {
           cardNumberRef={cardElementsRef.cardNumber}
           cardHolderRef={cardElementsRef.cardHolder}
           cardDateRef={cardElementsRef.cardDate}
-        ></Card>
+        >
+          {children}
+        </Card>
       </CForm>
     </div>
   );

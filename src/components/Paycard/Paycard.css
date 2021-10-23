@@ -18,18 +18,18 @@
   box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
   border-radius: 10px;
   padding: 35px;
-  padding-top: 180px;
+  padding-bottom: 180px;
 }
 @media screen and (max-width: 480px) {
   .card-form__inner {
     padding: 25px;
-    padding-top: 165px;
+    padding-bottom: 165px;
   }
 }
 @media screen and (max-width: 360px) {
   .card-form__inner {
     padding: 15px;
-    padding-top: 165px;
+    padding-bottom: 165px;
   }
 }
 .card-form__row {
@@ -99,7 +99,7 @@
   }
 }
 .card-list {
-  margin-bottom: -130px;
+  margin-top: -130px;
 }
 @media screen and (max-width: 480px) {
   .card-list {
