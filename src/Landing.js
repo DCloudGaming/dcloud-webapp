@@ -70,6 +70,7 @@ export default function LandingPage() {
               src={require("./assets/img/cyborg-flying.png")}
             />
             <Container className="top-section">
+              <div id="badge-landing-top">Ready to join us?</div>
               <Row>
                 <Col md="6">
                   <H1>
@@ -90,20 +91,19 @@ export default function LandingPage() {
               </Row>
               <Row className="mb-5">
                 <Col md="4">
-                  <H5>For gamers</H5>
-                  <Text className="bp3-running-text">
-                    Play the best collection of AAA, Indie and Retro games
-                    without the need to purchase fancy hardware. <br />
-                    Pay-as-you-use. Cancel anytime. No ads. No in-app purchase.
-                  </Text>
-                </Col>
-                <Col md="1" />
-                <Col md="4">
                   <H5>For streamers</H5>
                   <Text className="bp3-running-text">
                     Put your game library and spare hardware to productive use.{" "}
                     <br />
                     Earn profit. Multiply joy.
+                  </Text>
+                </Col>
+                <Col md="4">
+                  <H5>For gamers</H5>
+                  <Text className="bp3-running-text">
+                    Play the best collection of AAA, Indie and Retro games
+                    without the need to purchase fancy hardware. <br />
+                    Pay-as-you-use. Cancel anytime. No ads. No in-app purchase.
                   </Text>
                 </Col>
               </Row>
@@ -113,21 +113,21 @@ export default function LandingPage() {
                 </button>
               </Row>
               <Row className="mt-10">
-                <Col md="4" className="flex-center">
+                <Col md="3" className="flex-center">
                   <div className="video-demo">
                     <video autoPlay loop muted>
                       <source src={topFirst} type="video/mp4" />
                     </video>
                   </div>
                 </Col>
-                <Col md="4" className="flex-center">
+                <Col md="3" className="flex-center">
                   <div className="video-demo">
                     <video autoPlay loop muted>
                       <source src={topSecond} type="video/mp4" />
                     </video>
                   </div>
                 </Col>
-                <Col md="4" className="flex-center">
+                <Col md="3" className="flex-center">
                   <div className="video-demo">
                     <video autoPlay loop muted>
                       <source src={topThird} type="video/mp4" />
@@ -137,16 +137,6 @@ export default function LandingPage() {
               </Row>
             </Container>
           </section>
-          {/* TODO */}
-          {/* <section className="section mb-5">
-            <Row>
-              <img
-                alt="img"
-                className="img-center img-fluid"
-                src={require("./assets/img/demo.png")}
-              />
-            </Row>
-          </section> */}
         </section>
 
         <section className="section section-lg">

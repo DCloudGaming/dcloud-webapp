@@ -132,8 +132,8 @@
 img.img-landing-top {
   max-width: 400px;
   position: absolute;
-  right: 0;
-  top: 15vh;
+  right: 5vw;
+  top: 30vh;
   z-index: -1;
   margin: 0 auto;
 }
@@ -213,4 +213,18 @@ h1#logo-text {
 .flex-center {
   display: flex;
   justify-content: center;
+}
+
+#badge-landing-top {
+  color: #142764;
+  font-weight: 800;
+  background-color: #ffc272;
+  padding: 3rem 2rem;
+  border-radius: 100%;
+  position: absolute;
+  bottom: -3.5rem;
+  width: 8.5rem;
+  height: 8.5rem;
+  right: 13vw;
+  text-align: center;
 }
