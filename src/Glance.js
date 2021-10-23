@@ -66,26 +66,26 @@ function Glance() {
             return all;
           }, [])
           .map((row) => (
-            <Row className="mb-5 mt-10">
+            <Row className="mb-5">
               {row.map((stream) => (
                 <>
-                  <Col md={4}>
+                  <Col md={3}>
                     <Card elevation={Elevation.THREE}>
                       <Row>
-                        <Col md={4}>
+                        <Col md={5}>
                           <div className="glance-img-container">
                             <img
                               src={stream.image}
                               style={{
                                 borderRadius: "1rem",
                                 maxWitdth: "100%",
-                                maxHeight: "7rem",
+                                maxHeight: "6rem",
                               }}
                             />
                           </div>
                         </Col>
                         <Col md={1} />
-                        <Col md={7}>
+                        <Col md={5}>
                           <H3>{stream.title}</H3>
                           <Text>{stream.desc}</Text>
                           <br />
