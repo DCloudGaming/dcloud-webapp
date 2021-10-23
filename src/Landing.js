@@ -11,7 +11,11 @@ import {
 } from "@blueprintjs/core";
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-// import { ethers } from 'ethers'
+import sample from "./assets/video/pov-playing-game.mp4";
+import topFirst from "./assets/video/landing-top-first.mp4";
+import topSecond from "./assets/video/landing-top-second.mp4";
+import topThird from "./assets/video/landing-top-third.mp4";
+
 import "./Landing.css";
 
 export default function LandingPage() {
@@ -54,74 +58,87 @@ export default function LandingPage() {
       <div>
         <section className="section section-lg">
           <section className="top-section">
-            <nav class="bp3-navbar .modifier">
-              <Container>
-                <div class="bp3-navbar-group bp3-align-left">
-                  <img
-                    alt="img"
-                    id="logo"
-                    src={require("./assets/img/logo.png")}
-                    className="mr-3"
-                  />
-                  <H1 id="logo-text">DCLO.</H1>
-                </div>
-                <div class="bp3-navbar-group bp3-align-right">
-                  <button class="bp3-button bp3-minimal">
-                    <b>STREAMER</b>
-                  </button>
-                  <button class="bp3-button bp3-minimal">
-                    <b>PLAYER</b>
-                  </button>
-                  <button class="bp3-button bp3-minimal">
-                    <b>GAME PRODUCER</b>
-                  </button>
-                  <button class="bp3-button bp3-minimal">
-                    <b>LOGIN</b>
-                  </button>
-                  <button class="bp3-button bp3-minimal">
-                    <b>SIGN UP</b>
-                  </button>
-                </div>
-              </Container>
-            </nav>
-            <img
+            {/* TODO */}
+            {/* <img
               alt="img"
               className="img-landing-top"
               src={require("./assets/img/positions.png")}
+            /> */}
+            <img
+              alt="img"
+              className="img-landing-top"
+              src={require("./assets/img/cyborg-flying.png")}
             />
             <Container className="top-section">
-              <Row className="mb-4">
+              <Row>
                 <Col md="6">
                   <H1>
-                    Pick a game. Play instantly.
-                    <br />
-                    No fancy hardware needed.
+                    <b>Decentralized Cloud Gaming</b>
                   </H1>
                 </Col>
               </Row>
-              <Row className="mb-5">
+              <Row className="mb-4 mt-4">
                 <Col md="6">
                   <Text className="bp3-running-text">
-                    CloudMorph is a decentralized, self-hosted cloud
-                    gaming/cloud application platform. App deployment for
-                    publisher and App access for user are made simple. Users can
-                    easily discover and run any application/games directly from
-                    their browser. The app content are built up by community in
-                    decentralized manner.
+                    <b>Declo</b>, through the use of <b>DCLO tokens</b>, is the
+                    leading network that connects high-productivity server
+                    providers (streamers) and anyone who wants to play
+                    graphically demanding games on their regular devices
+                    (gamers).
                   </Text>
                 </Col>
               </Row>
-              <Row>
-                <button large className="button-highlight">
-                  Sign up to play
+              <Row className="mb-5">
+                <Col md="4">
+                  <H5>For gamers</H5>
+                  <Text className="bp3-running-text">
+                    Play the best collection of AAA, Indie and Retro games
+                    without the need to purchase fancy hardware. <br />
+                    Pay-as-you-use. Cancel anytime. No ads. No in-app purchase.
+                  </Text>
+                </Col>
+                <Col md="1" />
+                <Col md="4">
+                  <H5>For streamers</H5>
+                  <Text className="bp3-running-text">
+                    Put your game library and spare hardware to productive use.{" "}
+                    <br />
+                    Earn profit. Multiply joy.
+                  </Text>
+                </Col>
+              </Row>
+              <Row className="mt-3 mb-4">
+                <button large className="launch-app-button">
+                  Launch App
                 </button>
-                <button large className="button-secondary">
-                  Apply to stream
-                </button>
+              </Row>
+              <Row className="mt-10">
+                <Col md="4" className="flex-center">
+                  <div className="video-demo">
+                    <video autoPlay loop muted>
+                      <source src={topFirst} type="video/mp4" />
+                    </video>
+                  </div>
+                </Col>
+                <Col md="4" className="flex-center">
+                  <div className="video-demo">
+                    <video autoPlay loop muted>
+                      <source src={topSecond} type="video/mp4" />
+                    </video>
+                  </div>
+                </Col>
+                <Col md="4" className="flex-center">
+                  <div className="video-demo">
+                    <video autoPlay loop muted>
+                      <source src={topThird} type="video/mp4" />
+                    </video>
+                  </div>
+                </Col>
               </Row>
             </Container>
           </section>
-          <section className="section mb-5">
+          {/* TODO */}
+          {/* <section className="section mb-5">
             <Row>
               <img
                 alt="img"
@@ -129,7 +146,7 @@ export default function LandingPage() {
                 src={require("./assets/img/demo.png")}
               />
             </Row>
-          </section>
+          </section> */}
         </section>
 
         <section className="section section-lg">
@@ -598,7 +615,7 @@ export default function LandingPage() {
                 <Col md={3}>
                   <Menu className="transparent">
                     <br />
-                    <H5>DCLO.</H5>
+                    <H5>Declo</H5>
                     {dcloFooter.map((link) => (
                       <MenuItem text={link} />
                     ))}

@@ -67,6 +67,7 @@ function App() {
             <Glance />
           </Route>
           <Route path="/">
+            <Header />
             <LandingPage />
           </Route>
         </Switch>

@@ -42,7 +42,7 @@
 }
 
 .login__container > p {
-  margin-top: 15px;
+  margin-t: 15px;
   font-size: 12px;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .top-section {
-  height: 90vh;
+  height: 100vh;
 }
 
 .play-section {
@@ -102,6 +102,16 @@
   padding-left: 20px !important;
 }
 
+.launch-app-button {
+  background: #ff6633 !important;
+  color: white;
+  border-radius: 5rem;
+  font-weight: 700;
+  border-width: 0;
+  padding: 20px 30px !important;
+  width: 200px !important;
+}
+
 .button-secondary {
   color: #000033 !important;
   background: #ebf1f5;
@@ -120,13 +130,12 @@
 }
 
 img.img-landing-top {
-  width: 60%;
+  max-width: 400px;
   position: absolute;
-  left: 70%;
-  bottom: 10vh;
+  right: 0;
+  top: 15vh;
   z-index: -1;
   margin: 0 auto;
-  transform: translate(-60%, 0);
 }
 
 .bp3-heading {
@@ -137,7 +146,7 @@ img.img-landing-top {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 70vh;
+  height: 90vh;
 }
 
 .row > button {
@@ -183,4 +192,25 @@ h1#logo-text {
 
 .full-width {
   width: 100%;
+}
+
+.video-demo {
+}
+
+.video-demo video {
+  /* Make video to at least 100% wide and tall */
+  max-width: 500px;
+  max-height: 300px;
+
+  border-radius: 0.5rem;
+  box-shadow: 1rem 1rem #d2effc;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
 }
