@@ -342,7 +342,8 @@ export default function LandingPage() {
                     <PayCard role="Streamer">
                       <H5 className="mt-3 mb-4">GAMER CHECKLIST</H5>
                       <Checkbox>Connect your Metamask wallet</Checkbox>
-                      <Checkbox>High-speed internet connection </Checkbox>
+                      <Checkbox>High-speed internet connection</Checkbox>
+                      <Checkbox>Add DCLO tokens to your wallet</Checkbox>
                       <Checkbox>
                         Select the titles you want to play on Declo web app.
                       </Checkbox>
@@ -359,6 +360,9 @@ export default function LandingPage() {
                       <Checkbox>Connect your Metamask wallet</Checkbox>
                       <Checkbox>Install Declo desktop app</Checkbox>
                       <Checkbox>List your games and schedule</Checkbox>
+                      <Checkbox>
+                        Check DCLO tokens earned after streaming session
+                      </Checkbox>
                       <H5 className="mt-3 mb-5">Earn profit. Multiply joy.</H5>
                       <Divider />
                       <H5 className="mt-5 mb-3">
