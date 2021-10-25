@@ -116,11 +116,11 @@ button.early-access {
 }
 
 button.early-access:hover {
-  color: #2b2c95;
+  background-color: white;
 }
 
-button.early-access:active {
-  color: #2b2c95;
+button.early-access:focus {
+  background-color: white;
   box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #2b2c95,
     2px 2px 0 0 #2b2c95, 3px 3px 0 0 #2b2c95, 4px 4px 0 0 #2b2c95,
     5px 5px 0 0 #2b2c95;
@@ -140,10 +140,10 @@ button.early-access:active {
     5px 5px 0 0 #d2effc, 6px 6px 0 0 #d2effc, 7px 7px 0 0 #d2effc;
 }
 .button-3d:hover {
-  color: #444;
+  background-color: #f5fbff;
 }
-.button-3d:active {
-  color: #222;
+.button-3d:focus {
+  background-color: #f5fbff;
   box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #d2effc;
   /* 2px 2px 0 0 #d2effc, 3px 3px 0 0 #d2effc, 4px 4px 0 0 #d2effc, */
   /* 5px 5px 0 0 #d2effc; */

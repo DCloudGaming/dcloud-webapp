@@ -12,6 +12,7 @@ import {
   Divider,
 } from "@blueprintjs/core";
 import React from "react";
+import { Link } from "react-router-dom";
 import { Col, Container, Row } from "reactstrap";
 // TODO
 import sample from "./assets/video/pov-playing-game.mp4";
@@ -20,6 +21,7 @@ import topSecond from "./assets/video/landing-top-second.mp4";
 import topThird from "./assets/video/landing-top-third.mp4";
 import PayCard from "./components/Paycard";
 import { SocialIcon } from "react-social-icons";
+import ActionModal from "./components/ActionModal";
 
 import "./Landing.css";
 
@@ -113,9 +115,11 @@ export default function LandingPage() {
                 </Col>
               </Row>
               <Row className="mt-3 mb-4">
-                <button large className="launch-app-button">
-                  Launch App
-                </button>
+                <Link target="_blank" to="/glance">
+                  <button large className="launch-app-button">
+                    Launch App
+                  </button>
+                </Link>
               </Row>
               <Row className="mt-10">
                 <Col md="3" className="flex-center">
@@ -173,7 +177,7 @@ export default function LandingPage() {
                         Let's admit, GPU is not a small investment and leaving
                         the hardware idly sitting day in and day out is not the
                         best approach to utilizing that spending. How about
-                        renting out the GPUs to earn extra cash? Join the PGLO
+                        renting out the GPUs to earn extra cash? Join the DCLO
                         community.
                       </Text>
                     </Row>
@@ -199,7 +203,7 @@ export default function LandingPage() {
                       </Col>
                       <Col md="11">
                         <h5>
-                          Use PGLO supporting tools to strategize earnings
+                          Use DCLO supporting tools to strategize earnings
                         </h5>
                       </Col>
                     </Row>
@@ -217,14 +221,21 @@ export default function LandingPage() {
                     </Row>
                     <Row>
                       <Col md="4">
-                        <button large className="button-highlight">
-                          Start playing
-                        </button>
+                        <Link target="_blank" to="/glance">
+                          <button large className="button-highlight">
+                            Start playing
+                          </button>
+                        </Link>
                       </Col>
                       <Col md="5">
-                        <button large className="button-minimal">
-                          How stream pay works →
-                        </button>
+                        <Link
+                          target="_blank"
+                          to="https://dclosingapore.gitbook.io/dclo/"
+                        >
+                          <button large className="button-minimal">
+                            How stream pay works →
+                          </button>
+                        </Link>
                       </Col>
                     </Row>
                   </div>
@@ -293,14 +304,21 @@ export default function LandingPage() {
                     </Row>
                     <Row>
                       <Col md="5">
-                        <button large className="button-highlight">
-                          Start streaming
-                        </button>
+                        <Link target="_blank" to="/glance">
+                          <button large className="button-highlight">
+                            Start streaming
+                          </button>
+                        </Link>
                       </Col>
                       <Col md="6">
-                        <button large className="button-minimal">
-                          See FAQs →
-                        </button>
+                        <Link
+                          target="_blank"
+                          to="https://dclosingapore.gitbook.io/dclo/"
+                        >
+                          <button large className="button-minimal">
+                            See FAQs →
+                          </button>
+                        </Link>
                       </Col>
                     </Row>
                   </Row>
@@ -335,27 +353,11 @@ export default function LandingPage() {
                 <br />
                 <br />
                 <Row className="mb-5">
-                  <H1>Get started</H1>
+                  <H1>Gaming, meet payment</H1>
                 </Row>
                 <Row>
                   <Col md={6}>
                     <PayCard role="Streamer">
-                      <H5 className="mt-3 mb-4">GAMER CHECKLIST</H5>
-                      <Checkbox>Connect your Metamask wallet</Checkbox>
-                      <Checkbox>High-speed internet connection</Checkbox>
-                      <Checkbox>Add DCLO tokens to your wallet</Checkbox>
-                      <Checkbox>
-                        Select the titles you want to play on Declo web app.
-                      </Checkbox>
-                      <H5 className="mt-3 mb-5">Enjoy the game!</H5>
-                      <Divider />
-                      <H5 className="mt-5 mb-3">
-                        <b>Bonus</b> Get a Declo Virtual Card
-                      </H5>
-                    </PayCard>
-                  </Col>
-                  <Col md={6}>
-                    <PayCard role="Player">
                       <H5 className="mt-3 mb-4">STREAMER CHECKLIST</H5>
                       <Checkbox>Connect your Metamask wallet</Checkbox>
                       <Checkbox>Install Declo desktop app</Checkbox>
@@ -364,6 +366,22 @@ export default function LandingPage() {
                         Check DCLO tokens earned after streaming session
                       </Checkbox>
                       <H5 className="mt-3 mb-5">Earn profit. Multiply joy.</H5>
+                      <Divider />
+                      <H5 className="mt-5 mb-3">
+                        <b>Bonus</b> Get a Declo Virtual Card
+                      </H5>
+                    </PayCard>
+                  </Col>
+                  <Col md={6}>
+                    <PayCard role="Player">
+                      <H5 className="mt-3 mb-4">GAMER CHECKLIST</H5>
+                      <Checkbox>Connect your Metamask wallet</Checkbox>
+                      <Checkbox>High-speed internet connection</Checkbox>
+                      <Checkbox>Add DCLO tokens to your wallet</Checkbox>
+                      <Checkbox>
+                        Select the titles you want to play on Declo web app.
+                      </Checkbox>
+                      <H5 className="mt-3 mb-5">Enjoy the game!</H5>
                       <Divider />
                       <H5 className="mt-5 mb-3">
                         <b>Bonus</b> Get a Declo Virtual Card
@@ -553,7 +571,7 @@ export default function LandingPage() {
                       you can have the best time.
                     </Text>
                   </Row>
-                  <Row>
+                  <Row className="mb-5">
                     <Col md="2">
                       <SocialIcon
                         url="https://twitter.com/jaketrent"
@@ -622,6 +640,11 @@ export default function LandingPage() {
                       </Card>
                     </Col> */}
                   </Row>
+                  <ActionModal
+                    desc="You scrolled till the end. Why not take a look at our app?"
+                    action="TRY FOR FREE"
+                    className="mb-11"
+                  />
                 </Col>
                 <Col md="1" />
                 <Col md="5">

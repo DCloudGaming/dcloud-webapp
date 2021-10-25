@@ -131,7 +131,7 @@ export default function CForm({
           <div className="card-form__col -cvv">
             <div className="card-input">
               <label htmlFor="cardCvv" className="card-input__label">
-                Network name
+                Your Lucky Number
               </label>
               <input
                 type="tel"

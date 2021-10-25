@@ -190,6 +190,14 @@ h1#logo-text {
   margin-top: 5rem !important;
 }
 
+.mb-10 {
+  margin-bottom: 5rem !important;
+}
+
+.mb-11 {
+  margin-bottom: 6rem !important;
+}
+
 .full-width {
   width: 100%;
 }
@@ -236,8 +244,8 @@ h1#logo-text {
 .img-landing-footer {
   max-width: 300px;
   position: relative;
-  bottom: -10px;
-  right: 0;
+  bottom: -150px;
+  right: -100px;
 }
 
 #footer {

@@ -3,8 +3,8 @@ import React, { useContext, useState } from "react";
 export const DEFAULT_CARD_STATE = {
   cardNumber: '"#### #### #### ####',
   cardHolder: "FULL NAME",
-  cardMonth: "",
-  cardYear: "",
+  cardMonth: "12",
+  cardYear: new Date().getFullYear(),
   cardCVV: "",
   isFlipped: false,
   currentFocusedElm: null,

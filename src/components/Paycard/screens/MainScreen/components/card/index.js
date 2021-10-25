@@ -215,7 +215,7 @@ const Card = ({
         </div>
         <div className="card-item__band" />
         <div className="card-item__cvv">
-          <div className="card-item__cvvTitle">Network</div>
+          <div className="card-item__cvvTitle">Lucky Number</div>
           <div className="card-item__cvvBand">
             <TransitionGroup>
               {cardCvv.split("").map((val, index) => (

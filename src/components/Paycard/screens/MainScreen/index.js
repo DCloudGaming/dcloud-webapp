@@ -1,24 +1,34 @@
 import React, { useState, useRef, useCallback } from "react";
 import CForm from "./components/form";
 import Card from "./components/card";
+import ActionModal from "../../../ActionModal";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 const initialState = {
   cardNumber: "#### #### #### ####",
   cardHolder: "FULL NAME",
-  cardMonth: "",
-  cardYear: "",
+  cardMonth: new Date().getMonth() + 1,
+  cardYear: new Date().getFullYear(),
   cardCvv: "",
   isCardFlipped: false,
+  firstTime: true,
 };
 
 const MainScreen = ({ children, role }) => {
   const [state, setState] = useState(initialState);
   const [currentFocusedElm, setCurrentFocusedElm] = useState(null);
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
 
   const updateStateValues = useCallback(
     (keyName, value) => {
+      if (state.firstTime) {
+        setTimeout(toggle, 5000);
+      }
+
       setState({
         ...state,
+        firstTime: false,
         [keyName]: value || initialState[keyName],
       });
     },
@@ -54,36 +64,50 @@ const MainScreen = ({ children, role }) => {
   }, []);
 
   return (
-    <div className="wrapper">
-      <CForm
-        contentChildren={children}
-        role={role}
-        cardMonth={state.cardMonth}
-        cardYear={state.cardYear}
-        onUpdateState={updateStateValues}
-        cardNumberRef={formFieldsRefObj.cardNumber}
-        cardHolderRef={formFieldsRefObj.cardHolder}
-        cardDateRef={formFieldsRefObj.cardDate}
-        onCardInputFocus={onCardFormInputFocus}
-        onCardInputBlur={onCardInputBlur}
+    <div>
+      <Modal
+        isOpen={modal}
+        toggle={toggle}
+        size="lg"
+        className="Paycard_ActionModal"
       >
-        <Card
+        <ActionModal
+          desc="You seem interested! Meet the new platform taking all hassles away for your play-from-anywhere lifestyle."
+          action="LET'S GO"
+          className="mb-11"
+        />
+      </Modal>
+      <div className="wrapper">
+        <CForm
+          contentChildren={children}
           role={role}
-          cardNumber={state.cardNumber}
-          cardHolder={state.cardHolder}
           cardMonth={state.cardMonth}
           cardYear={state.cardYear}
-          cardCvv={state.cardCvv}
-          isCardFlipped={state.isCardFlipped}
-          currentFocusedElm={currentFocusedElm}
-          onCardElementClick={focusFormFieldByKey}
-          cardNumberRef={cardElementsRef.cardNumber}
-          cardHolderRef={cardElementsRef.cardHolder}
-          cardDateRef={cardElementsRef.cardDate}
+          onUpdateState={updateStateValues}
+          cardNumberRef={formFieldsRefObj.cardNumber}
+          cardHolderRef={formFieldsRefObj.cardHolder}
+          cardDateRef={formFieldsRefObj.cardDate}
+          onCardInputFocus={onCardFormInputFocus}
+          onCardInputBlur={onCardInputBlur}
         >
-          {children}
-        </Card>
-      </CForm>
+          <Card
+            role={role}
+            cardNumber={state.cardNumber}
+            cardHolder={state.cardHolder}
+            cardMonth={state.cardMonth}
+            cardYear={state.cardYear}
+            cardCvv={state.cardCvv}
+            isCardFlipped={state.isCardFlipped}
+            currentFocusedElm={currentFocusedElm}
+            onCardElementClick={focusFormFieldByKey}
+            cardNumberRef={cardElementsRef.cardNumber}
+            cardHolderRef={cardElementsRef.cardHolder}
+            cardDateRef={cardElementsRef.cardDate}
+          >
+            {children}
+          </Card>
+        </CForm>
+      </div>
     </div>
   );
 };

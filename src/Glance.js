@@ -47,7 +47,6 @@ function Glance() {
           </iframe>
         </ModalBody>
       </Modal>
-
       <div className="video-container">
         <video autoPlay loop muted>
           <source src={sample} type="video/mp4" />
