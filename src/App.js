@@ -19,6 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   console.warn = null;
+  localStorage.setItem("backend_url", "159.223.91.60:8000")
   // TODO: add user state here
   return (
     <Router>
