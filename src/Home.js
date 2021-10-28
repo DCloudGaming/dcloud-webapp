@@ -40,14 +40,12 @@ function Home() {
         <Col
           md={2}
           style={{
-            background: "rgb(240, 242, 252)",
-            padding: "8rem 1.5rem 0rem 3rem",
-            marginTop: "-10rem",
+            background: "linear-gradient(to bottom, #ffc271, transparent)",
+            padding: "70rem 1.5rem 0rem 3rem",
+            marginTop: "-70rem",
             zIndex: "-1",
-            height: "50rem",
-            display: "flex",
-            flexDirection: "column",
-            borderRadius: "1rem",
+            height: "110rem",
+            borderRadius: "30%",
           }}
         >
           <b>1. Connect</b> your Metamask wallet.

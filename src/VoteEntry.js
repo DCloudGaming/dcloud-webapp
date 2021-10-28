@@ -1,4 +1,4 @@
-import { H3, H5, Text } from "@blueprintjs/core";
+import { H3, H4, H5, Text } from "@blueprintjs/core";
 import React from "react";
 import { Button, Col, Row } from "reactstrap";
 import { voteApp } from "./api/listing";
@@ -16,7 +16,7 @@ function VoteEntry({ app_name, vote_count, publisher }) {
     <Col md={6} className="align-items-md-center">
       <div
         style={{
-          background: "#2b2d95",
+          background: "#d2effc",
           borderRadius: "2rem 2rem 1.5rem 1.5rem",
           width: "90%",
           boxShadow: "0 0.625rem 3.5rem 0 rgba(198, 203, 222, .45)",
@@ -57,7 +57,9 @@ function VoteEntry({ app_name, vote_count, publisher }) {
         <Row className="pt-3 pb-4 d-flex align-items-md-center">
           <Col md={5} />
           <Col md={4}>
-            <H5 style={{ color: "white" }}>{vote_count} votes</H5>
+            <H4>
+              <b>{vote_count}</b> votes
+            </H4>
           </Col>
           <Col md={3}>
             <Button
