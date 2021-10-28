@@ -41,8 +41,8 @@ function Home() {
           md={2}
           style={{
             background: "rgb(240, 242, 252)",
-            padding: "8rem 1.5rem 0rem 2.5rem",
-            marginTop: "-8.5rem",
+            padding: "8rem 1.5rem 0rem 3rem",
+            marginTop: "-10rem",
             zIndex: "-1",
             height: "50rem",
             display: "flex",
@@ -53,10 +53,13 @@ function Home() {
           <b>1. Connect</b> your Metamask wallet.
           <br />
           <br />
+          <br />
           <b>2. Vote</b> your favorite game.
           <br />
           <br />
+          <br />
           <b>3. Watch out</b> for upcoming airdrops on Declo social media sites.
+          <br />
           <br />
           <br />
           <b>4. Join Declo</b> community.
