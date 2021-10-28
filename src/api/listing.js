@@ -1,6 +1,71 @@
 import axios from "../axios";
 
 export const getAllowApps = async () => {
+  return {
+    data: [
+      {
+        app_name: "Golden",
+        vote_count: 100,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Adore You",
+        vote_count: 432,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Lights Up",
+        vote_count: 232,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Sign of the Times",
+        vote_count: 32,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Golden",
+        vote_count: 100,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Adore You",
+        vote_count: 432,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Lights Up",
+        vote_count: 232,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Sign of the Times",
+        vote_count: 32,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Golden",
+        vote_count: 100,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Adore You",
+        vote_count: 432,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Lights Up",
+        vote_count: 232,
+        publisher: "Harry Styles",
+      },
+      {
+        app_name: "Sign of the Times",
+        vote_count: 32,
+        publisher: "Harry Styles",
+      },
+    ],
+  };
+
   const response = await axios({
     method: "get",
     url: "/apps/getAllowApps",

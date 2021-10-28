@@ -47,13 +47,6 @@
   transform: translate(-50%, -50%);
 }
 
-.bp3-card {
-  border-radius: 3rem;
-  /* background: rgba(255, 255, 255, 0.1); */
-  border-width: 1rem;
-  border-color: white;
-}
-
 .button-outline {
   background: transparent !important;
   color: #161637;

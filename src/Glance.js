@@ -69,7 +69,10 @@ function Glance() {
               {row.map((stream) => (
                 <>
                   <Col md={3}>
-                    <Card elevation={Elevation.THREE}>
+                    <Card
+                      style={{ borderRadius: "3rem" }}
+                      elevation={Elevation.THREE}
+                    >
                       <Row>
                         <Col md={5}>
                           <div className="glance-img-container">
