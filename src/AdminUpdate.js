@@ -1,10 +1,9 @@
-import { H6, Button } from "@blueprintjs/core";
-import { Formik, Field, FieldArray } from "formik";
+import { Button, H6 } from "@blueprintjs/core";
+import { Field, FieldArray, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import "./AdminUpdate.css";
-import { getAdmin, updateAdmin } from "./api/admin";
-import MultiSelect from "./components/MultiSelect";
+import { updateAdmin } from "./api/admin";
 
 function AdminUpdate() {
   const [admin, setAdmin] = useState();

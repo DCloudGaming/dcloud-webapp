@@ -1,9 +1,9 @@
+import { H3 } from "@blueprintjs/core";
 import React, { useEffect, useState } from "react";
-import "./Home.css";
+import { Col, Container, Row } from "reactstrap";
 import { getAllowApps } from "./api/listing";
+import "./Home.css";
 import VoteEntry from "./VoteEntry";
-import { Container, Row, Col } from "reactstrap";
-import { Card, Elevation, Icon, H1, H3, H5, Text } from "@blueprintjs/core";
 
 function Home() {
   const [listings, setListings] = useState([]);

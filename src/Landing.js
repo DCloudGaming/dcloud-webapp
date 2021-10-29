@@ -1,28 +1,21 @@
 import {
-  Card,
-  Elevation,
+  Checkbox,
+  Divider,
   H1,
   H5,
   Icon,
   IconSize,
-  Menu,
-  MenuItem,
-  Checkbox,
   Text,
-  Divider,
 } from "@blueprintjs/core";
 import React from "react";
 import { Link } from "react-router-dom";
+import { SocialIcon } from "react-social-icons";
 import { Col, Container, Row } from "reactstrap";
-// TODO
-import sample from "./assets/video/pov-playing-game.mp4";
 import topFirst from "./assets/video/landing-top-first.mp4";
 import topSecond from "./assets/video/landing-top-second.mp4";
 import topThird from "./assets/video/landing-top-third.mp4";
-import PayCard from "./components/Paycard";
-import { SocialIcon } from "react-social-icons";
 import ActionModal from "./components/ActionModal";
-
+import PayCard from "./components/Paycard";
 import "./Landing.css";
 
 export default function LandingPage() {

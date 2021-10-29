@@ -28,9 +28,6 @@ function App() {
             <Header />
             <Orders />
           </Route>
-          <Route path="/play">
-            <Play />
-          </Route>
           <Route path="/login">
             <Login />
           </Route>
@@ -54,6 +51,8 @@ function App() {
             <Header />
             <UserUpdate />
           </Route>
+
+          {/* v.0.0.1 */}
           <Route path="/admin/update">
             <Header />
             <AdminUpdate />
@@ -65,6 +64,9 @@ function App() {
           <Route path="/glance">
             <Header />
             <Glance />
+          </Route>
+          <Route path="/play">
+            <Play />
           </Route>
           <Route path="/">
             <Header />

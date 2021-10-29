@@ -2,6 +2,7 @@ import { Card, Elevation, Text, H1, H3 } from "@blueprintjs/core";
 import React, { useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Link } from "react-router-dom";
 import sample from "./assets/video/pov-playing-game.mp4";
 import "./Glance.css";
 import "./Listing.css";
@@ -11,19 +12,22 @@ function Glance() {
     {
       title: "Diablo",
       desc: "Play on web browser.",
+      url: "/play?demo=Diablo",
       image: require("./assets/img/games/diablo.png"),
       action: "Play",
     },
     {
-      title: "Starcraft",
+      title: "Retro",
       desc: "Play on web browser.",
-      image: require("./assets/img/games/starcraft.jpg"),
+      url: "/play?demo=Retro",
+      image: require("./assets/img/games/retro.png"),
       action: "Play",
     },
     {
       title: "Trending",
       desc: "Vote new games.",
-      image: require("./assets/img/games/freefire.png"),
+      url: "/vote",
+      image: require("./assets/img/games/starcraft.jpg"),
       action: "Vote",
     },
   ];
@@ -91,9 +95,11 @@ function Glance() {
                           <H3>{stream.title}</H3>
                           <Text>{stream.desc}</Text>
                           <br />
-                          <button large className="button-3d">
-                            {stream.action}
-                          </button>
+                          <Link to={stream.url}>
+                            <button large className="button-3d">
+                              {stream.action}
+                            </button>
+                          </Link>
                         </Col>
                       </Row>
                     </Card>
