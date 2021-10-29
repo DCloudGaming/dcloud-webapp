@@ -1,9 +1,10 @@
+import { H3, Text } from "@blueprintjs/core";
 import React, { useEffect, useState } from "react";
-import "./Home.css";
+import { BrowserView } from "react-device-detect";
+import { Col, Container, Row } from "reactstrap";
 import { getAllowApps } from "./api/listing";
+import "./Home.css";
 import VoteEntry from "./VoteEntry";
-import { Container, Row, Col } from "reactstrap";
-import { Card, Elevation, Icon, H1, H3, H5, Text } from "@blueprintjs/core";
 
 function Home() {
   const [listings, setListings] = useState([]);
@@ -23,6 +24,12 @@ function Home() {
           <Col md={10}>
             <Row className="mb-4 justify-content-between">
               <H3>Your Collection</H3>
+              {listings.filter((listing) => listing.voted).length == 0 && (
+                <Text>
+                  Game titles you vote after connecting Metamask wallet will
+                  appear here.
+                </Text>
+              )}
             </Row>
             {listings
               .filter((listing) => listing.voted)
@@ -63,64 +70,66 @@ function Home() {
           </Col>
           <Col md={2} />
         </Row>
-        <Container
-          style={{
-            position: "fixed",
-            top: "0",
-            marginLeft: "inherit",
-            zIndex: "-1",
-          }}
-        >
-          <Row>
-            <Col md={10} />
-            <Col
-              md={2}
-              style={{
-                background: "#fff3e0",
-                padding: "10rem 0rem 0rem 3rem",
-                zIndex: "-1",
-                height: "100vh",
-              }}
-            >
-              <b>1. Connect</b> your Metamask wallet.
-              <br />
-              <br />
-              <br />
-              <b>2. Vote</b> for game titles you like to see on Declo.
-              <br />
-              <br />
-              <br />
-              <b>3. Watch out</b> for upcoming airdrops on Declo social media
-              sites.
-              <br />
-              <br />
-              <br />
-              <b>4. Join Declo</b> community.
-              <img
-                alt="logo"
-                className="header__logo"
-                src={require("./assets/img/cyborg-flying.png")}
+        <BrowserView>
+          <Container
+            style={{
+              position: "fixed",
+              top: "0",
+              marginLeft: "inherit",
+              zIndex: "-1",
+            }}
+          >
+            <Row>
+              <Col md={10} />
+              <Col
+                md={2}
                 style={{
-                  position: "absolute",
-                  bottom: "-2rem",
-                  marginLeft: "-8rem",
-                  width: "15em",
+                  background: "#fff3e0",
+                  padding: "10rem 0rem 0rem 3rem",
+                  zIndex: "-1",
+                  height: "100vh",
                 }}
-              />
-              <div
-                style={{
-                  marginLeft: "inherit",
-                  background: "inherit",
-                  height: "inherit",
-                  width: "100vw",
-                  position: "fixed",
-                  top: "0",
-                  zIndex: "-2",
-                }}
-              ></div>
-            </Col>
-          </Row>
-        </Container>
+              >
+                <b>1. Connect</b> your Metamask wallet.
+                <br />
+                <br />
+                <br />
+                <b>2. Vote</b> for game titles you like to see on Declo.
+                <br />
+                <br />
+                <br />
+                <b>3. Watch out</b> for upcoming airdrops on Declo social media
+                sites.
+                <br />
+                <br />
+                <br />
+                <b>4. Join Declo</b> community.
+                <img
+                  alt="logo"
+                  className="header__logo"
+                  src={require("./assets/img/cyborg-flying.png")}
+                  style={{
+                    position: "absolute",
+                    bottom: "-2rem",
+                    marginLeft: "-8rem",
+                    width: "15em",
+                  }}
+                />
+                <div
+                  style={{
+                    marginLeft: "inherit",
+                    background: "inherit",
+                    height: "inherit",
+                    width: "100vw",
+                    position: "fixed",
+                    top: "0",
+                    zIndex: "-2",
+                  }}
+                ></div>
+              </Col>
+            </Row>
+          </Container>
+        </BrowserView>
       </Container>
     </>
   );

@@ -1,5 +1,6 @@
-import { H3, H4, H5, Text } from "@blueprintjs/core";
+import { H3, H4, H5, Text, Icon, IconSize } from "@blueprintjs/core";
 import React from "react";
+import { BrowserView, MobileView, isMobile } from "react-device-detect";
 import { Button, Col, Row } from "reactstrap";
 import { voteApp } from "./api/listing";
 import "./VoteEntry.css";
@@ -13,7 +14,7 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
   };
 
   return (
-    <Col md={6} className="align-items-md-center">
+    <Col md={6} className={`align-items-md-center ${isMobile && "mb-5"}`}>
       <div
         style={{
           background: "#d2effc",
@@ -30,7 +31,7 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
           }}
         >
           <Row>
-            <Col md={5}>
+            <Col md={5} xs={7}>
               <img
                 style={{
                   borderRadius: "1rem",
@@ -44,7 +45,10 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
             </Col>
             <Col
               md={6}
-              className="d-flex flex-column justify-content-md-center"
+              xs={5}
+              className={`d-flex flex-column justify-content-md-center ${
+                isMobile && "pt-4"
+              }`}
             >
               <H3>{app_name}</H3>
               <Text>{publisher}</Text>
@@ -52,27 +56,52 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
             </Col>
           </Row>
         </div>
-        <Row className="pt-3 pb-4 d-flex align-items-md-center">
-          <Col md={5} />
-          <Col md={4}>
-            <H4>
-              <b>{vote_count}</b> votes
-            </H4>
-          </Col>
-          <Col md={3}>
-            {!voted && (
-              <Button
-                className="ActionModal_action-button"
-                style={{ marginLeft: "-0.5rem" }}
-                onClick={vote}
-              >
+        <BrowserView>
+          <Row className="pt-3 pb-4 d-flex align-items-md-center">
+            <Col md={5} />
+            <Col md={4}>
+              <H4>
+                <b>{vote_count}</b> votes
+              </H4>
+            </Col>
+            <Col md={3}>
+              {!voted && (
+                <Button
+                  className="ActionModal_action-button"
+                  style={{ marginLeft: "-0.5rem" }}
+                  onClick={vote}
+                >
+                  <H5>
+                    <b>Vote</b>
+                  </H5>
+                </Button>
+              )}
+            </Col>
+          </Row>
+        </BrowserView>
+        <MobileView>
+          <Row className="pt-3 pb-4 d-flex align-items-md-center">
+            <Col xs={7} />
+            <Col xs={5}>
+              {!voted ? (
+                <Button
+                  className="ActionModal_action-button"
+                  style={{ marginLeft: "-0.5rem" }}
+                  onClick={vote}
+                >
+                  <H5>
+                    <b>{vote_count}</b>
+                    <Icon icon="arrow-up" size={IconSize.MEDIUM} />
+                  </H5>
+                </Button>
+              ) : (
                 <H5>
-                  <b>Vote</b>
+                  <b>{vote_count}</b> votes
                 </H5>
-              </Button>
-            )}
-          </Col>
-        </Row>
+              )}
+            </Col>
+          </Row>
+        </MobileView>
       </div>
     </Col>
   );

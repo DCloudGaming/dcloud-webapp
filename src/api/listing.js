@@ -1,6 +1,13 @@
 import axios from "../axios";
 
 export const getAllowApps = async () => {
+  // const response = await axios({
+  //   method: "get",
+  //   url: "/apps/getAllowApps",
+  //   withCredentials: true,
+  // });
+  // return response;
+
   return {
     data: [
       {
@@ -101,13 +108,6 @@ export const getAllowApps = async () => {
       },
     ],
   };
-
-  const response = await axios({
-    method: "get",
-    url: "/apps/getAllowApps",
-    withCredentials: true,
-  });
-  return response;
 };
 
 export const voteApp = async (app_name) => {

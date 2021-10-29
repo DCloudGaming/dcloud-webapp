@@ -3,8 +3,24 @@ import { Link } from "react-router-dom";
 import { Col, Container } from "reactstrap";
 import "./Header.css";
 import MetamaskBox from "./MetamaskBox";
+import { isMobile } from "react-device-detect";
 
 function Header() {
+  if (isMobile) {
+    return (
+      <div className="header">
+        <Container className="d-flex align-items-center">
+          <Link to="/">
+            <img
+              alt="logo"
+              className="header__logo"
+              src={require("./assets/img/logo.png")}
+            />
+          </Link>
+        </Container>
+      </div>
+    );
+  }
   return (
     <div className="header">
       <Container className="d-flex align-items-center">
@@ -22,9 +38,9 @@ function Header() {
             <input className="header__searchInput" type="text" />
           </div>
         </Col> */}
-        <Col md={5}>
+        <Col md={7}>
           <div className="header__nav">
-            <Link to="/landing">
+            <Link to="/">
               <div className="header__option">
                 <span className="header__optionLineOne">What is</span>
                 <span className="header__optionLineTwo">Declo</span>
@@ -38,6 +54,12 @@ function Header() {
               </div>
             </Link> */}
 
+            <Link to="/glance">
+              <div className="header__option">
+                <span className="header__optionLineOne">Launch</span>
+                <span className="header__optionLineTwo">App</span>
+              </div>
+            </Link>
             <Link to="/vote">
               <div className="header__option">
                 <span className="header__optionLineOne">Vote</span>
@@ -69,6 +91,15 @@ function Header() {
               <div className="header__option">
                 <span className="header__optionLineOne">Read</span>
                 <span className="header__optionLineTwo">Docs</span>
+              </div>
+            </a>
+            <a
+              href="https://dclosingapore.gitbook.io/dclo/library/roadmap-1"
+              target="_blank"
+            >
+              <div className="header__option">
+                <span className="header__optionLineOne">About</span>
+                <span className="header__optionLineTwo">Team</span>
               </div>
             </a>
             <MetamaskBox />
