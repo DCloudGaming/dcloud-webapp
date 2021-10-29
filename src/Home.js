@@ -17,53 +17,89 @@ function Home() {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <Col md={10}>
-          <Row className="mb-4 justify-content-between">
-            <H3>Trending Titles</H3>
-          </Row>
-          {listings
-            .reduce((all, one, i) => {
-              const chunk = Math.floor(i / 2);
-              all[chunk] = [].concat(all[chunk] || [], one);
-              return all;
-            }, [])
-            .map((row) => (
-              <Row className="mb-5">
-                {row.map((listing) => (
-                  <VoteEntry {...listing} />
-                ))}
-              </Row>
-            ))}
-        </Col>
-        <Col
-          md={2}
+    <>
+      <Container>
+        <Row>
+          <Col md={10}>
+            <Row className="mb-4 justify-content-between">
+              <H3>Trending Titles</H3>
+            </Row>
+            {listings
+              .reduce((all, one, i) => {
+                const chunk = Math.floor(i / 2);
+                all[chunk] = [].concat(all[chunk] || [], one);
+                return all;
+              }, [])
+              .map((row) => (
+                <Row className="mb-5">
+                  {row.map((listing) => (
+                    <VoteEntry {...listing} />
+                  ))}
+                </Row>
+              ))}
+          </Col>
+          <Col md={2} />
+        </Row>
+        <Container
           style={{
-            background: "linear-gradient(to bottom, #ffc271, transparent)",
-            padding: "70rem 1.5rem 0rem 3rem",
-            marginTop: "-70rem",
+            position: "fixed",
+            top: "0",
+            marginLeft: "inherit",
             zIndex: "-1",
-            height: "110rem",
-            borderRadius: "30%",
           }}
         >
-          <b>1. Connect</b> your Metamask wallet.
-          <br />
-          <br />
-          <br />
-          <b>2. Vote</b> your favorite game.
-          <br />
-          <br />
-          <br />
-          <b>3. Watch out</b> for upcoming airdrops on Declo social media sites.
-          <br />
-          <br />
-          <br />
-          <b>4. Join Declo</b> community.
-        </Col>
-      </Row>
-    </Container>
+          <Row>
+            <Col md={10} />
+            <Col
+              md={2}
+              style={{
+                background: "#fff3e0",
+                padding: "10rem 0rem 0rem 3rem",
+                zIndex: "-1",
+                height: "100vh",
+              }}
+            >
+              <b>1. Connect</b> your Metamask wallet.
+              <br />
+              <br />
+              <br />
+              <b>2. Vote</b> for game titles you like to see on Declo.
+              <br />
+              <br />
+              <br />
+              <b>3. Watch out</b> for upcoming airdrops on Declo social media
+              sites.
+              <br />
+              <br />
+              <br />
+              <b>4. Join Declo</b> community.
+              <img
+                alt="logo"
+                className="header__logo"
+                src={require("./assets/img/cyborg-flying.png")}
+                style={{
+                  position: "absolute",
+                  bottom: "-2rem",
+                  marginLeft: "-8rem",
+                  width: "15em",
+                }}
+              />
+              <div
+                style={{
+                  marginLeft: "inherit",
+                  background: "inherit",
+                  height: "inherit",
+                  width: "100vw",
+                  position: "fixed",
+                  top: "0",
+                  zIndex: "-2",
+                }}
+              ></div>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+    </>
   );
 }
 
