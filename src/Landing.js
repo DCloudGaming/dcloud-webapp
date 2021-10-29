@@ -8,6 +8,7 @@ import {
   Text,
 } from "@blueprintjs/core";
 import React from "react";
+import { BrowserView, MobileView } from "react-device-detect";
 import { Link } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import { Col, Container, Row } from "reactstrap";
@@ -64,22 +65,24 @@ export default function LandingPage() {
               className="img-landing-top"
               src={require("./assets/img/positions.png")}
             /> */}
-            <img
-              alt="img"
-              className="img-landing-top"
-              src={require("./assets/img/cyborg-flying.png")}
-            />
+            <BrowserView>
+              <img
+                alt="img"
+                className="img-landing-top"
+                src={require("./assets/img/cyborg-flying.png")}
+              />
+            </BrowserView>
             <Container className="top-section">
               <div id="badge-landing-top">Ready to join us?</div>
               <Row>
-                <Col md="6">
+                <Col md="6" xs={12}>
                   <H1>
                     <b>Decentralized Cloud Gaming</b>
                   </H1>
                 </Col>
               </Row>
               <Row className="mb-4 mt-4">
-                <Col md="6">
+                <Col md="6" xs={12}>
                   <Text className="bp3-running-text">
                     <b>Declo</b>, through the use of <b>DCLO tokens</b>, is the
                     leading network that connects high-productivity server
@@ -90,7 +93,7 @@ export default function LandingPage() {
                 </Col>
               </Row>
               <Row className="mb-5">
-                <Col md="4">
+                <Col md="4" xs={12}>
                   <H5>For streamers</H5>
                   <Text className="bp3-running-text">
                     Put your game library and spare hardware to productive use.{" "}
@@ -98,7 +101,10 @@ export default function LandingPage() {
                     Earn profit. Multiply joy.
                   </Text>
                 </Col>
-                <Col md="4">
+                <Col md="4" xs={12}>
+                  <MobileView>
+                    <br />
+                  </MobileView>
                   <H5>For gamers</H5>
                   <Text className="bp3-running-text">
                     Play the best collection of AAA, Indie and Retro games
@@ -114,29 +120,31 @@ export default function LandingPage() {
                   </button>
                 </Link>
               </Row>
-              <Row className="mt-10">
-                <Col md="3" className="flex-center">
-                  <div className="video-demo">
-                    <video autoPlay loop muted>
-                      <source src={topFirst} type="video/mp4" />
-                    </video>
-                  </div>
-                </Col>
-                <Col md="3" className="flex-center">
-                  <div className="video-demo">
-                    <video autoPlay loop muted>
-                      <source src={topSecond} type="video/mp4" />
-                    </video>
-                  </div>
-                </Col>
-                <Col md="3" className="flex-center">
-                  <div className="video-demo">
-                    <video autoPlay loop muted>
-                      <source src={topThird} type="video/mp4" />
-                    </video>
-                  </div>
-                </Col>
-              </Row>
+              <BrowserView>
+                <Row className="mt-10">
+                  <Col md="3" className="flex-center">
+                    <div className="video-demo">
+                      <video autoPlay loop muted>
+                        <source src={topFirst} type="video/mp4" />
+                      </video>
+                    </div>
+                  </Col>
+                  <Col md="3" className="flex-center">
+                    <div className="video-demo">
+                      <video autoPlay loop muted>
+                        <source src={topSecond} type="video/mp4" />
+                      </video>
+                    </div>
+                  </Col>
+                  <Col md="3" className="flex-center">
+                    <div className="video-demo">
+                      <video autoPlay loop muted>
+                        <source src={topThird} type="video/mp4" />
+                      </video>
+                    </div>
+                  </Col>
+                </Row>
+              </BrowserView>
             </Container>
           </section>
         </section>
@@ -144,7 +152,7 @@ export default function LandingPage() {
           <section className="section">
             <Container>
               <Row className="row-grid justify-content-between mb-5">
-                <Col className="mt-lg-5" md="4">
+                <Col className="mt-lg-5 d-none d-sm-block" md="4">
                   <Row>
                     <img
                       alt="img"
@@ -153,7 +161,7 @@ export default function LandingPage() {
                     />
                   </Row>
                 </Col>
-                <Col md="7">
+                <Col md="7" xs={12}>
                   <div className="pl-md-5">
                     <Row className="mb-2">
                       <b>STREAM WITH DCLO</b>
@@ -175,57 +183,57 @@ export default function LandingPage() {
                       </Text>
                     </Row>
                     <Row className="mb-3">
-                      <Col md="1">
+                      <Col md="1" xs={2}>
                         <Icon
                           icon="time"
                           size={IconSize.LARGE}
                           className="brand-color"
                         />
                       </Col>
-                      <Col md="11">
+                      <Col md="11" xs={10}>
                         <h5>A flexible schedule</h5>
                       </Col>
                     </Row>
                     <Row className="mb-3">
-                      <Col md="1">
+                      <Col md="1" xs={2}>
                         <Icon
                           icon="bank-account"
                           size={IconSize.LARGE}
                           className="brand-color"
                         />
                       </Col>
-                      <Col md="11">
+                      <Col md="11" xs={10}>
                         <h5>
                           Use DCLO supporting tools to strategize earnings
                         </h5>
                       </Col>
                     </Row>
                     <Row className="mb-5">
-                      <Col md="1">
+                      <Col md="1" xs={2}>
                         <Icon
                           icon="heart"
                           size={IconSize.LARGE}
                           className="brand-color"
                         />
                       </Col>
-                      <Col md="11">
+                      <Col md="11" xs={10}>
                         <h5>Get paid promptly</h5>
                       </Col>
                     </Row>
-                    <Row>
-                      <Col md="4">
+                    <Row className="align-items-center">
+                      <Col md="4" xs={6}>
                         <Link target="_blank" to="/glance">
                           <button large className="button-highlight">
                             Start playing
                           </button>
                         </Link>
                       </Col>
-                      <Col md="5">
+                      <Col md="5" xs={6}>
                         <Link
                           target="_blank"
                           to="https://dclosingapore.gitbook.io/dclo/"
                         >
-                          <button large className="button-minimal">
+                          <button className="button-minimal">
                             How stream pay works →
                           </button>
                         </Link>
@@ -260,63 +268,63 @@ export default function LandingPage() {
                       </Text>
                     </Row>
                     <Row className="mb-4">
-                      <Col md="1">
+                      <Col md="1" xs={2}>
                         <Icon
                           icon="applications"
                           size={IconSize.LARGE}
                           className="brand-color"
                         />
                       </Col>
-                      <Col md="11">
+                      <Col md="11" xs={10}>
                         <h5>Match instantly</h5>
                       </Col>
                     </Row>
                     <Row className="mb-4">
-                      <Col md="1">
+                      <Col md="1" xs={2}>
                         <Icon
                           icon="desktop"
                           size={IconSize.LARGE}
                           className="brand-color"
                         />
                       </Col>
-                      <Col md="11">
+                      <Col md="11" xs={10}>
                         <h5>Rich game library</h5>
                       </Col>
                     </Row>
                     <Row className="mb-5">
-                      <Col md="1">
+                      <Col md="1" xs={2}>
                         <Icon
                           icon="timeline-events"
                           size={IconSize.LARGE}
                           className="brand-color"
                         />
                       </Col>
-                      <Col md="11">
+                      <Col md="11" xs={10}>
                         <h5>Schedule ahead</h5>
                       </Col>
                     </Row>
-                    <Row>
-                      <Col md="5">
+                    <Row className="align-items-center">
+                      <Col md="4" xs={7}>
                         <Link target="_blank" to="/glance">
                           <button large className="button-highlight">
                             Start streaming
                           </button>
                         </Link>
                       </Col>
-                      <Col md="6">
+                      <Col md="5" xs={5}>
                         <Link
                           target="_blank"
                           to="https://dclosingapore.gitbook.io/dclo/"
                         >
                           <button large className="button-minimal">
-                            See FAQs →
+                            See FAQs
                           </button>
                         </Link>
                       </Col>
                     </Row>
                   </Row>
                 </Col>
-                <Col md="5">
+                <Col md="5" xs={12}>
                   <Row
                     style={{
                       maxHeight: "500px",
@@ -349,7 +357,7 @@ export default function LandingPage() {
                   <H1>Gaming, meet payment</H1>
                 </Row>
                 <Row>
-                  <Col md={6}>
+                  <Col md={6} xs={12}>
                     <PayCard role="Streamer">
                       <H5 className="mt-3 mb-4">STREAMER CHECKLIST</H5>
                       <Checkbox>Connect your Metamask wallet</Checkbox>
@@ -359,13 +367,15 @@ export default function LandingPage() {
                         Check DCLO tokens earned after streaming session
                       </Checkbox>
                       <H5 className="mt-3 mb-5">Earn profit. Multiply joy.</H5>
-                      <Divider />
-                      <H5 className="mt-5 mb-3">
-                        <b>Bonus</b> Get a Declo Virtual Card
-                      </H5>
+                      <BrowserView>
+                        <Divider />
+                        <H5 className="mt-5 mb-3">
+                          <b>Bonus</b> Get a Declo Virtual Card
+                        </H5>
+                      </BrowserView>
                     </PayCard>
                   </Col>
-                  <Col md={6}>
+                  <Col md={6} xs={12}>
                     <PayCard role="Player">
                       <H5 className="mt-3 mb-4">GAMER CHECKLIST</H5>
                       <Checkbox>Connect your Metamask wallet</Checkbox>
@@ -375,10 +385,12 @@ export default function LandingPage() {
                         Select the titles you want to play on Declo web app.
                       </Checkbox>
                       <H5 className="mt-3 mb-5">Enjoy the game!</H5>
-                      <Divider />
-                      <H5 className="mt-5 mb-3">
-                        <b>Bonus</b> Get a Declo Virtual Card
-                      </H5>
+                      <BrowserView>
+                        <Divider />
+                        <H5 className="mt-5 mb-3 d-none d-sm-block">
+                          <b>Bonus</b> Get a Declo Virtual Card
+                        </H5>
+                      </BrowserView>
                     </PayCard>
                   </Col>
                 </Row>
@@ -565,31 +577,31 @@ export default function LandingPage() {
                     </Text>
                   </Row>
                   <Row className="mb-5">
-                    <Col md="2">
+                    <Col md="2" xs="2">
                       <SocialIcon
                         url="https://twitter.com/dclodeclo"
                         network="twitter"
                       />
                     </Col>
-                    <Col md="2">
+                    <Col md="2" xs="2">
                       <SocialIcon
                         url="https://discord.com/invite/WvyXAF4j"
                         network="discord"
                       />
                     </Col>
-                    <Col md="2">
+                    <Col md="2" xs="2">
                       <SocialIcon
                         url="https://t.me/dclodecloChannel"
                         network="telegram"
                       />
                     </Col>
-                    <Col md="2">
+                    <Col md="2" xs="2">
                       <SocialIcon
                         url="https://t.me/dclodeclo"
                         network="telegram"
                       />
                     </Col>
-                    <Col md="2">
+                    <Col md="2" xs="2">
                       <SocialIcon url="https://declo.substack.com/p/coming-soon?showWelcome=true" />
                     </Col>
                     {/* <Col md="6">
@@ -630,17 +642,22 @@ export default function LandingPage() {
                       </Card>
                     </Col> */}
                   </Row>
-                  <ActionModal
-                    desc="You scrolled till the end. Why not take a look at our app?"
-                    action="TRY FOR FREE"
-                    className="mb-11"
-                  />
+                  <MobileView>
+                    <br />
+                  </MobileView>
+                  <BrowserView>
+                    <ActionModal
+                      desc="You scrolled till the end. Why not take a look at our app?"
+                      action="TRY FOR FREE"
+                      className="mb-11"
+                    />
+                  </BrowserView>
                 </Col>
                 <Col md="1" />
                 <Col md="5">
                   <img
                     alt="img"
-                    className="img-landing-footer"
+                    className="img-landing-footer d-none d-sm-block"
                     src={require("./assets/img/cyborg-hatching.png")}
                   />
                 </Col>

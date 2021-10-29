@@ -65,10 +65,6 @@
   border-color: darkgray;
 }
 
-.top-section {
-  height: 100vh;
-}
-
 .play-section {
   padding-top: 5em;
   padding-bottom: 5em;
@@ -140,11 +136,17 @@ img.img-landing-top {
   color: #161637;
 }
 
-.container.top-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 90vh;
+@media screen and (min-width: 576px) {
+  .container.top-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+  }
+
+  .top-section {
+    height: 100vh;
+  }
 }
 
 .row > button {
@@ -221,18 +223,30 @@ h1#logo-text {
   justify-content: center;
 }
 
-#badge-landing-top {
-  color: #142764;
-  font-weight: 800;
-  background-color: #ffc272;
-  padding: 3rem 2rem;
-  border-radius: 100%;
-  position: absolute;
-  bottom: -3.5rem;
-  width: 8.5rem;
-  height: 8.5rem;
-  right: 13vw;
-  text-align: center;
+@media screen and (min-width: 576px) {
+  #badge-landing-top {
+    color: #142764;
+    font-weight: 800;
+    background-color: #ffc272;
+    padding: 3rem 2rem;
+    border-radius: 100%;
+    position: absolute;
+    bottom: -3.5rem;
+    width: 8.5rem;
+    height: 8.5rem;
+    right: 13vw;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #badge-landing-top {
+    display: none;
+  }
+
+  .top-section {
+    height: 81vh;
+  }
 }
 
 .section-lg {

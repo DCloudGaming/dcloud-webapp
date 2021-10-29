@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Container } from "reactstrap";
-import Glance from "./Glance";
 import "./Header.css";
 import MetamaskBox from "./MetamaskBox";
+import { BrowserView, MobileView } from "react-device-detect";
 
 function Header() {
   return (
@@ -23,36 +23,37 @@ function Header() {
             <input className="header__searchInput" type="text" />
           </div>
         </Col> */}
-        <Col md={7}>
-          <div className="header__nav">
-            <Link to="/landing">
-              <div className="header__option">
-                <span className="header__optionLineOne">What is</span>
-                <span className="header__optionLineTwo">Declo</span>
-              </div>
-            </Link>
+        <BrowserView>
+          <Col md={7}>
+            <div className="header__nav">
+              <Link to="/landing">
+                <div className="header__option">
+                  <span className="header__optionLineOne">What is</span>
+                  <span className="header__optionLineTwo">Declo</span>
+                </div>
+              </Link>
 
-            {/* <Link to="/dashboard">
+              {/* <Link to="/dashboard">
               <div className="header__option">
                 <span className="header__optionLineOne">.</span>
                 <span className="header__optionLineTwo">My Profile</span>
               </div>
             </Link> */}
 
-            <Link to="/glance">
-              <div className="header__option">
-                <span className="header__optionLineOne">Launch</span>
-                <span className="header__optionLineTwo">App</span>
-              </div>
-            </Link>
-            <Link to="/vote">
-              <div className="header__option">
-                <span className="header__optionLineOne">Vote</span>
-                <span className="header__optionLineTwo">Games</span>
-              </div>
-            </Link>
+              <Link to="/glance">
+                <div className="header__option">
+                  <span className="header__optionLineOne">Launch</span>
+                  <span className="header__optionLineTwo">App</span>
+                </div>
+              </Link>
+              <Link to="/vote">
+                <div className="header__option">
+                  <span className="header__optionLineOne">Vote</span>
+                  <span className="header__optionLineTwo">Games</span>
+                </div>
+              </Link>
 
-            {/* <Link to="/streams">
+              {/* <Link to="/streams">
               <div className="header__option">
                 <span className="header__optionLineOne">.</span>
                 <span className="header__optionLineTwo">Discover</span>
@@ -72,24 +73,25 @@ function Header() {
                 <span className="header__optionLineTwo">Admin Update</span>
               </div>
             </Link> */}
-            <a href="https://dclosingapore.gitbook.io/dclo/" target="_blank">
-              <div className="header__option">
-                <span className="header__optionLineOne">Read</span>
-                <span className="header__optionLineTwo">Docs</span>
-              </div>
-            </a>
-            <a
-              href="https://dclosingapore.gitbook.io/dclo/library/roadmap-1"
-              target="_blank"
-            >
-              <div className="header__option">
-                <span className="header__optionLineOne">About</span>
-                <span className="header__optionLineTwo">Team</span>
-              </div>
-            </a>
-            <MetamaskBox />
-          </div>
-        </Col>
+              <a href="https://dclosingapore.gitbook.io/dclo/" target="_blank">
+                <div className="header__option">
+                  <span className="header__optionLineOne">Read</span>
+                  <span className="header__optionLineTwo">Docs</span>
+                </div>
+              </a>
+              <a
+                href="https://dclosingapore.gitbook.io/dclo/library/roadmap-1"
+                target="_blank"
+              >
+                <div className="header__option">
+                  <span className="header__optionLineOne">About</span>
+                  <span className="header__optionLineTwo">Team</span>
+                </div>
+              </a>
+              <MetamaskBox />
+            </div>
+          </Col>
+        </BrowserView>
       </Container>
     </div>
   );
