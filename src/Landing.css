@@ -79,8 +79,6 @@
   border-radius: 10px;
   padding: 30px;
   height: 100%;
-  box-shadow: 0 0 0 0px rgb(16 22 26 / 15%), 0 0 0 rgb(16 22 26 / 0%),
-    0 0 0 rgb(16 22 26 / 0%);
 }
 
 .estimate-section {

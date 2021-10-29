@@ -1,6 +1,107 @@
 import axios from "../axios";
 
 export const getAllowApps = async () => {
+  return {
+    data: [
+      {
+        app_name: "Golden",
+        vote_count: 100,
+        publisher: "Harry Styles",
+        voted: true,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Adore You",
+        vote_count: 432,
+        publisher: "Harry Styles",
+        voted: true,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Lights Up",
+        vote_count: 232,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Sign of the Times",
+        vote_count: 32,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Golden",
+        vote_count: 100,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Adore You",
+        vote_count: 432,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Lights Up",
+        vote_count: 232,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Sign of the Times",
+        vote_count: 32,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Golden",
+        vote_count: 100,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Adore You",
+        vote_count: 432,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Lights Up",
+        vote_count: 232,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+      {
+        app_name: "Sign of the Times",
+        vote_count: 32,
+        publisher: "Harry Styles",
+        voted: false,
+        image_url:
+          "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all",
+      },
+    ],
+  };
+
   const response = await axios({
     method: "get",
     url: "/apps/getAllowApps",
