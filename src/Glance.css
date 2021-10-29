@@ -22,7 +22,7 @@
 }
 
 .video-container {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   width: 100%;
@@ -91,8 +91,6 @@ button.close {
 }
 
 button.early-access {
-  position: absolute;
-  bottom: 10vh;
   border-radius: 1rem;
   border-width: 0;
   padding: 1rem 2rem 0.5rem;
@@ -140,4 +138,19 @@ button.early-access:focus {
   box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #d2effc;
   /* 2px 2px 0 0 #d2effc, 3px 3px 0 0 #d2effc, 4px 4px 0 0 #d2effc, */
   /* 5px 5px 0 0 #d2effc; */
+}
+
+@media screen and (min-width: 576px) {
+  button.early-access {
+    position: absolute;
+    bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  button.early-access {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
 }
