@@ -4,7 +4,7 @@ import { Button, Col, Row } from "reactstrap";
 import { voteApp } from "./api/listing";
 import "./VoteEntry.css";
 
-function VoteEntry({ app_name, vote_count, publisher, voted }) {
+function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
   const vote = async () => {
     await voteApp(app_name);
     // TODO: Fix this
@@ -39,9 +39,7 @@ function VoteEntry({ app_name, vote_count, publisher, voted }) {
                   height: "150px",
                   margin: "1.75rem 0rem 0rem 1rem",
                 }}
-                src={
-                  "https://venturebeat.com/wp-content/uploads/2020/05/Garena-Free-Fire.jpg?w=1200&strip=all"
-                }
+                src={image_url}
               />
             </Col>
             <Col
