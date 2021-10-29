@@ -1,12 +1,12 @@
 import axios from "../axios";
 
 export const getAllowApps = async () => {
-  const response = await axios({
-    method: "get",
-    url: "/apps/getAllowApps",
-    withCredentials: true,
-  });
-  return response;
+  // const response = await axios({
+  //   method: "get",
+  //   url: "/apps/getAllowApps",
+  //   withCredentials: true,
+  // });
+  // return response;
 
   return {
     data: [
