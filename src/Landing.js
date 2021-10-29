@@ -567,33 +567,30 @@ export default function LandingPage() {
                   <Row className="mb-5">
                     <Col md="2">
                       <SocialIcon
-                        url="https://twitter.com/jaketrent"
+                        url="https://twitter.com/dclodeclo"
                         network="twitter"
                       />
                     </Col>
                     <Col md="2">
                       <SocialIcon
-                        url="https://twitter.com/jaketrent"
+                        url="https://discord.com/invite/WvyXAF4j"
                         network="discord"
                       />
                     </Col>
                     <Col md="2">
                       <SocialIcon
-                        url="https://twitter.com/jaketrent"
+                        url="https://t.me/dclodecloChannel"
                         network="telegram"
                       />
                     </Col>
                     <Col md="2">
                       <SocialIcon
-                        url="https://twitter.com/jaketrent"
-                        network="twitch"
+                        url="https://t.me/dclodeclo"
+                        network="telegram"
                       />
                     </Col>
                     <Col md="2">
-                      <SocialIcon
-                        url="https://twitter.com/jaketrent"
-                        network="facebook"
-                      />
+                      <SocialIcon url="https://declo.substack.com/p/coming-soon?showWelcome=true" />
                     </Col>
                     {/* <Col md="6">
                       <Card

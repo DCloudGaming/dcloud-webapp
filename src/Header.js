@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Col, Container } from "reactstrap";
+import Glance from "./Glance";
 import "./Header.css";
 import MetamaskBox from "./MetamaskBox";
 
@@ -22,7 +23,7 @@ function Header() {
             <input className="header__searchInput" type="text" />
           </div>
         </Col> */}
-        <Col md={5}>
+        <Col md={7}>
           <div className="header__nav">
             <Link to="/landing">
               <div className="header__option">
@@ -38,6 +39,12 @@ function Header() {
               </div>
             </Link> */}
 
+            <Link to="/glance">
+              <div className="header__option">
+                <span className="header__optionLineOne">Launch</span>
+                <span className="header__optionLineTwo">App</span>
+              </div>
+            </Link>
             <Link to="/vote">
               <div className="header__option">
                 <span className="header__optionLineOne">Vote</span>
@@ -69,6 +76,15 @@ function Header() {
               <div className="header__option">
                 <span className="header__optionLineOne">Read</span>
                 <span className="header__optionLineTwo">Docs</span>
+              </div>
+            </a>
+            <a
+              href="https://dclosingapore.gitbook.io/dclo/library/roadmap-1"
+              target="_blank"
+            >
+              <div className="header__option">
+                <span className="header__optionLineOne">About</span>
+                <span className="header__optionLineTwo">Team</span>
               </div>
             </a>
             <MetamaskBox />
