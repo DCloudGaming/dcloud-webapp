@@ -22,9 +22,32 @@ function Home() {
         <Row>
           <Col md={10}>
             <Row className="mb-4 justify-content-between">
+              <H3>Your Collection</H3>
+            </Row>
+            {listings
+              .filter((listing) => listing.voted)
+              .reduce((all, one, i) => {
+                const chunk = Math.floor(i / 2);
+                all[chunk] = [].concat(all[chunk] || [], one);
+                return all;
+              }, [])
+              .map((row) => (
+                <Row className="mb-5">
+                  {row.map((listing) => (
+                    <VoteEntry {...listing} />
+                  ))}
+                </Row>
+              ))}
+          </Col>
+          <Col md={2} />
+        </Row>
+        <Row>
+          <Col md={10}>
+            <Row className="mb-4 justify-content-between">
               <H3>Trending Titles</H3>
             </Row>
             {listings
+              .filter((listing) => !listing.voted)
               .reduce((all, one, i) => {
                 const chunk = Math.floor(i / 2);
                 all[chunk] = [].concat(all[chunk] || [], one);

@@ -4,7 +4,7 @@ import { Button, Col, Row } from "reactstrap";
 import { voteApp } from "./api/listing";
 import "./VoteEntry.css";
 
-function VoteEntry({ app_name, vote_count, publisher }) {
+function VoteEntry({ app_name, vote_count, publisher, voted }) {
   const vote = async () => {
     await voteApp(app_name);
     // TODO: Fix this
@@ -62,15 +62,17 @@ function VoteEntry({ app_name, vote_count, publisher }) {
             </H4>
           </Col>
           <Col md={3}>
-            <Button
-              className="ActionModal_action-button"
-              style={{ marginLeft: "-0.5rem" }}
-              onClick={vote}
-            >
-              <H5>
-                <b>Vote</b>
-              </H5>
-            </Button>
+            {!voted && (
+              <Button
+                className="ActionModal_action-button"
+                style={{ marginLeft: "-0.5rem" }}
+                onClick={vote}
+              >
+                <H5>
+                  <b>Vote</b>
+                </H5>
+              </Button>
+            )}
           </Col>
         </Row>
       </div>
