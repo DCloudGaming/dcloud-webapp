@@ -3,29 +3,28 @@ import { Field, FieldArray, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "reactstrap";
 import "./AdminUpdate.css";
-import { updateAdmin } from "./api/admin";
+import { getAdmin, updateAdmin } from "./api/admin";
 
 function AdminUpdate() {
   const [admin, setAdmin] = useState();
 
   useEffect(() => {
     const getAdminWrapper = async () => {
-      // TODO
-      // const resp = await getAdmin();
-      // console.log(resp);
-      // if (!resp.error) setAdmin(resp.data);
+      const resp = await getAdmin();
+      console.log(resp);
+      if (!resp.error) setAdmin(resp.data);
 
-      setAdmin({
-        hourly_rate: 10,
-        allowed_apps: [
-          {
-            app_name: "Golden",
-            publisher: "Harry Styles",
-            image_url:
-              "https://cdn.dribbble.com/users/1578582/screenshots/6637936/201_d_4x.png?compress=1&resize=400x300",
-          },
-        ],
-      });
+      // setAdmin({
+      //   hourly_rate: 10,
+      //   allowed_apps: [
+      //     {
+      //       app_name: "Golden",
+      //       publisher: "Harry Styles",
+      //       image_url:
+      //         "https://cdn.dribbble.com/users/1578582/screenshots/6637936/201_d_4x.png?compress=1&resize=400x300",
+      //     },
+      //   ],
+      // });
     };
 
     getAdminWrapper();
