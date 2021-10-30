@@ -7,7 +7,10 @@ import "./VoteEntry.css";
 
 function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
   const vote = async () => {
-    await voteApp(app_name);
+    const resp = await voteApp(app_name);
+    if (resp["Error"] && resp["Code"] == 401) {
+      alert("Please connect your Metamask wallet to vote.");
+    }
     // TODO: Fix this
     window.location.reload();
     // forceUpdate();

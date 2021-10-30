@@ -186,7 +186,7 @@ function renderBox(game) {
           <br />
         </>
       )}
-      <Link to="/glance">
+      <Link target="_blank" to="/glance">
         <H3 style={{ color: "white" }}>
           <Icon icon="chevron-left" size={IconSize.LARGE} /> Go back
         </H3>

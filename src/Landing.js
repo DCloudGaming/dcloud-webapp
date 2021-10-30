@@ -229,14 +229,14 @@ export default function LandingPage() {
                         </Link>
                       </Col>
                       <Col md="5" xs={6}>
-                        <Link
+                        <a
+                          href="https://dclosingapore.gitbook.io/dclo/"
                           target="_blank"
-                          to="https://dclosingapore.gitbook.io/dclo/"
                         >
                           <button className="button-minimal">
                             How stream pay works →
                           </button>
-                        </Link>
+                        </a>
                       </Col>
                     </Row>
                   </div>
@@ -312,14 +312,14 @@ export default function LandingPage() {
                         </Link>
                       </Col>
                       <Col md="5" xs={5}>
-                        <Link
+                        <a
+                          href="https://dclosingapore.gitbook.io/dclo/"
                           target="_blank"
-                          to="https://dclosingapore.gitbook.io/dclo/"
                         >
                           <button large className="button-minimal">
                             See FAQs
                           </button>
-                        </Link>
+                        </a>
                       </Col>
                     </Row>
                   </Row>

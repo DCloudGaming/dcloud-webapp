@@ -95,11 +95,11 @@ function Glance() {
                               Big screen required!
                             </button>
                           ) : (
-                            <Link to={stream.url}>
+                            <a href={stream.url} target="_blank">
                               <button large className="button-3d">
                                 {stream.action}
                               </button>
-                            </Link>
+                            </a>
                           )}
                         </Col>
                       </Row>
