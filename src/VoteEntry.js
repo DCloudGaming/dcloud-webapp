@@ -7,7 +7,10 @@ import "./VoteEntry.css";
 
 function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
   const vote = async () => {
-    await voteApp(app_name);
+    const resp = await voteApp(app_name);
+    if (resp["Error"] && resp["Code"] == 401) {
+      alert("Please connect your Metamask wallet to vote.");
+    }
     // TODO: Fix this
     window.location.reload();
     // forceUpdate();
@@ -36,8 +39,8 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
                 style={{
                   borderRadius: "1rem",
                   objectFit: "cover",
-                  width: "150px",
-                  height: "150px",
+                  width: "85%",
+                  aspectRatio: "1/1",
                   margin: "1.75rem 0rem 0rem 1rem",
                 }}
                 src={image_url}
@@ -58,13 +61,13 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
         </div>
         <BrowserView>
           <Row className="pt-3 pb-4 d-flex align-items-md-center">
-            <Col md={5} />
-            <Col md={4}>
+            <Col md={5} sm={1} />
+            <Col md={4} sm={4}>
               <H4>
                 <b>{vote_count}</b> votes
               </H4>
             </Col>
-            <Col md={3}>
+            <Col md={3} sm={4}>
               {!voted && (
                 <Button
                   className="ActionModal_action-button"

@@ -54,18 +54,18 @@ function Header() {
               </div>
             </Link> */}
 
-            <Link to="/glance">
+            <a href="/glance" target="_blank">
               <div className="header__option">
                 <span className="header__optionLineOne">Launch</span>
                 <span className="header__optionLineTwo">App</span>
               </div>
-            </Link>
-            <Link to="/vote">
+            </a>
+            <a href="/vote" target="_blank">
               <div className="header__option">
                 <span className="header__optionLineOne">Vote</span>
                 <span className="header__optionLineTwo">Games</span>
               </div>
-            </Link>
+            </a>
 
             {/* <Link to="/streams">
               <div className="header__option">
