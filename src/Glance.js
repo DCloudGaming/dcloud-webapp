@@ -11,17 +11,17 @@ import "./Listing.css";
 function Glance() {
   const streams = [
     {
-      title: "Diablo",
-      desc: "Play on web browser.",
-      url: "/play?demo=Diablo",
-      image: require("./assets/img/games/diablo.png"),
-      action: "Play",
-    },
-    {
       title: "Retro",
       desc: "Play on web browser.",
       url: "/play?demo=Retro",
       image: require("./assets/img/games/retro.png"),
+      action: "Play",
+    },
+    {
+      title: "Diablo",
+      desc: "Play on web browser. Beta version.",
+      url: "/play?demo=Diablo",
+      image: require("./assets/img/games/diablo.png"),
       action: "Play",
     },
     {
@@ -65,29 +65,28 @@ function Glance() {
             return all;
           }, [])
           .map((row) => (
-            <Row className="mb-md-5">
+            <Row className="mb-md-5 mb-sm-5">
               {row.map((stream) => (
                 <>
-                  <Col md={3} xs={12}>
+                  <Col md={4} sm={6} xs={12}>
                     <Card
                       style={{ borderRadius: "3rem" }}
                       elevation={Elevation.THREE}
                     >
                       <Row>
-                        <Col md={5} xs={4}>
+                        <Col md={6} xs={4}>
                           <div className="glance-img-container">
                             <img
                               src={stream.image}
                               style={{
                                 borderRadius: "1rem",
-                                maxWitdth: "100%",
-                                maxHeight: "6rem",
+                                maxWidth: "100%",
+                                // maxHeight: "inherit",
                               }}
                             />
                           </div>
                         </Col>
-                        <Col md={1} xs={1} />
-                        <Col md={5} xs={7}>
+                        <Col md={6} xs={7}>
                           <H3>{stream.title}</H3>
                           <Text>{stream.desc}</Text>
                           <br />
