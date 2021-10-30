@@ -3,6 +3,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Container } from "reactstrap";
 import ImportScript from "./common/importScript";
+import { isMobile } from "react-device-detect";
 import "./Order.css";
 
 function Play() {
@@ -174,13 +175,17 @@ function renderBox(game) {
         background: "rgba(0, 0, 0, 0.5)",
         position: "absolute",
         top: "0rem",
-        padding: "2rem 2rem 2rem 2rem",
+        padding: isMobile ? "1rem 1rem 0.75rem 0.25rem" : "2rem",
         left: "15vw",
         borderRadius: "0rem 0rem 1rem 1rem",
       }}
     >
-      <H1 style={{ color: "white" }}>Playing {game}</H1>
-      <br />
+      {!isMobile && (
+        <>
+          <H1 style={{ color: "white" }}>Playing {game}</H1>
+          <br />
+        </>
+      )}
       <Link to="/glance">
         <H3 style={{ color: "white" }}>
           <Icon icon="chevron-left" size={IconSize.LARGE} /> Go back
