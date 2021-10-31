@@ -1,0 +1,46 @@
+.ActionModal_background {
+  background-color: #2b2d95;
+  width: 100%;
+  border-radius: 100px;
+  padding: 2rem;
+}
+
+button.ActionModal_action-button {
+  border-radius: 1rem;
+  border-width: 0;
+  padding: 0.5rem 1rem 0.25rem;
+  outline: 0;
+  background: white;
+  border: none;
+  transition: all 0.3s ease-out;
+  box-shadow: inset 0 -8px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #ff6633,
+    2px 2px 0 0 #ff6633, 3px 3px 0 0 #ff6633, 4px 4px 0 0 #ff6633,
+    5px 5px 0 0 #ff6633, 6px 6px 0 0 #ff6633, 7px 7px 0 0 #ff6633;
+}
+
+button.ActionModal_action-button:focus {
+  background-color: white;
+  box-shadow: inset 0 -4px 0 0 rgba(0, 0, 0, 0.2), 1px 1px 0 0 #ff6633,
+    2px 2px 0 0 #ff6633, 3px 3px 0 0 #ff6633, 4px 4px 0 0 #ff6633;
+}
+
+button.ActionModal_action-button:hover {
+  background: white;
+}
+
+.modal-dialog.Paycard_ActionModal {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modal-dialog.Paycard_ActionModal > .modal-content {
+  background-color: transparent !important;
+}
+
+.modal-dialog.Paycard_ActionModal > .modal-content {
+  background-color: transparent !important;
+}

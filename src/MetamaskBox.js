@@ -29,24 +29,52 @@ function MetamaskBox() {
     };
     authMetamaskWrapper();
     return (
-      <div>
-        <div>Connected account: {account}</div>
-        <div>
-          <button onClick={handleGenOTP}>Get OTP</button>
-        </div>
+      <div className="header__option metamask_box">
+        <span className="header__optionLineOne">
+          0x...{account.substr(account.length - 5)}
+        </span>
+        <span className="header__optionLineTwo" onClick={handleGenOTP}>
+          Get OTP
+        </span>
       </div>
     );
   }
 
   if (status === "initializing")
-    return <div>Synchronisation with MetaMask ongoing...</div>;
+    return (
+      <div className="header__option metamask_box">
+        <span className="header__optionLineOne">Syncing</span>
+        <span className="header__optionLineTwo" onClick={handleGenOTP}>
+          Metamask
+        </span>
+      </div>
+    );
 
-  if (status === "unavailable") return <div>MetaMask not available :(</div>;
+  if (status === "unavailable")
+    return (
+      <div className="header__option metamask_box">
+        <span className="header__optionLineOne">Not available</span>
+        <span className="header__optionLineTwo">Metamask</span>
+      </div>
+    );
 
   if (status === "notConnected")
-    return <button onClick={connect}>Connect to MetaMask</button>;
+    return (
+      <div className="header__option metamask_box">
+        <span className="header__optionLineOne">Connect to</span>
+        <span className="header__optionLineTwo" onClick={connect}>
+          Metamask
+        </span>
+      </div>
+    );
 
-  if (status === "connecting") return <div>Connecting...</div>;
+  if (status === "connecting")
+    return (
+      <div className="header__option metamask_box">
+        <span className="header__optionLineOne">Connecting</span>
+        <span className="header__optionLineTwo">Metamask</span>
+      </div>
+    );
 }
 
 export default MetamaskBox;

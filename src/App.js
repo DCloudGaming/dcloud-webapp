@@ -10,6 +10,7 @@ import Play from "./Play";
 import LandingPage from "./Landing";
 import Listing from "./Listing";
 import Streams from "./Streams";
+import Glance from "./Glance";
 import UserDashboard from "./UserDashboard";
 import UserUpdate from "./UserUpdate";
 import AdminUpdate from "./AdminUpdate";
@@ -18,21 +19,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   console.warn = null;
+  // localStorage.setItem("backend_url", "159.223.91.60:8080")
+  localStorage.setItem("backend_url", "https://api.declo.co");
+  // localStorage.setItem("backend_url", "127.0.0.1:8080")
   // TODO: add user state here
   return (
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/landing">
-            <Header />
-            <LandingPage />
-          </Route>
           <Route path="/orders">
             <Header />
             <Orders />
-          </Route>
-          <Route path="/play">
-            <Play />
           </Route>
           <Route path="/login">
             <Login />
@@ -65,8 +62,16 @@ function App() {
             <Header />
             <Home />
           </Route>
+          <Route path="/glance">
+            <Header />
+            <Glance />
+          </Route>
+          <Route path="/play">
+            <Play />
+          </Route>
           <Route path="/">
             <Header />
+            <LandingPage />
           </Route>
         </Switch>
       </div>
