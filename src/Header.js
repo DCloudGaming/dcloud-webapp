@@ -46,14 +46,12 @@ function Header() {
                 <span className="header__optionLineTwo">Declo</span>
               </div>
             </a>
-
             {/* <Link to="/dashboard">
               <div className="header__option">
                 <span className="header__optionLineOne">.</span>
                 <span className="header__optionLineTwo">My Profile</span>
               </div>
             </Link> */}
-
             <a href="/glance" target="_blank">
               <div className="header__option">
                 <span className="header__optionLineOne">Launch</span>
@@ -66,27 +64,25 @@ function Header() {
                 <span className="header__optionLineTwo">Games</span>
               </div>
             </a>
-
-            {/* <Link to="/streams">
+            <Link to="/streams">
               <div className="header__option">
-                <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineOne">DEBUG MODE</span>
                 <span className="header__optionLineTwo">Discover</span>
               </div>
             </Link>
-
             <Link to="/user/update">
               <div className="header__option">
-                <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineOne">DEBUG MODE</span>
                 <span className="header__optionLineTwo">Host Update</span>
               </div>
             </Link>
-
             <Link to="/admin/update">
               <div className="header__option">
-                <span className="header__optionLineOne">.</span>
+                <span className="header__optionLineOne">DEBUG MODE</span>
                 <span className="header__optionLineTwo">Admin Update</span>
               </div>
-            </Link> */}
+            </Link>{" "}
+            */}
             <a href="https://dclosingapore.gitbook.io/dclo/" target="_blank">
               <div className="header__option">
                 <span className="header__optionLineOne">Read</span>

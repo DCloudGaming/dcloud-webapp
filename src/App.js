@@ -20,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   console.warn = null;
   // localStorage.setItem("backend_url", "159.223.91.60:8080")
-  localStorage.setItem("backend_url", "https://api.declo.co")
+  localStorage.setItem("backend_url", "https://api.declo.co");
   // localStorage.setItem("backend_url", "127.0.0.1:8080")
   // TODO: add user state here
   return (
@@ -54,8 +54,6 @@ function App() {
             <Header />
             <UserUpdate />
           </Route>
-
-          {/* v.0.0.1 */}
           <Route path="/admin/update">
             <Header />
             <AdminUpdate />
