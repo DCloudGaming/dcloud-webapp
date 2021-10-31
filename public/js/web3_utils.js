@@ -1,5 +1,6 @@
 // TODO: Move to env file
-const APP_BACKEND_URL = "http://localhost:8080/api";
+const BACKEND_URL = localStorage.getItem("backend_url");
+const APP_BACKEND_URL = `${BACKEND_URL}/api`;
 const web3 = new Web3("https://cloudflare-eth.com");
 
 const handleWalletClick = async () => {
