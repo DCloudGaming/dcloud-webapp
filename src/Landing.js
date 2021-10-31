@@ -481,6 +481,16 @@ export default function LandingPage() {
             <Row className="mb-5 mt-10">
               <img alt="" src={`/img/landing/charts/howitworks.png`} />
             </Row>
+            <Row>
+              <a
+                target="_blank"
+                href="https://dclosingapore.gitbook.io/dclo/getting-started/network-flow"
+              >
+                <button large className="button-highlight">
+                  Read user guide
+                </button>
+              </a>
+            </Row>
           </Container>
         </section>
         {/* TODO */}
