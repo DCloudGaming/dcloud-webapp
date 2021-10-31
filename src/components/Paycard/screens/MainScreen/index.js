@@ -1,8 +1,8 @@
-import React, { useState, useRef, useCallback } from "react";
-import CForm from "./components/form";
-import Card from "./components/card";
+import React, { useCallback, useRef, useState } from "react";
+import { Modal } from "reactstrap";
 import ActionModal from "../../../ActionModal";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import Card from "./components/card";
+import CForm from "./components/form";
 
 const initialState = {
   cardNumber: "#### #### #### ####",

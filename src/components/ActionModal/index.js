@@ -13,7 +13,7 @@ function ActionModal({ desc, action, className }) {
         <H5 style={{ color: "white" }}>{desc}</H5>
       </Col>
       <Col md={4}>
-        <Link target="_blank" to="/glance">
+        <Link target="_blank" rel="noopener noreferrer" to="/glance">
           <Button className="ActionModal_action-button" onClick={() => {}}>
             <H5>
               <b>{action}</b>

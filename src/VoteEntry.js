@@ -8,7 +8,7 @@ import "./VoteEntry.css";
 function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
   const vote = async () => {
     const resp = await voteApp(app_name);
-    if (resp["Error"] && resp["Code"] == 401) {
+    if (resp["Error"] && resp["Code"] === 401) {
       alert("Please connect your Metamask wallet to vote.");
     }
     // TODO: Fix this
@@ -36,6 +36,7 @@ function VoteEntry({ app_name, vote_count, publisher, image_url, voted }) {
           <Row>
             <Col md={5} xs={7}>
               <img
+                alt="cover"
                 style={{
                   borderRadius: "1rem",
                   objectFit: "cover",

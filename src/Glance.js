@@ -1,9 +1,15 @@
-import { Card, Elevation, Text, H1, H3 } from "@blueprintjs/core";
+import { Card, Elevation, H3, Text } from "@blueprintjs/core";
 import React, { useState } from "react";
-import { Col, Container, Row } from "reactstrap";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { MobileView, isMobile } from "react-device-detect";
-import { Link } from "react-router-dom";
+import { isMobile, MobileView } from "react-device-detect";
+import {
+  Button,
+  Col,
+  Container,
+  Modal,
+  ModalBody,
+  ModalHeader,
+  Row,
+} from "reactstrap";
 import sample from "./assets/video/pov-playing-game.mp4";
 import "./Glance.css";
 import "./Listing.css";
@@ -41,6 +47,7 @@ function Glance() {
         <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody>
           <iframe
+            title="loading"
             src="https://docs.google.com/forms/d/e/1FAIpQLSeEMI1vgsCqRZ_WQKvUDak8Yq0cGiDXfRYamF4-gnEjeBS7ZQ/viewform?embedded=true"
             width="100%"
             height="100%"
@@ -77,6 +84,7 @@ function Glance() {
                         <Col md={6} xs={4}>
                           <div className="glance-img-container">
                             <img
+                              alt="stream"
                               src={stream.image}
                               style={{
                                 borderRadius: "1rem",
@@ -90,12 +98,16 @@ function Glance() {
                           <H3>{stream.title}</H3>
                           <Text>{stream.desc}</Text>
                           <br />
-                          {isMobile && stream.title == "Diablo" ? (
+                          {isMobile && stream.title === "Diablo" ? (
                             <button disabled className="button-3d">
                               Big screen required!
                             </button>
                           ) : (
-                            <a href={stream.url} target="_blank">
+                            <a
+                              href={stream.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
                               <button large className="button-3d">
                                 {stream.action}
                               </button>
