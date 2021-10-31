@@ -38,7 +38,7 @@ function Header() {
             <input className="header__searchInput" type="text" />
           </div>
         </Col> */}
-        <Col md={7}>
+        <Col md={10}>
           <div className="header__nav">
             <a href="/" target="_blank" rel="noopener noreferrer">
               <div className="header__option">

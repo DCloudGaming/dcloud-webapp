@@ -7,33 +7,6 @@
 
 > :warning: Many front-end bugs are minor and hard to catch, feel free to try out and submit issues when you encounter bugs. I have never tested every flow thoroughly.
 
-# Progress
-
-> :zap: Pseudo Kanban for progress tracking and transparency
-
-### Pending
-
-- Sign up with Metamask
-- Unlink wallet address
-
-### Building presentational components using mock data
-
-### Building functional components using API data
-
-- List all listings - without filters `/`
-- Listing detail - Timing & games `/listing`
-- User dashboard - Basic infos, Wallet address & balance & transactions, Streamer profile `/dashboard`
-- Create/Update/Delete listing detail - Timing & games -> It will be updated dynamically when streamer app is online
-- Create/Update user dashboard - form: name, location, hardware, connection & actions: save, connect wallet, log out `/user/update`
-- Instant play page (duplicate Listing page) - Filter form: game, start time, duration -> click on a listing -> open the video player `/stream`
-- Play by link `/play`
-
-### Testing; completing user goals
-
-### Final polish
-
-### Ready for launch i.e. done
-
 ## Available Scripts
 
 In the project directory, you can run:
