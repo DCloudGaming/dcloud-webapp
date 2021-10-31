@@ -13,7 +13,7 @@ function ImportScript(resourceUrl, order) {
     return () => {
       document.body.removeChild(script);
     };
-  }, [resourceUrl]);
+  }, [resourceUrl, order]);
 }
 
 export default ImportScript;

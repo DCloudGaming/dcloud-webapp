@@ -40,25 +40,25 @@ function Header() {
         </Col> */}
         <Col md={7}>
           <div className="header__nav">
-            <a href="/" target="_blank">
+            <a href="/" target="_blank" rel="noopener noreferrer">
               <div className="header__option">
                 <span className="header__optionLineOne">What is</span>
                 <span className="header__optionLineTwo">Declo</span>
               </div>
             </a>
-            {/* <Link to="/dashboard">
+            <Link to="/dashboard">
               <div className="header__option">
-                <span className="header__optionLineOne">.</span>
-                <span className="header__optionLineTwo">My Profile</span>
+                <span className="header__optionLineOne">View</span>
+                <span className="header__optionLineTwo">Profile</span>
               </div>
-            </Link> */}
-            <a href="/glance" target="_blank">
+            </Link>
+            <a href="/glance" target="_blank" rel="noopener noreferrer">
               <div className="header__option">
                 <span className="header__optionLineOne">Launch</span>
                 <span className="header__optionLineTwo">App</span>
               </div>
             </a>
-            <a href="/vote" target="_blank">
+            <a href="/vote" target="_blank" rel="noopener noreferrer">
               <div className="header__option">
                 <span className="header__optionLineOne">Vote</span>
                 <span className="header__optionLineTwo">Games</span>
@@ -81,9 +81,12 @@ function Header() {
                 <span className="header__optionLineOne">DEBUG MODE</span>
                 <span className="header__optionLineTwo">Admin Update</span>
               </div>
-            </Link>{" "}
-            */}
-            <a href="https://dclosingapore.gitbook.io/dclo/" target="_blank">
+            </Link>
+            <a
+              href="https://dclosingapore.gitbook.io/dclo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <div className="header__option">
                 <span className="header__optionLineOne">Read</span>
                 <span className="header__optionLineTwo">Docs</span>
@@ -92,6 +95,7 @@ function Header() {
             <a
               href="https://dclosingapore.gitbook.io/dclo/library/roadmap-1"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <div className="header__option">
                 <span className="header__optionLineOne">About</span>
