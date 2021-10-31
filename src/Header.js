@@ -40,12 +40,12 @@ function Header() {
         </Col> */}
         <Col md={7}>
           <div className="header__nav">
-            <Link to="/">
+            <a href="/" target="_blank">
               <div className="header__option">
                 <span className="header__optionLineOne">What is</span>
                 <span className="header__optionLineTwo">Declo</span>
               </div>
-            </Link>
+            </a>
 
             {/* <Link to="/dashboard">
               <div className="header__option">

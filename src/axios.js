@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const BACKEND_URL = localStorage.getItem("backend_url");
+// const BACKEND_URL = localStorage.getItem("backend_url");
+const BACKEND_URL = "https://api.declo.co";
+console.log("BACKEND ");
+console.log(BACKEND_URL);
 
 const instance = axios.create({
   // THE API (cloud function) URL
