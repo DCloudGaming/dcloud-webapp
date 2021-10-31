@@ -28,10 +28,10 @@ function Play() {
   // Demo
   const query = new URLSearchParams(data.search);
   const demoTitle = query.get("demo");
-  if (demoTitle == "Diablo") {
+  if (demoTitle === "Diablo") {
     return renderDiablo();
   }
-  if (demoTitle == "Retro") {
+  if (demoTitle === "Retro") {
     return renderRetro();
   }
 
@@ -136,6 +136,7 @@ function renderDiablo() {
         }}
       >
         <iframe
+          title="diablo"
           width="100%"
           height="100%"
           src="http://clouddiablo.com/embed"
@@ -157,6 +158,7 @@ function renderRetro() {
         }}
       >
         <iframe
+          title="retro"
           width="100%"
           height="100%"
           src="https://cloudretro.io/"
@@ -186,7 +188,7 @@ function renderBox(game) {
           <br />
         </>
       )}
-      <Link target="_blank" to="/glance">
+      <Link target="_blank" rel="noopener noreferrer" to="/glance">
         <H3 style={{ color: "white" }}>
           <Icon icon="chevron-left" size={IconSize.LARGE} /> Go back
         </H3>

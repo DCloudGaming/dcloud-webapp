@@ -20,39 +20,39 @@ import PayCard from "./components/Paycard";
 import "./Landing.css";
 
 export default function LandingPage() {
-  const streamerFooter = [
-    "Become a Streamer",
-    "Earnings",
-    "Cities",
-    "Help",
-    "Safety",
-    "Application Requirements",
-    "Bonus",
-    "DCLO Rewards",
-    "Hub",
-  ];
-  const playerFooter = [
-    "Become a Player",
-    "Earnings",
-    "Cities",
-    "Help",
-    "Safety",
-    "Application Requirements",
-    "Bonus",
-    "DCLO Rewards",
-    "Hub",
-    "Gift Cards",
-    "Something",
-    "Donate",
-  ];
-  const dcloFooter = [
-    "Careers",
-    "Developers",
-    "Press",
-    "Investor Relations",
-    "Media",
-    "Business",
-  ];
+  // const streamerFooter = [
+  //   "Become a Streamer",
+  //   "Earnings",
+  //   "Cities",
+  //   "Help",
+  //   "Safety",
+  //   "Application Requirements",
+  //   "Bonus",
+  //   "DCLO Rewards",
+  //   "Hub",
+  // ];
+  // const playerFooter = [
+  //   "Become a Player",
+  //   "Earnings",
+  //   "Cities",
+  //   "Help",
+  //   "Safety",
+  //   "Application Requirements",
+  //   "Bonus",
+  //   "DCLO Rewards",
+  //   "Hub",
+  //   "Gift Cards",
+  //   "Something",
+  //   "Donate",
+  // ];
+  // const dcloFooter = [
+  //   "Careers",
+  //   "Developers",
+  //   "Press",
+  //   "Investor Relations",
+  //   "Media",
+  //   "Business",
+  // ];
 
   return (
     <>
@@ -114,7 +114,7 @@ export default function LandingPage() {
                 </Col>
               </Row>
               <Row className="mt-3 mb-4">
-                <Link target="_blank" to="/glance">
+                <Link target="_blank" rel="noopener noreferrer" to="/glance">
                   <button large className="launch-app-button">
                     Launch App
                   </button>
@@ -222,7 +222,11 @@ export default function LandingPage() {
                     </Row>
                     <Row className="align-items-center">
                       <Col md="4" xs={6}>
-                        <Link target="_blank" to="/glance">
+                        <Link
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          to="/glance"
+                        >
                           <button large className="button-highlight">
                             Start playing
                           </button>
@@ -232,6 +236,7 @@ export default function LandingPage() {
                         <a
                           href="https://dclosingapore.gitbook.io/dclo/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <button className="button-minimal">
                             How stream pay works →
@@ -305,7 +310,11 @@ export default function LandingPage() {
                     </Row>
                     <Row className="align-items-center">
                       <Col md="4" xs={7}>
-                        <Link target="_blank" to="/glance">
+                        <Link
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          to="/glance"
+                        >
                           <button large className="button-highlight">
                             Start streaming
                           </button>
@@ -315,6 +324,7 @@ export default function LandingPage() {
                         <a
                           href="https://dclosingapore.gitbook.io/dclo/"
                           target="_blank"
+                          rel="noopener noreferrer"
                         >
                           <button large className="button-minimal">
                             See FAQs
@@ -480,6 +490,17 @@ export default function LandingPage() {
           <Container>
             <Row className="mb-5 mt-10">
               <img alt="" src={`/img/landing/charts/howitworks.png`} />
+            </Row>
+            <Row>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://dclosingapore.gitbook.io/dclo/getting-started/network-flow"
+              >
+                <button large className="button-highlight">
+                  Read user guide
+                </button>
+              </a>
             </Row>
           </Container>
         </section>

@@ -6,7 +6,6 @@ import "./UserDashboard.css";
 
 function UserDashboard() {
   const [user, setUser] = useState();
-  const userId = 1;
 
   useEffect(() => {
     const getUserWrapper = async () => {
@@ -32,6 +31,7 @@ function UserDashboard() {
           <H6>Wallet {user.wallet_address}</H6>
           <Row className="mt-5 mb-5 dashboard__balance-section">
             <img
+              alt="piggy"
               style={{
                 width: "80%",
                 borderRadius: "2rem",

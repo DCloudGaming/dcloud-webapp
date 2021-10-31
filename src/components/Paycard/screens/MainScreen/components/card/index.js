@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   CSSTransition,
-  TransitionGroup,
   SwitchTransition,
+  TransitionGroup,
 } from "react-transition-group";
 import "../card/style.css";
 
@@ -14,11 +14,6 @@ const CARDS = {
   unionpay: "^62",
   troy: "^9792",
   diners: "^(30[0-5]|36)",
-};
-
-const cardBackgroundName = () => {
-  let random = Math.floor(Math.random() * 25 + 1);
-  return `${random}.jpeg`;
 };
 
 const Card = ({

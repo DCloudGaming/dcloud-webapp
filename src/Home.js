@@ -24,7 +24,7 @@ function Home() {
           <Col md={10}>
             <Row className="mb-4 justify-content-between">
               <H3>Your Collection</H3>
-              {listings.filter((listing) => listing.voted).length == 0 && (
+              {listings.filter((listing) => listing.voted).length === 0 && (
                 <Text>
                   Game titles you vote after connecting Metamask wallet will
                   appear here.
