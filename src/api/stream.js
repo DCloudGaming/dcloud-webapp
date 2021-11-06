@@ -8,6 +8,14 @@ export const getStreams = async () => {
   return response;
 };
 
+export const queryLinks = async (invite_url) => {
+  const response = await axios({
+    method: "get",
+    url: `/apps/queryLink?url=${invite_url}`,
+  });
+  return response;
+};
+
 export const startSession = async (app_name, host_wallet_address) => {
   const response = await axios({
     method: "post",

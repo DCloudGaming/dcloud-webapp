@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Orders from "./Orders";
@@ -21,7 +21,8 @@ function App() {
   console.warn = null;
   // localStorage.setItem("backend_url", "159.223.91.60:8080")
   // localStorage.setItem("backend_url", "https://api.declo.co");
-  localStorage.setItem("backend_url", "127.0.0.1:8080");
+  // localStorage.setItem("backend_url", "127.0.0.1:8080");
+  localStorage.setItem("backend_url", "localhost:8080");
   localStorage.setItem("backend_protocol", "http");
   // TODO: add user state here
   return (
@@ -42,6 +43,13 @@ function App() {
           <Route path="/listing">
             <Header />
             <Listing />
+          </Route>
+          <Route path="/streams/:invite_url" children={
+            <div>
+              <Header />
+              <Streams/>
+            </div>
+          }>
           </Route>
           <Route path="/streams">
             <Header />
