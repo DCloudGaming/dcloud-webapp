@@ -5,8 +5,6 @@
 - Dashboard, wallet, CMS for token holder
 - Landing page for visitors
 
-> :warning: Many front-end bugs are minor and hard to catch, feel free to try out and submit issues when you encounter bugs. I have never tested every flow thoroughly.
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -55,3 +53,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 ### Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+
+## Sample env
+```
+REACT_APP_HOST = localhost:8080
+REACT_APP_PROTOCOL = http
+```
+
+
